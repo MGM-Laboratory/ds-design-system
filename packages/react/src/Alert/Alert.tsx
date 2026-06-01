@@ -11,11 +11,13 @@ export const alertVariants = cva(
   {
     variants: {
       tone: {
-        info: 'border-brand-blue/20 bg-brand-blue-50 text-ink',
-        success: 'border-brand-green/20 bg-brand-green-50 text-ink',
-        warning: 'border-brand-yellow/30 bg-brand-yellow-50 text-ink',
-        danger: 'border-brand-red/20 bg-brand-red-50 text-ink',
-        neutral: 'border-line bg-surface-muted text-ink',
+        // Literal text colors so Alerts read correctly even when nested
+        // inside an inverse Surface (their backgrounds are always light).
+        info: 'border-brand-blue/20 bg-brand-blue-50 text-[#0e1116]',
+        success: 'border-brand-green/20 bg-brand-green-50 text-[#0e1116]',
+        warning: 'border-brand-yellow/30 bg-brand-yellow-50 text-[#0e1116]',
+        danger: 'border-brand-red/20 bg-brand-red-50 text-[#0e1116]',
+        neutral: 'border-[#ececea] bg-[#f7f7f5] text-[#0e1116]',
       },
     },
     defaultVariants: { tone: 'info' },
@@ -72,6 +74,6 @@ export const AlertTitle = React.forwardRef<HTMLHeadingElement, React.HTMLAttribu
 
 export const AlertDescription = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   function AlertDescription({ className, ...rest }, ref) {
-    return <div ref={ref} className={cn('text-ink-2', className)} {...rest} />;
+    return <div ref={ref} className={cn('text-[#3b4150]', className)} {...rest} />;
   },
 );
