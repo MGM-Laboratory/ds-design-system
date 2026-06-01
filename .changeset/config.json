@@ -1,13 +1,13 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "labmgm/ds-design-system" }],
+  "changelog": ["@changesets/changelog-github", { "repo": "MGM-Laboratory/ds-design-system" }],
   "commit": false,
   "fixed": [],
   "linked": [],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["docs", "storybook", "playground"],
+  "ignore": ["docs", "storybook", "@labmgm/playground"],
   "privatePackages": {
     "version": false,
     "tag": false
