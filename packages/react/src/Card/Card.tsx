@@ -14,7 +14,7 @@ export const cardVariants = cva(
         'tint-yellow': 'bg-brand-yellow-50 border border-brand-yellow/30',
         'tint-red': 'bg-brand-red-50 border border-brand-red/20',
         'tint-green': 'bg-brand-green-50 border border-brand-green/20',
-        inverse: 'bg-surface-inverse text-white border border-white/10',
+        inverse: 'bg-surface-inverse border border-white/10',
       },
       padding: {
         none: 'p-0',
@@ -40,9 +40,14 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(function Card(
   { as: Tag = 'div', variant, padding, interactive, className, ...rest },
   ref,
 ) {
+  // When the card variant uses a dark background, set data-surface="inverse" so
+  // nested children using contextual tokens (text-ink, border-line, etc.) flip
+  // their CSS variables to the inverse scope. See tokens.css.
+  const dataSurface = variant === 'inverse' ? 'inverse' : undefined;
   return (
     <Tag
       ref={ref}
+      data-surface={dataSurface}
       className={cn(cardVariants({ variant, padding, interactive }), className)}
       {...rest}
     />

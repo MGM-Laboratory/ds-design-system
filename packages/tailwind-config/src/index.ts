@@ -12,26 +12,34 @@ import {
 import type { Config } from 'tailwindcss';
 import animatePlugin from 'tailwindcss-animate';
 
-// Map ColorToken → Tailwind nested color object (so `bg-brand-blue` works).
+// Map ColorToken → Tailwind nested color object.
+//
+// Contextual tokens (bg, surface, ink, line, focus) route through CSS variables
+// so they automatically flip inside `[data-surface="inverse"]` scopes — that
+// scope is defined in @labmgm/tokens/tokens.css and redefines --ink, --bg, etc.
+// to their inverse counterparts. This is how nested children (e.g. a CardTitle
+// using `text-ink`) correctly read as white when inside a dark Surface.
+//
+// Brand colors stay literal — the brand palette is fixed and does NOT flip.
 function buildTailwindColors(): Record<string, unknown> {
   return {
-    bg: colors.bg,
+    bg: 'var(--bg)',
     surface: {
-      DEFAULT: colors.surface,
-      muted: colors['surface-muted'],
-      inverse: colors['surface-inverse'],
+      DEFAULT: 'var(--surface)',
+      muted: 'var(--surface-muted)',
+      inverse: 'var(--surface-inverse)',
     },
     ink: {
-      DEFAULT: colors.ink,
-      2: colors['ink-2'],
-      3: colors['ink-3'],
-      4: colors['ink-4'],
+      DEFAULT: 'var(--ink)',
+      2: 'var(--ink-2)',
+      3: 'var(--ink-3)',
+      4: 'var(--ink-4)',
     },
     line: {
-      DEFAULT: colors.line,
-      strong: colors['line-strong'],
+      DEFAULT: 'var(--line)',
+      strong: 'var(--line-strong)',
     },
-    focus: colors.focus,
+    focus: 'var(--focus)',
     brand: {
       blue: { DEFAULT: colors['brand-blue'], 50: colors['brand-blue-50'] },
       yellow: { DEFAULT: colors['brand-yellow'], 50: colors['brand-yellow-50'] },

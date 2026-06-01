@@ -22,10 +22,14 @@ export const Banner = React.forwardRef<HTMLDivElement, BannerProps>(function Ban
   { tone = 'info', action, onDismiss, className, children, ...rest },
   ref,
 ) {
+  // Dark/colored backgrounds get the inverse surface scope so nested children
+  // using contextual tokens flip to light. Yellow keeps its dark text.
+  const dataSurface = tone === 'warning' ? undefined : 'inverse';
   return (
     <div
       ref={ref}
       role="status"
+      data-surface={dataSurface}
       className={cn(
         'flex flex-wrap items-center justify-center gap-3 px-4 py-2 text-body-sm',
         toneMap[tone],
