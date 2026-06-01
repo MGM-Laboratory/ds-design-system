@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Minus, Plus } from '@labmgm/icons';
+import { Minus, Plus } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 import { Input, type InputProps } from './Input.js';
 

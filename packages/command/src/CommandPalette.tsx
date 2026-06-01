@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { Command } from 'cmdk';
-import { Search } from '@labmgm/icons';
+import { Search } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 import { useKeyboardShortcut } from '@labmgm/hooks';
 

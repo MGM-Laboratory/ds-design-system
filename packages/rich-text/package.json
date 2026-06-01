@@ -44,7 +44,8 @@
     "@tiptap/extension-youtube": "^2.8.0",
     "@tiptap/pm": "^2.8.0",
     "@tiptap/react": "^2.8.0",
-    "@tiptap/starter-kit": "^2.8.0"
+    "@tiptap/starter-kit": "^2.8.0",
+    "lucide-react": "^0.453.0"
   },
   "peerDependencies": {
     "react": ">=18",

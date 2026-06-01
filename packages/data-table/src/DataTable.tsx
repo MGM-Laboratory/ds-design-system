@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { flexRender, type Table } from '@tanstack/react-table';
-import { ArrowDown, ArrowUp, ArrowUpDown } from '@labmgm/icons';
+import { ArrowDown, ArrowUp, ArrowUpDown } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 
 export interface DataTableProps<TData> extends React.HTMLAttributes<HTMLDivElement> {

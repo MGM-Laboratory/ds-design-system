@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as RadixDialog from '@radix-ui/react-dialog';
-import { X } from '@labmgm/icons';
+import { X } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 import { cva, type VariantProps } from 'class-variance-authority';
 

@@ -32,7 +32,8 @@
     "@labmgm/icons": "workspace:*",
     "@labmgm/utils": "workspace:*",
     "@radix-ui/react-dialog": "^1.1.2",
-    "cmdk": "^1.0.0"
+    "cmdk": "^1.0.0",
+    "lucide-react": "^0.453.0"
   },
   "peerDependencies": {
     "react": ">=18",

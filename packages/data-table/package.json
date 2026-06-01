@@ -30,7 +30,8 @@
   "dependencies": {
     "@labmgm/icons": "workspace:*",
     "@labmgm/utils": "workspace:*",
-    "@tanstack/react-table": "^8.20.5"
+    "@tanstack/react-table": "^8.20.5",
+    "lucide-react": "^0.453.0"
   },
   "peerDependencies": {
     "react": ">=18",

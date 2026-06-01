@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { X } from '@labmgm/icons';
+import { X } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 
 export interface BannerProps extends React.HTMLAttributes<HTMLDivElement> {

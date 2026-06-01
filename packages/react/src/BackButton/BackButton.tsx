@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ArrowLeft } from '@labmgm/icons';
+import { ArrowLeft } from 'lucide-react';
 import { Button, type ButtonProps } from '../Button/Button.js';
 
 export interface BackButtonProps extends Omit<ButtonProps, 'leadingIcon'> {

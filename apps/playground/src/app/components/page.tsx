@@ -23,7 +23,7 @@ import {
   TabsTrigger,
   TabsContent,
 } from '@labmgm/react';
-import { Heart, Sparkles, Settings } from '@labmgm/icons';
+import { Heart, Sparkles, Settings } from 'lucide-react';
 import { toast } from '@labmgm/toast';
 
 export default function ComponentsPage() {

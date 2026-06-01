@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Upload } from '@labmgm/icons';
+import { Upload } from 'lucide-react';
 import { cn, formatBytes } from '@labmgm/utils';
 
 export interface FileDropzoneProps {

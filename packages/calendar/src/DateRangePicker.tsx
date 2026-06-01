@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as Popover from '@radix-ui/react-popover';
-import { Calendar as CalIcon } from '@labmgm/icons';
+import { Calendar as CalIcon } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 import { format } from 'date-fns';
 import { Calendar } from './Calendar.js';

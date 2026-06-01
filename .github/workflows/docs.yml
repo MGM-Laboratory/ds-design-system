@@ -47,7 +47,6 @@ jobs:
 
       - name: Build Storybook
         run: pnpm --filter storybook build
-        continue-on-error: true
 
       - name: Assemble Pages site
         run: |

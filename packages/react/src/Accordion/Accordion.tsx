@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as RadixAccordion from '@radix-ui/react-accordion';
-import { ChevronDown } from '@labmgm/icons';
+import { ChevronDown } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 
 export const Accordion = RadixAccordion.Root;
