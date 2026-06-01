@@ -1,0 +1,45 @@
+export const metadata = { title: 'Introduction · MGM Design System' };
+
+# `@labmgm/*` — MGM Laboratory Design System
+
+The official component library for MGM Laboratory websites and product surfaces. Calm, premium, Bauhaus-accented, primary-colored, and human — straight out of the box.
+
+## Why a design system?
+
+So every project starts at the same finish line. Brand colors, typography, components, patterns, icons, animation, accessibility — all already decided, all already built, all installable with one command.
+
+## Highlights
+
+- **One install gets everything**. Radix UI, Lucide, Framer Motion, React Hook Form, Zod, Tiptap, TanStack Table — bundled into the relevant `@labmgm/*` package as a direct dependency.
+- **Two ways to ship styles**. Extend our Tailwind preset, or import the pre-compiled `styles.css`. Whichever fits your stack.
+- **20 packages, 70+ components**. Every primitive you'll need, all aligned to [`DESIGN_SYSTEM.md`](/brand).
+- **Closed palette, opinionated motion**. No purple sneaking in, no rogue eases. The brand is enforced at the type level where it can be.
+
+## Get started
+
+```bash
+pnpm add @labmgm/react @labmgm/tokens @labmgm/tailwind-config
+```
+
+```ts
+// tailwind.config.ts
+import preset from '@labmgm/tailwind-config';
+
+export default {
+  presets: [preset],
+  content: ['./src/**/*.{ts,tsx}', './node_modules/@labmgm/**/dist/**/*.{js,mjs}'],
+};
+```
+
+```tsx
+import { Button, Card, CardHeader, CardTitle } from '@labmgm/react';
+
+<Card>
+  <CardHeader>
+    <CardTitle>Hello, MGM.</CardTitle>
+  </CardHeader>
+  <Button>Get started</Button>
+</Card>
+```
+
+See **Installation** for the full setup. See **Getting started** for a step-by-step walkthrough.

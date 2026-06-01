@@ -1,0 +1,26 @@
+/**
+ * @labmgm/fonts — raw CSS for non-Next consumers.
+ * Imports Bricolage Grotesque, Geist, and Geist Mono from Google Fonts.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&display=swap');
+
+:root {
+  --font-display: 'Bricolage Grotesque', 'Söhne', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Geist', 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'JetBrains Mono', ui-monospace, monospace;
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+  font-feature-settings: 'cv11', 'ss01';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-mono);
+}

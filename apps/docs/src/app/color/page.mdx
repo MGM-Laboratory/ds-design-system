@@ -1,0 +1,48 @@
+export const metadata = { title: 'Color · MGM Design System' };
+
+# Color
+
+The MGM palette is closed and opinionated. Four brand colors, four light tints, four ink levels, two line weights.
+
+## Brand
+
+| Token | Hex | Use |
+|---|---|---|
+| `--brand-blue`   | `#3a6dc5` | Primary action, links |
+| `--brand-yellow` | `#f7bf33` | Highlight, attention, warmth |
+| `--brand-red`    | `#f94141` | Emphasis, energy, error |
+| `--brand-green`  | `#0f8657` | Success, positive states |
+
+## Tints (for backgrounds / chips)
+
+`--brand-blue-50`, `--brand-yellow-50`, `--brand-red-50`, `--brand-green-50` — 8% of the brand color over white.
+
+## Surfaces
+
+| Token | Hex | Use |
+|---|---|---|
+| `--bg`              | `#ffffff` | Page background |
+| `--surface`         | `#ffffff` | Card / panel surface |
+| `--surface-muted`   | `#f7f7f5` | Subtle off-white zoning |
+| `--surface-inverse` | `#0e1116` | High-contrast dark sections |
+
+## Ink (text)
+
+| Token | Hex | Use |
+|---|---|---|
+| `--ink`   | `#0e1116` | Primary text |
+| `--ink-2` | `#3b4150` | Secondary text |
+| `--ink-3` | `#6b7280` | Tertiary text, captions, helper text (≥14px) |
+| `--ink-4` | `#9aa1ad` | Disabled, faint, decorative |
+
+## Accessibility
+
+- Body text on white must use `--ink` or `--ink-2`. `--ink-3` is for ≥14px helper only.
+- `--brand-blue` (#3a6dc5) on white passes AA. ✅
+- `--brand-green` (#0f8657) on white passes AA. ✅
+- `--brand-red` only passes AA Large (≥18px or ≥14px bold). Don't use for body copy.
+- `--brand-yellow` never carries text on white. Fill only, with `--ink` text on top.
+
+## Inverse sections
+
+Wrap any container in `data-surface="inverse"` to flip surfaces. Or use the `<Surface tone="inverse">` component from `@labmgm/theme`. **Use sparingly — at most once per long page.**

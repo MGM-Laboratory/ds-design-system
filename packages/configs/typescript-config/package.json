@@ -1,0 +1,17 @@
+{
+  "name": "@labmgm/typescript-config",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared TypeScript configurations for @labmgm packages",
+  "license": "MIT",
+  "files": [
+    "base.json",
+    "react-lib.json",
+    "next.json"
+  ],
+  "exports": {
+    "./base.json": "./base.json",
+    "./react-lib.json": "./react-lib.json",
+    "./next.json": "./next.json"
+  }
+}

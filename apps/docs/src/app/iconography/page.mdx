@@ -1,0 +1,33 @@
+export const metadata = { title: 'Iconography · MGM Design System' };
+
+# Iconography
+
+One library, stroke-only, slightly heavier than default.
+
+## Library
+
+**Lucide** (`@labmgm/icons` wraps `lucide-react`). No other icon set.
+
+```tsx
+import { ArrowRight, Check, Search } from '@labmgm/icons';
+
+<ArrowRight />          {/* 20px, stroke 2.25, currentColor */}
+<Check size={16} />
+<Search size={24} className="text-brand-blue" />
+```
+
+## Rules
+
+- **Sizes**: 16 / 20 / 24 px only. No arbitrary values.
+- **Stroke**: 2.25 (heavier than Lucide's default 2).
+- **Color**: `currentColor`, inheriting from text. Brand-colored icons only in accent moments.
+- **Stroke-only**, no filled icons. The single exception is the pattern catalog (filled by definition).
+- **No emoji**, no flags, no 3D icons.
+
+## When to use which size
+
+| Size | Use |
+|---|---|
+| 16 px | Dense UI: tags, inline buttons, table cells |
+| 20 px | Default product UI |
+| 24 px | Marketing, hero, feature cards |

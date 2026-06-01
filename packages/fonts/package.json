@@ -1,0 +1,60 @@
+{
+  "name": "@labmgm/fonts",
+  "version": "0.1.0",
+  "description": "Font loaders for Bricolage Grotesque, Geist, and Geist Mono — the MGM type stack.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/labmgm/ds-design-system.git",
+    "directory": "packages/fonts"
+  },
+  "homepage": "https://github.com/labmgm/ds-design-system/tree/main/packages/fonts#readme",
+  "type": "module",
+  "sideEffects": ["*.css"],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./next": {
+      "types": "./dist/next.d.ts",
+      "import": "./dist/next.mjs",
+      "require": "./dist/next.js"
+    },
+    "./fonts.css": "./dist/fonts.css",
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsup && cp src/fonts.css dist/fonts.css",
+    "dev": "tsup --watch",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "clean": "rm -rf dist .turbo"
+  },
+  "peerDependencies": {
+    "next": ">=14"
+  },
+  "peerDependenciesMeta": {
+    "next": { "optional": true }
+  },
+  "devDependencies": {
+    "@labmgm/eslint-config": "workspace:*",
+    "@labmgm/typescript-config": "workspace:*",
+    "@types/node": "^22.7.5",
+    "eslint": "^9.12.0",
+    "next": "^15.0.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

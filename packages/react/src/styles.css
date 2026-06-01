@@ -1,0 +1,39 @@
+/**
+ * @labmgm/react — pre-compiled component styles.
+ * Consumers who don't use Tailwind can import this once:
+ *
+ *   import '@labmgm/react/styles.css';
+ *
+ * Tailwind users should instead extend the preset (@labmgm/tailwind-config) — that
+ * route gives full utility composition and avoids shipping duplicate CSS.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    color: var(--ink);
+    background-color: var(--bg);
+  }
+
+  ::selection {
+    background-color: rgba(58, 109, 197, 0.22);
+    color: var(--ink);
+  }
+}
+
+@layer components {
+  .mgm-shimmer {
+    background-image: linear-gradient(
+      90deg,
+      var(--surface-muted) 0%,
+      rgba(0, 0, 0, 0.04) 50%,
+      var(--surface-muted) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.6s linear infinite;
+  }
+}

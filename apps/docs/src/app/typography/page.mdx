@@ -1,0 +1,38 @@
+export const metadata = { title: 'Typography · MGM Design System' };
+
+# Typography
+
+Two font families, one type scale.
+
+## Families
+
+- **Bricolage Grotesque** — display, hero, editorial moments. Tight tracking (-2% to -3%) at large sizes.
+- **Geist** — body, UI, labels, captions, navigation, buttons.
+- **Geist Mono** — code, version numbers, technical numerals.
+
+Don't substitute. Inter, Roboto, Arial, Helvetica, Poppins, Montserrat flatten the brand.
+
+## Scale
+
+| Token | Size | Use |
+|---|---|---|
+| `display-2xl` | 72px | Marketing hero |
+| `display-xl`  | 56px | Sub-hero |
+| `display-lg`  | 40px | Page H1 in product |
+| `h1` – `h4`   | 32 / 24 / 20 / 17px | Section / subsection / card / inline |
+| `body-lg` / `body` / `body-sm` | 18 / 16 / 15px | Body copy |
+| `caption`     | 13px | Labels, helper, table heads |
+| `mono`        | 14px | Code, technical numerals |
+| `eyebrow`     | 12px | All-caps section labels |
+
+## Hierarchy rules
+
+- **One display per page**. Inner sections start at `h1` or smaller.
+- Never two headings adjacent without a body line, eyebrow, or rule between them.
+- Long-form paragraphs cap at 68 characters per line (`max-w-prose`).
+- Numbers in dashboards use `tabular-nums` for column alignment.
+- Color in headings is a **deliberate one-word highlight**, not a whole sentence.
+
+## Responsive
+
+Headlines step down on small screens via `clamp()`. The Tailwind preset includes these automatically.

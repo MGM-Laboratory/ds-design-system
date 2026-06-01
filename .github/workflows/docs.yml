@@ -1,0 +1,76 @@
+name: Docs
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: docs-${{ github.workflow }}
+  cancel-in-progress: true
+
+env:
+  TURBO_TELEMETRY_DISABLED: 1
+  NODE_OPTIONS: "--max-old-space-size=4096"
+
+jobs:
+  build-docs:
+    name: Build & deploy docs + storybook
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build packages
+        run: pnpm turbo run build --filter='./packages/*'
+
+      - name: Build Storybook
+        run: pnpm --filter storybook build
+
+      - name: Build Docs
+        run: pnpm --filter docs build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+
+      - name: Assemble Pages site
+        run: |
+          mkdir -p public-site
+          cp -R apps/storybook/storybook-static public-site/storybook
+          # Next.js exports go into a static dir if `output: 'export'`; otherwise upload .next/standalone
+          if [ -d apps/docs/out ]; then
+            cp -R apps/docs/out/* public-site/
+          else
+            echo "docs build did not produce a static export — skipping docs deploy"
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public-site
+
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

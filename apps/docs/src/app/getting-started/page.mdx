@@ -1,0 +1,89 @@
+export const metadata = { title: 'Getting started · MGM Design System' };
+
+# Getting started
+
+A step-by-step walkthrough for a fresh Next.js 15 project.
+
+## 1. Create a project
+
+```bash
+pnpm create next-app my-mgm-app --typescript --tailwind --app --src-dir
+cd my-mgm-app
+```
+
+## 2. Install the design system
+
+```bash
+pnpm add @labmgm/react @labmgm/tokens @labmgm/fonts @labmgm/tailwind-config
+```
+
+## 3. Wire Tailwind
+
+```ts
+// tailwind.config.ts
+import preset from '@labmgm/tailwind-config';
+
+export default {
+  presets: [preset],
+  content: [
+    './src/**/*.{ts,tsx}',
+    './node_modules/@labmgm/**/dist/**/*.{js,mjs}',
+  ],
+};
+```
+
+## 4. Import tokens + fonts
+
+```tsx
+// src/app/layout.tsx
+import '@labmgm/tokens/tokens.css';
+import { bricolageGrotesque, geist, geistMono } from '@labmgm/fonts/next';
+import { ThemeProvider } from '@labmgm/theme';
+
+export default function RootLayout({ children }) {
+  return (
+    <html
+      lang="en"
+      className={`${bricolageGrotesque.variable} ${geist.variable} ${geistMono.variable}`}
+    >
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+## 5. Build a page
+
+```tsx
+import { Container, Section, Stack } from '@labmgm/layout';
+import { Button, Card, CardHeader, CardTitle } from '@labmgm/react';
+
+export default function Home() {
+  return (
+    <Section padding="lg">
+      <Container>
+        <Stack gap={6}>
+          <h1 className="text-display-lg">Hello, MGM.</h1>
+          <Card>
+            <CardHeader>
+              <CardTitle>Cards out of the box</CardTitle>
+            </CardHeader>
+          </Card>
+          <Button>Get started</Button>
+        </Stack>
+      </Container>
+    </Section>
+  );
+}
+```
+
+That's it.
+
+## What's next
+
+- Add **forms** — see `@labmgm/forms` with `useMgmForm` + Zod.
+- Add **charts** — see `@labmgm/charts`.
+- Add a **command palette** with ⌘K — see `@labmgm/command`.
+- Decorate with the **pattern catalog** — see [Patterns](/patterns).

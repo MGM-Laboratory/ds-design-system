@@ -1,0 +1,46 @@
+export const metadata = { title: 'Motion · MGM Design System' };
+
+# Motion
+
+Motion at MGM is **calm, intentional, and short**. No springs flopping around. No 500ms entrances. No parallax.
+
+## Durations
+
+| Token | ms | Use |
+|---|---|---|
+| `--dur-1` | 120 | Quick UI, micro-interactions |
+| `--dur-2` | 200 | Default transitions |
+| `--dur-3` | 320 | Medium animations |
+| `--dur-4` | 520 | Longer reveals, fade-ups |
+| `--dur-5` | 800 | Slow, emphasis |
+
+## Easings
+
+| Token | Curve | Use |
+|---|---|---|
+| `--ease-out-soft`    | `cubic-bezier(0.22, 1, 0.36, 1)` | Default exit |
+| `--ease-in-out-soft` | `cubic-bezier(0.65, 0, 0.35, 1)` | Two-way transitions |
+| `--ease-spring`      | `cubic-bezier(0.34, 1.56, 0.64, 1)` | Bouncy, playful |
+
+## Tailwind utilities
+
+```html
+<button class="transition-colors duration-200 ease-out-soft">…</button>
+```
+
+## Framer Motion presets
+
+Use `@labmgm/motion` to get presets bound to these tokens:
+
+```tsx
+import { motion, fadeUp, staggerContainer, staggerItem } from '@labmgm/motion';
+
+<motion.section variants={staggerContainer(0, 0.1)} initial="hidden" animate="show">
+  <motion.h1 variants={staggerItem}>Hello</motion.h1>
+  <motion.p variants={fadeUp}>World</motion.p>
+</motion.section>
+```
+
+## Reduced motion
+
+`@labmgm/tokens/tokens.css` collapses all durations to ~0 when the user prefers reduced motion. Framer Motion does the same automatically.
