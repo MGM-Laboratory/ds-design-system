@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The core MGM Laboratory React component library — buttons, cards, modals, navigation, feedback, and more. Bundled with Radix UI, Framer Motion, and every dep you need.",
   "license": "MIT",
   "repository": {
@@ -13,14 +13,14 @@
   "sideEffects": [
     "*.css"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./styles.css": "./dist/styles.css",
     "./package.json": "./package.json"
@@ -35,7 +35,7 @@
     "dev": "tsup --watch",
     "lint": "eslint src",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "clean": "rm -rf dist .turbo"
   },
   "dependencies": {

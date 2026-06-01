@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/patterns",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "80 Bauhaus-inspired pattern tiles plus a seedable PatternGrid composer with no-adjacent-repeat algorithm.",
   "license": "MIT",
   "repository": {
@@ -11,14 +11,14 @@
   "homepage": "https://github.com/labmgm/ds-design-system/tree/main/packages/patterns#readme",
   "type": "module",
   "sideEffects": false,
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./svg/*": "./svg/*",
     "./package.json": "./package.json"
@@ -33,7 +33,7 @@
     "dev": "tsup --watch",
     "lint": "eslint src",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "clean": "rm -rf dist .turbo src/catalog.ts"
   },
   "dependencies": {

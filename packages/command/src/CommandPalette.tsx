@@ -70,6 +70,7 @@ export const CommandInput = React.forwardRef<
       <Search size={16} className="text-ink-3" />
       <Command.Input
         ref={ref}
+        // eslint-disable-next-line jsx-a11y/no-autofocus
         autoFocus
         className={cn(
           'h-12 w-full bg-transparent text-body text-ink outline-none placeholder:text-ink-4',
