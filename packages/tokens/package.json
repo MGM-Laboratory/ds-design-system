@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/tokens",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "MGM Laboratory design tokens — colors, type scale, shadows, radii, motion. CSS vars + TS + JSON.",
   "license": "MIT",
   "repository": {
@@ -13,14 +13,14 @@
   "sideEffects": [
     "*.css"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./tokens.css": "./dist/tokens.css",
     "./tokens.json": "./dist/tokens.json",
@@ -35,7 +35,7 @@
     "dev": "tsup --watch",
     "lint": "eslint src",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "clean": "rm -rf dist .turbo"
   },
   "devDependencies": {

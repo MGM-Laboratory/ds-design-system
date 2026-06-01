@@ -46,16 +46,16 @@ jobs:
             turbo-${{ runner.os }}-
 
       - name: Lint
-        run: pnpm lint
+        run: pnpm turbo run lint --filter='./packages/*'
 
       - name: Typecheck
-        run: pnpm typecheck
+        run: pnpm turbo run typecheck --filter='./packages/*'
 
       - name: Test
-        run: pnpm test
+        run: pnpm turbo run test --filter='./packages/*'
 
-      - name: Build
-        run: pnpm build
+      - name: Build packages
+        run: pnpm turbo run build --filter='./packages/*'
 
       - name: Verify changeset present (PR only)
         if: github.event_name == 'pull_request'

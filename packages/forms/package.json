@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/forms",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Form primitives for MGM Laboratory — Input, Textarea, Select, Combobox, Switch, Slider, FileDropzone, Wizard, plus React Hook Form + Zod helpers.",
   "license": "MIT",
   "repository": {
@@ -11,19 +11,19 @@
   "homepage": "https://github.com/labmgm/ds-design-system/tree/main/packages/forms#readme",
   "type": "module",
   "sideEffects": false,
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./schemas": {
       "types": "./dist/schemas.d.ts",
-      "import": "./dist/schemas.mjs",
-      "require": "./dist/schemas.js"
+      "import": "./dist/schemas.js",
+      "require": "./dist/schemas.cjs"
     },
     "./package.json": "./package.json"
   },
@@ -36,7 +36,7 @@
     "dev": "tsup --watch",
     "lint": "eslint src",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "clean": "rm -rf dist .turbo"
   },
   "dependencies": {

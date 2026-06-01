@@ -1,2 +1,2 @@
-import config from '@labmgm/eslint-config';
+import config from '@labmgm/eslint-config/react';
 export default config;
