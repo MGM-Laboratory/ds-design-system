@@ -23,6 +23,7 @@ export const Callout = React.forwardRef<HTMLDivElement, CalloutProps>(function C
   return (
     <div
       ref={ref}
+      data-surface="default"
       className={cn(
         'flex gap-3 rounded-r-md border-l-4 px-4 py-3 text-body-sm text-ink-2',
         toneClasses[tone],

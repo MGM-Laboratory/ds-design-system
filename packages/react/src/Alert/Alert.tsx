@@ -51,7 +51,7 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert
 ) {
   const Icon = iconMap[tone ?? 'info'];
   return (
-    <div ref={ref} role="alert" className={cn(alertVariants({ tone }), className)} {...rest}>
+    <div ref={ref} role="alert" data-surface="default" className={cn(alertVariants({ tone }), className)} {...rest}>
       {showIcon && (
         <Icon
           size={18}

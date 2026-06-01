@@ -10,21 +10,24 @@ export function Toaster(props: ToasterProps) {
   return (
     <SonnerToaster
       position="bottom-right"
-      richColors
       closeButton
       duration={4000}
       toastOptions={{
+        unstyled: true,
         classNames: {
           toast:
-            'rounded-md border border-line bg-surface text-ink shadow-2 px-4 py-3 font-sans text-body-sm',
+            'group pointer-events-auto flex gap-3 items-start w-[var(--width)] rounded-md border border-line bg-surface text-ink shadow-2 px-4 py-3 font-sans text-body-sm',
           title: 'font-semibold text-ink',
           description: 'text-ink-3 text-caption mt-1',
-          actionButton: 'bg-ink text-white px-2 py-1 rounded-sm text-caption',
+          icon: 'shrink-0 mt-0.5',
+          actionButton: 'ml-auto bg-surface-inverse text-white px-2 py-1 rounded-sm text-caption',
           cancelButton: 'bg-surface-muted text-ink-2 px-2 py-1 rounded-sm text-caption',
-          success: '!bg-brand-green-50 !border-brand-green/20 !text-ink',
-          error: '!bg-brand-red-50 !border-brand-red/20 !text-ink',
-          warning: '!bg-brand-yellow-50 !border-brand-yellow/30 !text-ink',
-          info: '!bg-brand-blue-50 !border-brand-blue/20 !text-ink',
+          closeButton: 'absolute top-2 right-2 text-ink-3 hover:text-ink',
+          success: 'bg-brand-green-50 border-brand-green/30 text-ink [&_[data-icon]]:text-brand-green',
+          error: 'bg-brand-red-50 border-brand-red/30 text-ink [&_[data-icon]]:text-brand-red',
+          warning: 'bg-brand-yellow-50 border-brand-yellow/40 text-ink [&_[data-icon]]:text-[#8a6d18]',
+          info: 'bg-brand-blue-50 border-brand-blue/30 text-ink [&_[data-icon]]:text-brand-blue',
+          loading: 'bg-surface border-line text-ink [&_[data-icon]]:text-brand-blue',
         },
       }}
       {...props}

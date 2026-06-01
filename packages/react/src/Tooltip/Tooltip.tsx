@@ -17,8 +17,9 @@ export const TooltipContent = React.forwardRef<
       <RadixTooltip.Content
         ref={ref}
         sideOffset={sideOffset}
+        data-surface="inverse"
         className={cn(
-          'z-50 max-w-xs select-none rounded-sm border border-line bg-ink px-2 py-1 text-caption text-white shadow-2',
+          'z-50 max-w-xs select-none rounded-sm bg-surface-inverse px-2 py-1 text-caption text-white shadow-2',
           'data-[state=delayed-open]:animate-fade-in data-[state=closed]:animate-fade-in',
           className,
         )}

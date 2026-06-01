@@ -14,7 +14,7 @@ const toneFill = {
   'brand-blue': 'bg-brand-blue',
   'brand-green': 'bg-brand-green',
   'brand-red': 'bg-brand-red',
-  ink: 'bg-ink',
+  ink: 'bg-surface-inverse',
 } as const;
 
 export const Progress = React.forwardRef<React.ElementRef<typeof RadixProgress.Root>, ProgressProps>(

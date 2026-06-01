@@ -65,7 +65,7 @@ export const Step = React.forwardRef<HTMLLIElement, StepProps>(function Step(
         className={cn(
           'inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-caption font-semibold',
           status === 'complete' && 'bg-brand-green border-brand-green text-white',
-          status === 'active' && 'bg-ink border-ink text-white',
+          status === 'active' && 'bg-surface-inverse border-surface-inverse text-white',
           status === 'pending' && 'bg-surface border-line text-ink-3',
         )}
       >

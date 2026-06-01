@@ -12,9 +12,10 @@ export const AlertDialogContent = React.forwardRef<
 >(function AlertDialogContent({ className, ...rest }, ref) {
   return (
     <RadixAlertDialog.Portal>
-      <RadixAlertDialog.Overlay className="fixed inset-0 z-50 bg-ink/40 backdrop-blur-sm data-[state=open]:animate-fade-in" />
+      <RadixAlertDialog.Overlay className="fixed inset-0 z-50 bg-surface-inverse/40 backdrop-blur-sm data-[state=open]:animate-fade-in" />
       <RadixAlertDialog.Content
         ref={ref}
+        data-surface="default"
         className={cn(
           'fixed left-[50%] top-[50%] z-50 grid w-full max-w-[480px] -translate-x-1/2 -translate-y-1/2 gap-4',
           'rounded-lg border border-line bg-surface p-6 text-ink shadow-3 focus:outline-none',

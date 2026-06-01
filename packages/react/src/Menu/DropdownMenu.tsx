@@ -30,6 +30,7 @@ export const DropdownMenuContent = React.forwardRef<
       <RadixMenu.Content
         ref={ref}
         sideOffset={sideOffset}
+        data-surface="default"
         className={cn(menuContentClasses, className)}
         {...rest}
       />
@@ -122,5 +123,5 @@ export const DropdownMenuSubContent = React.forwardRef<
   React.ElementRef<typeof RadixMenu.SubContent>,
   React.ComponentPropsWithoutRef<typeof RadixMenu.SubContent>
 >(function DropdownMenuSubContent({ className, ...rest }, ref) {
-  return <RadixMenu.SubContent ref={ref} className={cn(menuContentClasses, className)} {...rest} />;
+  return <RadixMenu.SubContent ref={ref} data-surface="default" className={cn(menuContentClasses, className)} {...rest} />;
 });

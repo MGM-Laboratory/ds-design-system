@@ -41,7 +41,7 @@ const ToggleGroupItem = React.forwardRef<
       ref={ref}
       className={cn(
         buttonVariants({ variant: 'ghost', size: 'sm' }),
-        'data-[state=on]:bg-ink data-[state=on]:text-white',
+        'data-[state=on]:bg-surface-inverse data-[state=on]:text-white',
         className,
       )}
       {...rest}

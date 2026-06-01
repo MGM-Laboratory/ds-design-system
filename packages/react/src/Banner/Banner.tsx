@@ -12,9 +12,9 @@ export interface BannerProps extends React.HTMLAttributes<HTMLDivElement> {
 const toneMap = {
   info: 'bg-brand-blue text-white',
   success: 'bg-brand-green text-white',
-  warning: 'bg-brand-yellow text-ink',
+  warning: 'bg-brand-yellow text-[#0e1116]',
   danger: 'bg-brand-red text-white',
-  inverse: 'bg-ink text-white',
+  inverse: 'bg-surface-inverse text-white',
 } as const;
 
 /** Wide, top-of-page announcement banner. */
