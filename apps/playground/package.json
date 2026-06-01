@@ -1,0 +1,49 @@
+{
+  "name": "@labmgm/playground",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start --port 3000",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .next .turbo node_modules/.cache"
+  },
+  "dependencies": {
+    "@labmgm/brand": "workspace:*",
+    "@labmgm/calendar": "workspace:*",
+    "@labmgm/charts": "workspace:*",
+    "@labmgm/command": "workspace:*",
+    "@labmgm/data-table": "workspace:*",
+    "@labmgm/fonts": "workspace:*",
+    "@labmgm/forms": "workspace:*",
+    "@labmgm/hooks": "workspace:*",
+    "@labmgm/icons": "workspace:*",
+    "@labmgm/layout": "workspace:*",
+    "@labmgm/motion": "workspace:*",
+    "@labmgm/patterns": "workspace:*",
+    "@labmgm/react": "workspace:*",
+    "@labmgm/rich-text": "workspace:*",
+    "@labmgm/theme": "workspace:*",
+    "@labmgm/toast": "workspace:*",
+    "@labmgm/tokens": "workspace:*",
+    "next": "^15.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@labmgm/tailwind-config": "workspace:*",
+    "@labmgm/typescript-config": "workspace:*",
+    "@types/node": "^22.7.5",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.12.0",
+    "eslint-config-next": "^15.0.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.3"
+  }
+}

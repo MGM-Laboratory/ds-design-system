@@ -1,0 +1,5 @@
+{
+  "extends": "@labmgm/typescript-config/react-lib.json",
+  "compilerOptions": { "outDir": "dist", "rootDir": "src" },
+  "include": ["src/**/*"]
+}

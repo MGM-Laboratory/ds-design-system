@@ -1,0 +1,12 @@
+# Default owners for everything
+*                                       @labmgm/design-system-team
+
+# Tokens, brand, and patterns require design review
+/packages/tokens/                       @labmgm/design-system-team @labmgm/design-leads
+/packages/brand/                        @labmgm/design-system-team @labmgm/design-leads
+/packages/patterns/                     @labmgm/design-system-team @labmgm/design-leads
+/packages/tailwind-config/              @labmgm/design-system-team @labmgm/design-leads
+
+# CI / release pipeline
+/.github/                               @labmgm/design-system-team @labmgm/platform-team
+/.changeset/                            @labmgm/design-system-team

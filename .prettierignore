@@ -1,0 +1,9 @@
+node_modules
+dist
+.next
+.turbo
+coverage
+storybook-static
+pnpm-lock.yaml
+*.min.css
+*.min.js

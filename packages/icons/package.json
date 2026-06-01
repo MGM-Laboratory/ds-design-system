@@ -1,0 +1,59 @@
+{
+  "name": "@labmgm/icons",
+  "version": "0.1.0",
+  "description": "MGM-branded icon set — wraps lucide-react with the canonical 2.25 stroke width and 16/20/24 size tokens.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/labmgm/ds-design-system.git",
+    "directory": "packages/icons"
+  },
+  "homepage": "https://github.com/labmgm/ds-design-system/tree/main/packages/icons#readme",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "@labmgm/utils": "workspace:*",
+    "lucide-react": "^0.453.0"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@labmgm/eslint-config": "workspace:*",
+    "@labmgm/typescript-config": "workspace:*",
+    "@testing-library/react": "^16.0.1",
+    "@types/node": "^22.7.5",
+    "@types/react": "^18.3.11",
+    "eslint": "^9.12.0",
+    "jsdom": "^25.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

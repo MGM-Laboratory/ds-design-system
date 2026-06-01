@@ -1,0 +1,60 @@
+{
+  "name": "@labmgm/utils",
+  "version": "0.1.0",
+  "description": "Utility helpers used across the @labmgm design system: cn(), formatters, polymorphic refs, Slot helpers.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/labmgm/ds-design-system.git",
+    "directory": "packages/utils"
+  },
+  "homepage": "https://github.com/labmgm/ds-design-system/tree/main/packages/utils#readme",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "clean": "rm -rf dist .turbo"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.4"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": { "optional": true }
+  },
+  "devDependencies": {
+    "@labmgm/eslint-config": "workspace:*",
+    "@labmgm/typescript-config": "workspace:*",
+    "@types/node": "^22.7.5",
+    "@types/react": "^18.3.11",
+    "eslint": "^9.12.0",
+    "react": "^18.3.1",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

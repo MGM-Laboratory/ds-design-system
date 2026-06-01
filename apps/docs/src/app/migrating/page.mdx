@@ -1,0 +1,51 @@
+export const metadata = { title: 'Migrating from aslib / atlas · MGM Design System' };
+
+# Migrating from `aslib` / `atlas`
+
+For internal projects that already have copies of the design system inline (the original `aslib` and `atlas` repos).
+
+## Why migrate?
+
+- One source of truth instead of two divergent copies.
+- Automated updates via npm — no more hand-syncing tokens.
+- Better tree-shaking — only the components you import ship.
+- Storybook coverage of every component.
+
+## Step 1: install `@labmgm/react` + friends
+
+See [Installation](/installation).
+
+## Step 2: replace local UI imports
+
+| Was | Becomes |
+|---|---|
+| `@/components/ui/button` | `@labmgm/react` (named export `Button`) |
+| `@/components/ui/card`   | `@labmgm/react` (named exports `Card`, `CardHeader`, …) |
+| `@/components/ui/modal`  | `@labmgm/react` (named exports `Dialog`, `DialogContent`, …) |
+| `@/components/ui/input`  | `@labmgm/react` or `@labmgm/forms` |
+| `@/components/brand/GeometricPattern` | `@labmgm/patterns` (`PatternGrid` + presets) |
+| `@/components/brand/Logo`             | `@labmgm/brand` (`Logo`) |
+| `@/styles/globals.css` (tokens block) | `import '@labmgm/tokens/tokens.css';` |
+
+A codemod is on the roadmap. Until then, search-and-replace works well — the prop APIs are intentionally close to the originals.
+
+## Step 3: switch Tailwind config
+
+Replace your existing Tailwind theme with the preset:
+
+```ts
+// tailwind.config.ts
+import preset from '@labmgm/tailwind-config';
+export default {
+  presets: [preset],
+  content: [...],
+};
+```
+
+## Step 4: delete `src/components/ui/`
+
+Yes, the whole folder.
+
+## Step 5: file PRs for any gaps
+
+If a component or variant you relied on isn't in `@labmgm/react`, open an issue or PR in `ds-design-system`. We'd rather upstream the change than fork.

@@ -1,0 +1,51 @@
+export const metadata = { title: 'Patterns · MGM Design System' };
+
+# Patterns
+
+The 80-tile MGM pattern catalog.
+
+## Catalog
+
+- **10 shapes**: `arcs`, `circle`, `clover`, `domes`, `fans`, `leaves`, `plus`, `quads`, `square`, `x`
+- **8 schemes**: each shape in `blue-on-white`, `green-on-white`, `red-on-white`, `yellow-on-white`, `white-on-blue`, `white-on-green`, `white-on-red`, `white-on-yellow`.
+
+## Components
+
+```tsx
+import {
+  PatternGrid, PatternTile,
+  PatternCorner, PatternBanner, PatternStrip, PatternDado,
+  PatternPyramid, PatternTriangle,
+} from '@labmgm/patterns';
+```
+
+| Component | Use |
+|---|---|
+| `<PatternGrid>` | Any N×M grid. Deterministic via `seed`. No adjacent repeats of shape or color. |
+| `<PatternTile>` | A single 100×100 tile. |
+| `<PatternCorner>` | 2×2 / 3×3 / 4×4 block anchored to a corner. |
+| `<PatternBanner>` | Wide 2×6 banner block. |
+| `<PatternStrip>` | Single-row horizontal strip. |
+| `<PatternDado>` | Thin solid-color strip for footer dividers. |
+| `<PatternPyramid>` | Stepped pyramid. |
+| `<PatternTriangle>` | Pyramid with `direction="up" \| "down"`. |
+
+## How to use
+
+> The pattern is **the spice, not the meal**.
+
+- **Hero accents** — `<PatternBanner>` above or below a section title.
+- **Footer divider** — `<PatternDado>` between content and footer.
+- **Empty state** — `<ShapeSignature>` from `@labmgm/brand` (a small 2×2 PatternGrid).
+- **404 pages** — bigger composition like `<PatternGrid rows={6} cols={6}>`.
+- **Favicon** — render `<PatternTile>` to a static SVG.
+
+What to avoid: wallpapering whole sections; placing text inside a tile; recoloring the tiles.
+
+## Determinism
+
+`<PatternGrid>` is seedable so SSR and client renders match. Same `seed` = same composition, always.
+
+```tsx
+<PatternGrid rows={3} cols={3} seed="hero" />
+```

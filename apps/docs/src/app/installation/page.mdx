@@ -1,0 +1,80 @@
+export const metadata = { title: 'Installation · MGM Design System' };
+
+# Installation
+
+Pick what you need. Or install `@labmgm/react` and get the core library.
+
+## Core
+
+```bash
+pnpm add @labmgm/react @labmgm/tokens @labmgm/tailwind-config @labmgm/fonts
+```
+
+## Optional packages
+
+```bash
+# Forms
+pnpm add @labmgm/forms
+
+# Data tables
+pnpm add @labmgm/data-table
+
+# Charts
+pnpm add @labmgm/charts
+
+# Rich text editor
+pnpm add @labmgm/rich-text
+
+# Calendar + date pickers
+pnpm add @labmgm/calendar
+
+# Command palette
+pnpm add @labmgm/command
+
+# Toasts
+pnpm add @labmgm/toast
+
+# Framer Motion presets
+pnpm add @labmgm/motion
+
+# Hooks
+pnpm add @labmgm/hooks
+
+# A11y primitives
+pnpm add @labmgm/a11y
+```
+
+## Styling — pick one
+
+### Option A: Tailwind preset (recommended for new projects)
+
+```ts
+// tailwind.config.ts
+import preset from '@labmgm/tailwind-config';
+
+export default {
+  presets: [preset],
+  content: [
+    './src/**/*.{ts,tsx}',
+    './node_modules/@labmgm/**/dist/**/*.{js,mjs}',
+  ],
+};
+```
+
+### Option B: Pre-compiled CSS (no Tailwind needed)
+
+```ts
+import '@labmgm/tokens/tokens.css';
+import '@labmgm/react/styles.css';
+```
+
+## Requirements
+
+- Node.js 20+
+- React 18+
+- For Tailwind users: Tailwind CSS 3.4+
+- For Next.js: Next.js 14+ (15 recommended)
+
+## Tree-shaking
+
+Every package ships dual ESM + CJS with `sideEffects: false` (except CSS files). Importing `import { Button } from '@labmgm/react'` only pulls Button, Slot, and CVA — nothing else.
