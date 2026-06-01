@@ -40,10 +40,12 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(function Card(
   { as: Tag = 'div', variant, padding, interactive, className, ...rest },
   ref,
 ) {
-  // When the card variant uses a dark background, set data-surface="inverse" so
-  // nested children using contextual tokens (text-ink, border-line, etc.) flip
-  // their CSS variables to the inverse scope. See tokens.css.
-  const dataSurface = variant === 'inverse' ? 'inverse' : undefined;
+  // Every card is a self-contained surface. Set data-surface explicitly so
+  // children read the right scope regardless of any ancestor's data-surface.
+  // - "inverse" variant uses the dark surface and flips children to light.
+  // - All other variants are light surfaces; reset to "default" so a Card
+  //   tint-blue nested inside an inverse Section still reads correctly.
+  const dataSurface = variant === 'inverse' ? 'inverse' : 'default';
   return (
     <Tag
       ref={ref}

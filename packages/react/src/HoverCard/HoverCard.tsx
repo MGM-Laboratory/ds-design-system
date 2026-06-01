@@ -15,6 +15,7 @@ export const HoverCardContent = React.forwardRef<
         ref={ref}
         align={align}
         sideOffset={sideOffset}
+        data-surface="default"
         className={cn(
           'z-50 w-72 rounded-md border border-line bg-surface p-4 text-ink shadow-2 outline-none',
           'data-[state=open]:animate-scale-in',

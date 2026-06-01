@@ -13,6 +13,7 @@ export const ContextMenuContent = React.forwardRef<
     <RadixContextMenu.Portal>
       <RadixContextMenu.Content
         ref={ref}
+        data-surface="default"
         className={cn(
           'z-50 min-w-[12rem] overflow-hidden rounded-md border border-line bg-surface p-1 text-ink shadow-2 data-[state=open]:animate-scale-in',
           className,

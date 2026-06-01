@@ -43,11 +43,11 @@ export const DialogContent = React.forwardRef<
     <RadixDialog.Portal>
       <RadixDialog.Overlay
         className={cn(
-          'fixed inset-0 z-50 bg-ink/40 backdrop-blur-sm',
+          'fixed inset-0 z-50 bg-surface-inverse/40 backdrop-blur-sm',
           'data-[state=open]:animate-fade-in data-[state=closed]:animate-fade-in',
         )}
       />
-      <RadixDialog.Content ref={ref} className={cn(dialogContentVariants({ size }), className)} {...rest}>
+      <RadixDialog.Content ref={ref} data-surface="default" className={cn(dialogContentVariants({ size }), className)} {...rest}>
         {children}
         {showClose && (
           <RadixDialog.Close

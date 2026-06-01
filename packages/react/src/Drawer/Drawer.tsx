@@ -38,8 +38,8 @@ export const DrawerContent = React.forwardRef<
 >(function DrawerContent({ side, showClose = true, className, children, ...rest }, ref) {
   return (
     <RadixDialog.Portal>
-      <RadixDialog.Overlay className="fixed inset-0 z-50 bg-ink/40 backdrop-blur-sm data-[state=open]:animate-fade-in" />
-      <RadixDialog.Content ref={ref} className={cn(drawerVariants({ side }), className)} {...rest}>
+      <RadixDialog.Overlay className="fixed inset-0 z-50 bg-surface-inverse/40 backdrop-blur-sm data-[state=open]:animate-fade-in" />
+      <RadixDialog.Content ref={ref} data-surface="default" className={cn(drawerVariants({ side }), className)} {...rest}>
         {showClose && (
           <RadixDialog.Close
             className="absolute right-4 top-4 inline-flex h-7 w-7 items-center justify-center rounded-sm text-ink-3 transition-colors hover:bg-surface-muted hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2"

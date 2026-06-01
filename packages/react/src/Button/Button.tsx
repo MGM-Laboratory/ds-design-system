@@ -18,7 +18,7 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         primary: [
-          'bg-ink text-white hover:bg-ink-2',
+          'bg-surface-inverse text-white hover:bg-[#3b4150]',
           'shadow-1 hover:shadow-2',
         ],
         secondary: [

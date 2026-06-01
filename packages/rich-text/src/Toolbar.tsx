@@ -29,7 +29,7 @@ function Btn({ active, onClick, label, children, disabled }: BtnProps) {
         'inline-flex h-8 w-8 items-center justify-center rounded-sm text-ink-3 transition-colors',
         'hover:bg-surface-muted hover:text-ink',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus',
-        active && 'bg-ink text-white hover:bg-ink',
+        active && 'bg-surface-inverse text-white hover:bg-surface-inverse',
         disabled && 'opacity-40 cursor-not-allowed',
       )}
     >

@@ -60,7 +60,7 @@ function buildCss() {
 
   lines.push('}', '');
 
-  // Inverse surface scope
+  // Inverse surface scope. Children of this scope read inverse colors.
   lines.push('[data-surface="inverse"] {');
   lines.push('  --bg: #0e1116;');
   lines.push('  --surface: #0e1116;');
@@ -73,6 +73,24 @@ function buildCss() {
   lines.push('  --line-strong: #3b4150;');
   lines.push('  color: var(--ink);');
   lines.push('  background-color: var(--bg);');
+  lines.push('}', '');
+
+  // Default surface RESET. Self-contained light surfaces (Card with a tint or
+  // outlined variant, Dialog content, Popover content, Alert, Callout, Toast
+  // items) set data-surface="default" so they reset the scope back to light
+  // even when nested inside a dark Surface. Without this, a Popover opened
+  // from within an inverse Section would inherit white ink on its own white
+  // background. Brand colors stay literal regardless of scope.
+  lines.push('[data-surface="default"] {');
+  lines.push(`  --bg: ${tokens.colors.bg};`);
+  lines.push(`  --surface: ${tokens.colors.surface};`);
+  lines.push(`  --surface-muted: ${tokens.colors['surface-muted']};`);
+  lines.push(`  --ink: ${tokens.colors.ink};`);
+  lines.push(`  --ink-2: ${tokens.colors['ink-2']};`);
+  lines.push(`  --ink-3: ${tokens.colors['ink-3']};`);
+  lines.push(`  --ink-4: ${tokens.colors['ink-4']};`);
+  lines.push(`  --line: ${tokens.colors.line};`);
+  lines.push(`  --line-strong: ${tokens.colors['line-strong']};`);
   lines.push('}', '');
 
   // Reduced motion (DESIGN_SYSTEM follow-on: never dramatic)

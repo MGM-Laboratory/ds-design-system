@@ -46,9 +46,10 @@ export function CommandPalette({
   return (
     <Dialog.Root open={isOpen} onOpenChange={setOpen}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-50 bg-ink/40 backdrop-blur-sm data-[state=open]:animate-fade-in" />
+        <Dialog.Overlay className="fixed inset-0 z-50 bg-surface-inverse/40 backdrop-blur-sm data-[state=open]:animate-fade-in" />
         <Dialog.Content
           aria-label="Command palette"
+          data-surface="default"
           className="fixed left-[50%] top-[20%] z-50 w-full max-w-xl -translate-x-1/2 rounded-md border border-line bg-surface shadow-3 outline-none data-[state=open]:animate-scale-in"
         >
           <Command className="flex flex-col">

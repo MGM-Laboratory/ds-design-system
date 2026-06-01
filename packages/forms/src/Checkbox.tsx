@@ -19,8 +19,8 @@ export const Checkbox = React.forwardRef<React.ElementRef<typeof RadixCheckbox.R
         className={cn(
           'peer inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-line bg-surface text-white',
           'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2',
-          'data-[state=checked]:bg-ink data-[state=checked]:border-ink',
-          'data-[state=indeterminate]:bg-ink data-[state=indeterminate]:border-ink',
+          'data-[state=checked]:bg-surface-inverse data-[state=checked]:border-surface-inverse',
+          'data-[state=indeterminate]:bg-surface-inverse data-[state=indeterminate]:border-surface-inverse',
           'data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed',
           className,
         )}

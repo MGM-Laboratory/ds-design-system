@@ -10,7 +10,7 @@ describe('<Button>', () => {
 
   it('applies primary variant by default', () => {
     render(<Button>hi</Button>);
-    expect(screen.getByRole('button').className).toContain('bg-ink');
+    expect(screen.getByRole('button').className).toContain('bg-surface-inverse');
   });
 
   it('respects disabled state', () => {

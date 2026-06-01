@@ -22,7 +22,7 @@ export const ToggleButton = React.forwardRef<
       aria-label={label}
       className={cn(
         buttonVariants({ variant, size }),
-        'data-[state=on]:bg-ink data-[state=on]:text-white',
+        'data-[state=on]:bg-surface-inverse data-[state=on]:text-white',
         className,
       )}
       {...rest}

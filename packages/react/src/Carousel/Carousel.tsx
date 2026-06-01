@@ -78,7 +78,7 @@ export const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(function
               onClick={() => emblaApi?.scrollTo(i)}
               className={cn(
                 'h-1.5 rounded-full transition-all duration-200',
-                i === selectedIndex ? 'w-6 bg-ink' : 'w-1.5 bg-line-strong',
+                i === selectedIndex ? 'w-6 bg-surface-inverse' : 'w-1.5 bg-line-strong',
               )}
             />
           ))}

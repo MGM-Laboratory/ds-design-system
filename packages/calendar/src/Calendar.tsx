@@ -31,7 +31,7 @@ export function Calendar({ className, classNames, ...rest }: CalendarProps) {
         day_button:
           'inline-flex h-9 w-9 items-center justify-center rounded-sm text-body-sm text-ink hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus',
         today: 'font-semibold text-brand-blue',
-        selected: '!bg-ink !text-white',
+        selected: '!bg-surface-inverse !text-white',
         outside: 'text-ink-4',
         disabled: 'text-ink-4 opacity-50',
         ...classNames,

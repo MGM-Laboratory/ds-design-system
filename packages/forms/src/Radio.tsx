@@ -40,13 +40,13 @@ export const Radio = React.forwardRef<React.ElementRef<typeof RadixRadioGroup.It
         className={cn(
           'peer inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-line bg-surface',
           'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2',
-          'data-[state=checked]:border-ink',
+          'data-[state=checked]:border-surface-inverse',
           'data-[disabled]:opacity-50',
           className,
         )}
         {...rest}
       >
-        <RadixRadioGroup.Indicator className="block h-2 w-2 rounded-full bg-ink" />
+        <RadixRadioGroup.Indicator className="block h-2 w-2 rounded-full bg-surface-inverse" />
       </RadixRadioGroup.Item>
     );
     if (!label && !description) return control;
