@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/tailwind-config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tailwind CSS preset that wires every MGM Laboratory design token.",
   "license": "MIT",
   "repository": {
@@ -22,7 +22,10 @@
     },
     "./package.json": "./package.json"
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -49,7 +52,6 @@
     "vitest": "^2.1.2"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   }
 }

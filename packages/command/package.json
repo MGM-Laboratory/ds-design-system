@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/command",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MGM-styled command palette backed by cmdk: <CommandPalette>, <CommandGroup>, <CommandItem>, with keyboard shortcuts.",
   "license": "MIT",
   "type": "module",
@@ -8,8 +8,17 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.mjs", "require": "./dist/index.js" } },
-  "files": ["dist", "README.md"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -25,7 +34,10 @@
     "@radix-ui/react-dialog": "^1.1.2",
     "cmdk": "^1.0.0"
   },
-  "peerDependencies": { "react": ">=18", "react-dom": ">=18" },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
   "devDependencies": {
     "@labmgm/eslint-config": "workspace:*",
     "@labmgm/typescript-config": "workspace:*",
@@ -37,5 +49,7 @@
     "typescript": "^5.6.3",
     "vitest": "^2.1.2"
   },
-  "publishConfig": { "access": "public", "provenance": true }
+  "publishConfig": {
+    "access": "public"
+  }
 }
