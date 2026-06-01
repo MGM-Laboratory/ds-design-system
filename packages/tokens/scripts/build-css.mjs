@@ -60,7 +60,14 @@ function buildCss() {
 
   lines.push('}', '');
 
-  // Inverse surface scope. Children of this scope read inverse colors.
+  // Inverse surface scope — redefines CSS variables so descendants that use
+  // contextual tokens (text-ink, bg-surface, border-line, etc.) pick up the
+  // inverse values automatically. We intentionally do NOT set `color` or
+  // `background-color` on the scope owner itself: that fights with the
+  // owner's own Tailwind classes (e.g. a Banner with `bg-brand-blue` that
+  // ALSO sets data-surface="inverse" to flip its children's ink reading).
+  // Owners that want a literal dark surface explicitly add the
+  // `bg-surface-inverse` Tailwind class themselves.
   lines.push('[data-surface="inverse"] {');
   lines.push('  --bg: #0e1116;');
   lines.push('  --surface: #0e1116;');
@@ -71,8 +78,6 @@ function buildCss() {
   lines.push('  --ink-4: #6b7280;');
   lines.push('  --line: #2a2e36;');
   lines.push('  --line-strong: #3b4150;');
-  lines.push('  color: var(--ink);');
-  lines.push('  background-color: var(--bg);');
   lines.push('}', '');
 
   // Default surface RESET. Self-contained light surfaces (Card with a tint or
