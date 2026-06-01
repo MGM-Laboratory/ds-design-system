@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Check } from '@labmgm/icons';
+import { Check } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 
 export interface StepperProps extends React.HTMLAttributes<HTMLOListElement> {

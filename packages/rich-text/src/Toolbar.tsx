@@ -1,6 +1,6 @@
 import * as React from 'react';
 import type { Editor } from '@tiptap/react';
-import { Bold, Italic, Underline, Code, List, ListOrdered, Quote, Link as LinkIcon, Heading1, Heading2, Heading3, Undo, Redo } from '@labmgm/icons';
+import { Bold, Italic, Underline, Code, List, ListOrdered, Quote, Link as LinkIcon, Heading1, Heading2, Heading3, Undo, Redo } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 
 export interface ToolbarProps {

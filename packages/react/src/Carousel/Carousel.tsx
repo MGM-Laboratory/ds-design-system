@@ -1,6 +1,6 @@
 import * as React from 'react';
 import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react';
-import { ChevronLeft, ChevronRight } from '@labmgm/icons';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 import { IconButton } from '../Button/IconButton.js';
 

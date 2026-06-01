@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { DayPicker, type DayPickerProps } from 'react-day-picker';
-import { ChevronLeft, ChevronRight } from '@labmgm/icons';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 
 export type CalendarProps = DayPickerProps;

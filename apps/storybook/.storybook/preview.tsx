@@ -2,7 +2,6 @@ import * as React from 'react';
 import type { Preview } from '@storybook/react';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import '@labmgm/tokens/tokens.css';
-import '@labmgm/fonts/fonts.css';
 import './preview.css';
 
 const preview: Preview = {

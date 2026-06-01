@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Command } from 'cmdk';
-import { Check, ChevronDown, Search } from '@labmgm/icons';
+import { Check, ChevronDown, Search } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 
 export interface ComboboxOption {

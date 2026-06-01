@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as RadixSelect from '@radix-ui/react-select';
-import { Check, ChevronDown } from '@labmgm/icons';
+import { Check, ChevronDown } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 
 export interface SelectOption {

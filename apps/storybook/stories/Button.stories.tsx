@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Sparkles, ArrowRight } from '@labmgm/icons';
+import { Sparkles, ArrowRight } from 'lucide-react';
 import { Button } from '@labmgm/react';
 
 const meta = {

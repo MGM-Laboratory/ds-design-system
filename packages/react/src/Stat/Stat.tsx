@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ArrowDown, ArrowUp } from '@labmgm/icons';
+import { ArrowDown, ArrowUp } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 
 export interface StatProps extends React.HTMLAttributes<HTMLDivElement> {

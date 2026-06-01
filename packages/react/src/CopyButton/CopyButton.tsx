@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Check, Copy } from '@labmgm/icons';
+import { Check, Copy } from 'lucide-react';
 import { IconButton } from '../Button/IconButton.js';
 import type { ButtonProps } from '../Button/Button.js';
 

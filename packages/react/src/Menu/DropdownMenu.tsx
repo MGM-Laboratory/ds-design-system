@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as RadixMenu from '@radix-ui/react-dropdown-menu';
-import { Check, ChevronRight, Circle } from '@labmgm/icons';
+import { Check, ChevronRight, Circle } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 
 export const DropdownMenu = RadixMenu.Root;

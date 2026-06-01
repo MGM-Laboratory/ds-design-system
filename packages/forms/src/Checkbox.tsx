@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as RadixCheckbox from '@radix-ui/react-checkbox';
-import { Check, Minus } from '@labmgm/icons';
+import { Check, Minus } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 
 export interface CheckboxProps extends React.ComponentPropsWithoutRef<typeof RadixCheckbox.Root> {

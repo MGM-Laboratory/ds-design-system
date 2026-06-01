@@ -4,10 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "storybook dev -p 6006",
-    "storybook": "storybook dev -p 6006",
-    "build": "storybook build -o storybook-static",
-    "build-storybook": "storybook build -o storybook-static",
+    "dev": "storybook dev -p 6006 --disable-telemetry",
+    "storybook": "storybook dev -p 6006 --disable-telemetry",
+    "build": "storybook build -o storybook-static --disable-telemetry",
+    "build-storybook": "storybook build -o storybook-static --disable-telemetry",
     "lint": "echo 'no-op'",
     "typecheck": "tsc --noEmit",
     "test": "echo 'no tests'",
@@ -24,7 +24,8 @@
     "@labmgm/theme": "workspace:*",
     "@labmgm/tokens": "workspace:*",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "lucide-react": "^0.453.0"
   },
   "devDependencies": {
     "@labmgm/tailwind-config": "workspace:*",

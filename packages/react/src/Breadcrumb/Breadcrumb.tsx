@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ChevronRight } from '@labmgm/icons';
+import { ChevronRight } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 
 export const Breadcrumb = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLElement>>(
