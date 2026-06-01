@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/tokens",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MGM Laboratory design tokens — colors, type scale, shadows, radii, motion. CSS vars + TS + JSON.",
   "license": "MIT",
   "repository": {
@@ -10,7 +10,9 @@
   },
   "homepage": "https://github.com/labmgm/ds-design-system/tree/main/packages/tokens#readme",
   "type": "module",
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -24,7 +26,10 @@
     "./tokens.json": "./dist/tokens.json",
     "./package.json": "./package.json"
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup && node ./scripts/build-css.mjs",
     "dev": "tsup --watch",
@@ -43,7 +48,6 @@
     "vitest": "^2.1.2"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   }
 }

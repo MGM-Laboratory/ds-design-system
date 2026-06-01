@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/fonts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Font loaders for Bricolage Grotesque, Geist, and Geist Mono — the MGM type stack.",
   "license": "MIT",
   "repository": {
@@ -10,7 +10,9 @@
   },
   "homepage": "https://github.com/labmgm/ds-design-system/tree/main/packages/fonts#readme",
   "type": "module",
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -28,7 +30,10 @@
     "./fonts.css": "./dist/fonts.css",
     "./package.json": "./package.json"
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup && cp src/fonts.css dist/fonts.css",
     "dev": "tsup --watch",
@@ -41,7 +46,9 @@
     "next": ">=14"
   },
   "peerDependenciesMeta": {
-    "next": { "optional": true }
+    "next": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@labmgm/eslint-config": "workspace:*",
@@ -54,7 +61,6 @@
     "vitest": "^2.1.2"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   }
 }

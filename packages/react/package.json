@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The core MGM Laboratory React component library — buttons, cards, modals, navigation, feedback, and more. Bundled with Radix UI, Framer Motion, and every dep you need.",
   "license": "MIT",
   "repository": {
@@ -10,7 +10,9 @@
   },
   "homepage": "https://github.com/labmgm/ds-design-system/tree/main/packages/react#readme",
   "type": "module",
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -23,7 +25,10 @@
     "./styles.css": "./dist/styles.css",
     "./package.json": "./package.json"
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup && pnpm build:css",
     "build:css": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --minify",
@@ -97,7 +102,6 @@
     "vitest": "^2.1.2"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   }
 }
