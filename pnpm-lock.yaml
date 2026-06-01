@@ -205,9 +205,18 @@ importers:
       '@labmgm/brand':
         specifier: workspace:*
         version: link:../../packages/brand
+      '@labmgm/calendar':
+        specifier: workspace:*
+        version: link:../../packages/calendar
       '@labmgm/charts':
         specifier: workspace:*
         version: link:../../packages/charts
+      '@labmgm/command':
+        specifier: workspace:*
+        version: link:../../packages/command
+      '@labmgm/data-table':
+        specifier: workspace:*
+        version: link:../../packages/data-table
       '@labmgm/forms':
         specifier: workspace:*
         version: link:../../packages/forms
@@ -223,9 +232,15 @@ importers:
       '@labmgm/react':
         specifier: workspace:*
         version: link:../../packages/react
+      '@labmgm/rich-text':
+        specifier: workspace:*
+        version: link:../../packages/rich-text
       '@labmgm/theme':
         specifier: workspace:*
         version: link:../../packages/theme
+      '@labmgm/toast':
+        specifier: workspace:*
+        version: link:../../packages/toast
       '@labmgm/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
