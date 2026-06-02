@@ -8,7 +8,7 @@
 pnpm add @labmgm/rich-text
 ```
 
-> [Storybook (Rich text)](https://mgm-laboratory.github.io/ds-design-system/?path=/docs/rich-text-editor-renderer--editor) · [Source](./src)
+> [Storybook (Rich text)](https://ds.labmgm.org/?path=/docs/rich-text-editor-renderer--editor) · [Source](./src)
 
 ---
 

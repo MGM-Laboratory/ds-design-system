@@ -10,7 +10,7 @@ Backed by `cmdk`. Mount the palette anywhere in your tree; pressing ⌘K (Cmd+K 
 pnpm add @labmgm/command
 ```
 
-> [Storybook (Components / CommandPalette)](https://mgm-laboratory.github.io/ds-design-system/?path=/docs/components-commandpalette--docs) · [Source](./src)
+> [Storybook (Components / CommandPalette)](https://ds.labmgm.org/?path=/docs/components-commandpalette--docs) · [Source](./src)
 
 ---
 

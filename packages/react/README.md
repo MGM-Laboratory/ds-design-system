@@ -11,7 +11,7 @@ Buttons, cards, dialogs, navigation, feedback, layout — everything you need fo
 pnpm add @labmgm/react @labmgm/tokens @labmgm/tailwind-config
 ```
 
-> [Storybook](https://mgm-laboratory.github.io/ds-design-system/) · [Source](./src) · [Monorepo root](../..)
+> [Storybook](https://ds.labmgm.org/) · [Source](./src) · [Monorepo root](../..)
 
 ---
 
@@ -82,7 +82,7 @@ export default function Home() {
 
 ## Component catalog
 
-> Open the [Storybook](https://mgm-laboratory.github.io/ds-design-system/) for live examples of every component and every variant.
+> Open the [Storybook](https://ds.labmgm.org/) for live examples of every component and every variant.
 
 | Category | Components |
 |---|---|

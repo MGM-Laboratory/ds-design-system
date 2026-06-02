@@ -8,7 +8,7 @@
 pnpm add @labmgm/brand
 ```
 
-> [Storybook (Brand)](https://mgm-laboratory.github.io/ds-design-system/?path=/docs/brand-logo-wordmark--docs) · [Source](./src)
+> [Storybook (Brand)](https://ds.labmgm.org/?path=/docs/brand-logo-wordmark--docs) · [Source](./src)
 
 ---
 

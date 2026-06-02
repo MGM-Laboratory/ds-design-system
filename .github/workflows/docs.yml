@@ -62,6 +62,9 @@ jobs:
           <body><h1>MGM Design System</h1><p>Storybook is being built. Check back soon.</p><p><a href="https://www.npmjs.com/org/labmgm">View packages on npm →</a></p></body></html>
           HTML
           fi
+          # CNAME tells GitHub Pages to serve the custom domain.
+          echo "ds.labmgm.org" > public-site/CNAME
+          echo "✓ Wrote CNAME for ds.labmgm.org"
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

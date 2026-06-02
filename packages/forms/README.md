@@ -10,7 +10,7 @@ Field primitives, **React Hook Form + Zod** wiring, a polished `<Field>` wrapper
 pnpm add @labmgm/forms
 ```
 
-> [Storybook (Forms / Primitives)](https://mgm-laboratory.github.io/ds-design-system/?path=/docs/forms-primitives--docs) · [Source](./src)
+> [Storybook (Forms / Primitives)](https://ds.labmgm.org/?path=/docs/forms-primitives--docs) · [Source](./src)
 
 ---
 

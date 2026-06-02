@@ -10,7 +10,7 @@
 pnpm add @labmgm/patterns
 ```
 
-> [Storybook (Brand / Patterns)](https://mgm-laboratory.github.io/ds-design-system/?path=/docs/brand-patterns--docs) · [SVG catalog](./svg)
+> [Storybook (Brand / Patterns)](https://ds.labmgm.org/?path=/docs/brand-patterns--docs) · [SVG catalog](./svg)
 
 ---
 

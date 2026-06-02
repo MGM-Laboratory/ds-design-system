@@ -8,7 +8,7 @@
 pnpm add @labmgm/toast
 ```
 
-> [Storybook (Feedback / Toast)](https://mgm-laboratory.github.io/ds-design-system/?path=/docs/feedback-toast--docs) · [Source](./src)
+> [Storybook (Feedback / Toast)](https://ds.labmgm.org/?path=/docs/feedback-toast--docs) · [Source](./src)
 
 ---
 

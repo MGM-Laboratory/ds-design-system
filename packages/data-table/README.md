@@ -8,7 +8,7 @@
 pnpm add @labmgm/data-table
 ```
 
-> [Storybook (Data display / DataTable)](https://mgm-laboratory.github.io/ds-design-system/?path=/docs/data-display-datatable--docs) · [Source](./src)
+> [Storybook (Data display / DataTable)](https://ds.labmgm.org/?path=/docs/data-display-datatable--docs) · [Source](./src)
 
 ---
 

@@ -8,7 +8,7 @@
 pnpm add @labmgm/charts
 ```
 
-> [Storybook (Charts)](https://mgm-laboratory.github.io/ds-design-system/?path=/docs/charts-all--docs) · [Source](./src)
+> [Storybook (Charts)](https://ds.labmgm.org/?path=/docs/charts-all--docs) · [Source](./src)
 
 ---
 
