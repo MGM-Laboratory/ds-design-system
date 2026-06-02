@@ -1,78 +1,137 @@
 # `@labmgm/react`
 
-The core MGM Laboratory React component library. Buttons, cards, dialogs, navigation, feedback, layout — everything you need for a product or marketing surface. Bundled with Radix UI, Lucide icons, Tailwind, and a fully-tokenized theme.
+> The core MGM Laboratory React component library.
+
+[![npm version](https://img.shields.io/npm/v/%40labmgm%2Freact?style=flat&color=3a6dc5)](https://www.npmjs.com/package/@labmgm/react)
+[![license](https://img.shields.io/badge/license-MIT-0f8657.svg)](../../LICENSE)
+
+Buttons, cards, dialogs, navigation, feedback, layout — everything you need for a product or marketing surface. Radix UI, Lucide, Framer Motion, Tailwind, and a fully-tokenized theme are bundled — **no second UI library to install**.
 
 ```bash
-pnpm add @labmgm/react @labmgm/tokens
+pnpm add @labmgm/react @labmgm/tokens @labmgm/tailwind-config
 ```
+
+> [Storybook](https://mgm-laboratory.github.io/ds-design-system/) · [Source](./src) · [Monorepo root](../..)
+
+---
 
 ## Two ways to ship styles
 
-**Option A — Tailwind preset** (preferred for new projects):
+<table>
+<tr>
+<td><b>A — Tailwind preset</b> (recommended)</td>
+<td><b>B — Pre-compiled CSS</b> (no Tailwind needed)</td>
+</tr>
+<tr>
+<td>
 
 ```ts
 // tailwind.config.ts
 import preset from '@labmgm/tailwind-config';
+
 export default {
   presets: [preset],
-  content: ['./src/**/*.{ts,tsx}', './node_modules/@labmgm/**/dist/**/*.{js,mjs}'],
+  content: [
+    './src/**/*.{ts,tsx}',
+    './node_modules/@labmgm/**/dist/**/*.{js,mjs}',
+  ],
 };
 ```
 
-**Option B — Pre-compiled CSS** (no Tailwind needed):
+</td>
+<td>
 
 ```ts
+// root layout
 import '@labmgm/tokens/tokens.css';
 import '@labmgm/react/styles.css';
 ```
 
-## Use it
+</td>
+</tr>
+</table>
+
+---
+
+## Quick example
 
 ```tsx
-import {
-  Container, Section, Stack, Grid,
-  Button, Card, Badge, Avatar,
-  Dialog, DropdownMenu, Tooltip,
-  Tabs, Accordion, Breadcrumb, Pagination,
-  Alert, Banner, Progress, Empty, Skeleton,
-} from '@labmgm/react';
+import { Container, Section, Stack, Button, Card, CardHeader, CardTitle, CardContent } from '@labmgm/react';
 
-<Section tone="muted" padding="lg">
-  <Container>
-    <Stack gap={6}>
-      <h1 className="text-display-lg">Build the loud internet.</h1>
-      <Button variant="primary" size="lg">Get started</Button>
-    </Stack>
-  </Container>
-</Section>
+export default function Home() {
+  return (
+    <Section tone="muted" padding="lg">
+      <Container>
+        <Stack gap={6}>
+          <h1 className="text-display-lg">
+            Build the <span className="text-brand-red">loud</span> internet.
+          </h1>
+          <Card>
+            <CardHeader><CardTitle>Out of the box</CardTitle></CardHeader>
+            <CardContent>No extra setup.</CardContent>
+          </Card>
+          <Button size="lg">Get started</Button>
+        </Stack>
+      </Container>
+    </Section>
+  );
+}
 ```
+
+---
 
 ## Component catalog
 
-**Buttons & actions** — `Button`, `IconButton`, `ButtonGroup`, `ToggleButton`, `ToggleButtonGroup`, `Link`, `Kbd`, `CopyButton`, `BackButton`
+> Open the [Storybook](https://mgm-laboratory.github.io/ds-design-system/) for live examples of every component and every variant.
 
-**Display** — `Card` (+ Header/Title/Description/Content/Footer), `Badge`, `Tag`, `Chip`, `Avatar`, `AvatarGroup`, `Stat`, `Empty`, `Skeleton`, `Spinner`, `Code`, `CodeBlock`
+| Category | Components |
+|---|---|
+| **Buttons & actions** | `Button` · `IconButton` · `ButtonGroup` · `ToggleButton` · `ToggleButtonGroup` · `Link` · `Kbd` · `CopyButton` · `BackButton` |
+| **Display** | `Card` (+ Header/Title/Description/Content/Footer) · `Badge` · `Tag` · `Chip` · `Avatar` · `AvatarGroup` · `Stat` · `Empty` · `Skeleton` · `Spinner` · `Code` · `CodeBlock` |
+| **Overlays** | `Dialog` · `AlertDialog` · `Drawer` · `Popover` · `HoverCard` · `Tooltip` · `DropdownMenu` · `ContextMenu` |
+| **Navigation** | `Tabs` · `Accordion` · `Breadcrumb` · `Pagination` · `Stepper` · `Navbar` |
+| **Feedback** | `Alert` · `Banner` · `Progress` · `ProgressCircle` · `Callout` |
+| **Data display** | `List` · `DescriptionList` · `Timeline` · `Separator` |
+| **Media** | `Image` · `Carousel` |
+| **Layout** *(from `@labmgm/layout`, re-exported)* | `Container` · `Section` · `Stack` · `VStack` · `HStack` · `Grid` · `Flex` · `Box` · `Center` · `Spacer` · `AspectRatio` · `Divider` |
+| **Brand** *(from `@labmgm/brand`, re-exported)* | `Logo` · `Wordmark` · `ShapeSignature` · `FooterStrip` |
+| **Theme** *(from `@labmgm/theme`, re-exported)* | `ThemeProvider` · `Surface` · `useSurface` |
+| **Patterns** *(from `@labmgm/patterns`, re-exported)* | `PatternGrid` · `PatternTile` · `PatternCorner` · `PatternBanner` · `PatternDado` · `PatternStrip` · `PatternPyramid` · `PatternTriangle` |
 
-**Overlays** — `Dialog`, `AlertDialog`, `Drawer`, `Popover`, `HoverCard`, `Tooltip`, `DropdownMenu`, `ContextMenu`
+Specialized packages live separately:
 
-**Navigation** — `Tabs`, `Accordion`, `Breadcrumb`, `Pagination`, `Stepper`, `Navbar`
+- [`@labmgm/forms`](../forms) — Input, Combobox, Wizard, validation
+- [`@labmgm/data-table`](../data-table) — TanStack Table v8
+- [`@labmgm/charts`](../charts) — Recharts wrappers
+- [`@labmgm/rich-text`](../rich-text) — Tiptap editor + renderer
+- [`@labmgm/calendar`](../calendar) — date / range / time pickers
+- [`@labmgm/command`](../command) — ⌘K palette
+- [`@labmgm/toast`](../toast) — Sonner-wrapped toasts
 
-**Feedback** — `Alert`, `Banner`, `Progress`, `ProgressCircle`, `Callout`
+---
 
-**Data display** — `List`, `DescriptionList`, `Timeline`, `Separator`
+## Surface tones
 
-**Media** — `Image`, `Carousel`
+```tsx
+<Section tone="default">…</Section>   // white / ink
+<Section tone="muted">…</Section>     // off-white / ink
+<Section tone="inverse">…</Section>   // dark / light, child components flip automatically
+```
 
-**Layout (from @labmgm/layout)** — `Container`, `Section`, `Stack`, `VStack`, `HStack`, `Grid`, `Flex`, `Box`, `Center`, `Spacer`, `AspectRatio`, `Divider`
+Self-contained surfaces (`Card`, `Dialog`, `Popover`, `Alert`, `Callout`, `Toast`, `Drawer`, `DropdownMenu`, `HoverCard`, `ContextMenu`) automatically reset to `data-surface="default"` so they read correctly even when nested inside a dark Section. Tooltip stays dark by design.
 
-**Brand (from @labmgm/brand)** — `Logo`, `Wordmark`, `ShapeSignature`, `FooterStrip`
+---
 
-**Theme (from @labmgm/theme)** — `ThemeProvider`, `Surface`, `useSurface`
+## Brand rules quick reference
 
-**Patterns (from @labmgm/patterns)** — `PatternGrid`, `PatternTile`, `PatternCorner`, `PatternBanner`, `PatternDado`, `PatternStrip`, `PatternPyramid`, `PatternTriangle`
+- **Closed palette.** No purple, teal, pink, or orange. Brand colors: `brand-blue`, `brand-yellow`, `brand-red`, `brand-green`.
+- **Stroke-only icons** at 2.25 stroke width, 16 / 20 / 24 px (use `@labmgm/icons` or `lucide-react`).
+- **Typography**: Bricolage Grotesque (display), Geist (UI), Geist Mono (code). No substitutes.
+- **One display per page.** Inner sections start at `h1` or smaller.
+- The full spec lives in [`DESIGN_SYSTEM.md`](../../DESIGN_SYSTEM.md).
 
-For forms (`Input`, `Combobox`, `Wizard`, etc.), see [`@labmgm/forms`](https://npmjs.com/package/@labmgm/forms).
-For data tables, see [`@labmgm/data-table`](https://npmjs.com/package/@labmgm/data-table).
-For charts, see [`@labmgm/charts`](https://npmjs.com/package/@labmgm/charts).
-For rich text editing, see [`@labmgm/rich-text`](https://npmjs.com/package/@labmgm/rich-text).
-For toasts, see [`@labmgm/toast`](https://npmjs.com/package/@labmgm/toast).
+---
+
+## License
+
+MIT © MGM Laboratory
