@@ -10,7 +10,7 @@ Powered by `react-day-picker` v9 + `date-fns`.
 pnpm add @labmgm/calendar
 ```
 
-> [Storybook (Forms / Date & Time)](https://mgm-laboratory.github.io/ds-design-system/?path=/docs/forms-date-time--docs) · [Source](./src)
+> [Storybook (Forms / Date & Time)](https://ds.labmgm.org/?path=/docs/forms-date-time--docs) · [Source](./src)
 
 ---
 

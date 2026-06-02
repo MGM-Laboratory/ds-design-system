@@ -8,9 +8,9 @@ Ship product UIs and websites with brand-correct components, patterns, icons, fo
 [![npm version](https://img.shields.io/npm/v/%40labmgm%2Freact?style=for-the-badge&label=%40labmgm%2Freact&color=3a6dc5)](https://www.npmjs.com/package/@labmgm/react)
 [![License: MIT](https://img.shields.io/badge/License-MIT-0f8657.svg?style=for-the-badge)](./LICENSE)
 [![CI](https://img.shields.io/github/actions/workflow/status/MGM-Laboratory/ds-design-system/ci.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/MGM-Laboratory/ds-design-system/actions)
-[![Storybook](https://img.shields.io/badge/Storybook-live-f7bf33?style=for-the-badge&logo=storybook&logoColor=000)](https://mgm-laboratory.github.io/ds-design-system/)
+[![Storybook](https://img.shields.io/badge/Storybook-live-f7bf33?style=for-the-badge&logo=storybook&logoColor=000)](https://ds.labmgm.org/)
 
-[**📚 Storybook**](https://mgm-laboratory.github.io/ds-design-system/) · [**📦 npm**](https://www.npmjs.com/org/labmgm) · [**🎨 Design system spec**](./DESIGN_SYSTEM.md) · [**🤝 Contributing**](./CONTRIBUTING.md)
+[**📚 Storybook**](https://ds.labmgm.org/) · [**📦 npm**](https://www.npmjs.com/org/labmgm) · [**🎨 Design system spec**](./DESIGN_SYSTEM.md) · [**🤝 Contributing**](./CONTRIBUTING.md)
 
 </div>
 
@@ -370,7 +370,7 @@ import { Toaster } from '@labmgm/toast';
 
 **That's the entire flow** — five files, no third-party UI dependencies, fully validated, brand-correct.
 
-> Browse the **Forms** stories in [Storybook](https://mgm-laboratory.github.io/ds-design-system/) to see every input live with its props.
+> Browse the **Forms** stories in [Storybook](https://ds.labmgm.org/) to see every input live with its props.
 
 ---
 
@@ -521,7 +521,7 @@ Cards, dialogs, popovers, and other self-contained surfaces reset back to `data-
 
 </details>
 
-> **166 stories across 40 categories** are live at [mgm-laboratory.github.io/ds-design-system](https://mgm-laboratory.github.io/ds-design-system/).
+> **166 stories across 40 categories** are live at [ds.labmgm.org/](https://ds.labmgm.org/).
 
 ---
 
@@ -714,7 +714,7 @@ CI will run automatically. Once green and reviewed, merge — the version PR + p
 - [`CONTRIBUTING.md`](./CONTRIBUTING.md) — workflow, coding standards, release process
 - [`CHANGELOG.md`](./CHANGELOG.md) — high-level monorepo history
 - [`CLAUDE.md`](./CLAUDE.md) — AI assistant context
-- [Storybook](https://mgm-laboratory.github.io/ds-design-system/) — every component, every variant, every state
+- [Storybook](https://ds.labmgm.org/) — every component, every variant, every state
 - [npm org](https://www.npmjs.com/org/labmgm) — installable packages
 - [Issues](https://github.com/MGM-Laboratory/ds-design-system/issues) — bugs and feature requests
 

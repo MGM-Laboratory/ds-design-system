@@ -86,7 +86,7 @@ pnpm changeset                  # describe affected packages + bump type
 - **Always run `pnpm build` (or `pnpm turbo run build --filter=...`) before claiming a fix works.** The local source can lie; the bundled CSS / JS is what consumers get.
 - **Verify what's deployed.** GitHub Pages caches assets for 10 minutes. To confirm a fix shipped, fetch the file directly:
   ```bash
-  curl -sL https://mgm-laboratory.github.io/ds-design-system/assets/preview-<hash>.css | grep '...'
+  curl -sL https://ds.labmgm.org/assets/preview-<hash>.css | grep '...'
   ```
 - **Don't introduce backwards-compat shims.** If a refactor would break the API, bump major (or stay on `0.x` and accept the breakage, documenting it in the changeset).
 - **Match the brand spec.** Don't introduce purple, teal, pink, orange, gradients between brand colors, drop shadows on colored fills, or icon families other than Lucide.
@@ -108,7 +108,7 @@ pnpm changeset                  # describe affected packages + bump type
 pnpm turbo run lint typecheck test build --filter='[HEAD^]'
 
 # Inspect a deployed asset
-curl -sL https://mgm-laboratory.github.io/ds-design-system/index.json | jq '.entries | length'
+curl -sL https://ds.labmgm.org/index.json | jq '.entries | length'
 
 # Reset tokens.css regeneration
 rm packages/tokens/dist/tokens.css && pnpm --filter @labmgm/tokens build
