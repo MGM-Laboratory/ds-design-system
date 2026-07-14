@@ -49,7 +49,7 @@ jobs:
         run: pnpm check:packages
 
       - name: Build Storybook
-        run: pnpm --filter storybook build
+        run: pnpm --filter @labmgm/storybook build
 
       - name: Assemble Pages site
         run: |

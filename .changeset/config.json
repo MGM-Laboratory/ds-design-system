@@ -7,7 +7,7 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["docs", "storybook", "@labmgm/playground"],
+  "ignore": ["docs", "@labmgm/storybook", "@labmgm/playground"],
   "privatePackages": {
     "version": false,
     "tag": false
