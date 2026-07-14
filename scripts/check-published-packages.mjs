@@ -169,6 +169,13 @@ if (!iconsLucideSource.includes('export * from "lucide-react";') || iconsLucideS
   issues.push('@labmgm/icons: lucide exports are not statically analyzable');
 }
 
+for (const packageName of ['calendar', 'command', 'data-table', 'forms', 'icons', 'react', 'rich-text']) {
+  const manifest = JSON.parse(fs.readFileSync(path.join(packagesDir, packageName, 'package.json'), 'utf8'));
+  if (!/^\^1\./.test(manifest.dependencies?.['lucide-react'] ?? '')) {
+    issues.push(`@labmgm/${packageName}: Lucide 1 is required for React 19-compatible declarations`);
+  }
+}
+
 const nextFontsEntrypoint = path.join(packagesDir, 'fonts', 'dist', 'next.js');
 const nextFontsSource = fs.readFileSync(nextFontsEntrypoint, 'utf8');
 for (const fontName of ['bricolageGrotesque', 'geist', 'geistMono']) {

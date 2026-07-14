@@ -52,7 +52,7 @@
     "@radix-ui/react-switch": "^1.1.1",
     "class-variance-authority": "^0.7.0",
     "cmdk": "^1.0.0",
-    "lucide-react": "^0.453.0"
+    "lucide-react": "^1.24.0"
   },
   "peerDependencies": {
     "react": ">=18",
