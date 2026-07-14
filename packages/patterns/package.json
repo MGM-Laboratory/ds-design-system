@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/patterns",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "80 Bauhaus-inspired pattern tiles plus a seedable PatternGrid composer with no-adjacent-repeat algorithm.",
   "license": "MIT",
   "repository": {

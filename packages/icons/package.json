@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/icons",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "MGM-branded icon set — wraps lucide-react with the canonical 2.25 stroke width and 16/20/24 size tokens.",
   "license": "MIT",
   "repository": {

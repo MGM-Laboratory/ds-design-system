@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/data-table",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "MGM-styled data table built on TanStack Table v8: sort, filter, pagination, column visibility, row selection, sticky headers.",
   "license": "MIT",
   "type": "module",
