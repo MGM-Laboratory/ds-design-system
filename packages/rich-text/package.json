@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/rich-text",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Tiptap-based rich text editor and renderer for MGM Laboratory. StarterKit + Link + Image + Code + Mention + Placeholder + Table + YouTube.",
   "license": "MIT",
   "type": "module",
