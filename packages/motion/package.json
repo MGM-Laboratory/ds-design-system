@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/motion",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Framer Motion re-export with MGM Laboratory presets bound to design-token durations and easings.",
   "license": "MIT",
   "type": "module",

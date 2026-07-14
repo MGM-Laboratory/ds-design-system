@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/charts",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Recharts wrappers using MGM Laboratory brand tokens: BarChart, LineChart, AreaChart, PieChart, DonutChart, Sparkline.",
   "license": "MIT",
   "type": "module",

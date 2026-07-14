@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/hooks",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Useful React hooks for MGM Laboratory: useMediaQuery, useDebounce, useThrottle, useLocalStorage, useClickOutside, useKeyboardShortcut, useCopyToClipboard, useIntersectionObserver, useResizeObserver, useReducedMotion, useControllableState.",
   "license": "MIT",
   "repository": {

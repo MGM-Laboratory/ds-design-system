@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/theme",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Theme provider and Surface primitive for MGM Laboratory — manages inverse sections via data-surface.",
   "license": "MIT",
   "repository": {
