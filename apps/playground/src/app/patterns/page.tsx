@@ -42,17 +42,17 @@ export default function PatternsPage() {
           </Grid>
 
           <section>
-            <h3 className="text-h3 mb-3">Strip</h3>
+            <h3 className="mb-3 text-h3">Strip</h3>
             <PatternStrip tiles={20} tileSize={40} seed="strip-demo" />
           </section>
 
           <section>
-            <h3 className="text-h3 mb-3">Dado (footer divider)</h3>
+            <h3 className="mb-3 text-h3">Dado (footer divider)</h3>
             <PatternDado tiles={120} />
           </section>
 
           <section>
-            <h3 className="text-h3 mb-3">Corner block</h3>
+            <h3 className="mb-3 text-h3">Corner block</h3>
             <div className="relative h-64 overflow-hidden rounded-md border border-line bg-surface-muted">
               <PatternCorner placement="top-left" size={3} />
               <PatternCorner placement="bottom-right" size={3} />

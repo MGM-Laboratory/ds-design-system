@@ -11,11 +11,7 @@ export {
 } from './catalog.js';
 export { getPatternTile, getPatternSvg, randomPattern } from './lookup.js';
 export { PatternTile, type PatternTileProps } from './PatternTile.js';
-export {
-  PatternGrid,
-  type PatternGridProps,
-  type PatternGridSelection,
-} from './PatternGrid.js';
+export { PatternGrid, type PatternGridProps, type PatternGridSelection } from './PatternGrid.js';
 export { PatternCorner, type PatternCornerProps } from './presets/PatternCorner.js';
 export { PatternBanner, type PatternBannerProps } from './presets/PatternBanner.js';
 export { PatternDado, type PatternDadoProps } from './presets/PatternDado.js';

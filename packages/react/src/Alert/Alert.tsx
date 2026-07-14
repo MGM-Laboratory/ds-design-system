@@ -4,10 +4,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@labmgm/utils';
 
 export const alertVariants = cva(
-  [
-    'relative flex items-start gap-3 rounded-md border p-4',
-    'text-body-sm',
-  ],
+  ['relative flex items-start gap-3 rounded-md border p-4', 'text-body-sm'],
   {
     variants: {
       tone: {
@@ -41,8 +38,7 @@ const iconColorMap = {
 } as const;
 
 export interface AlertProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof alertVariants> {
+  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof alertVariants> {
   /** Show the tone-appropriate icon. @default true */
   showIcon?: boolean;
 }
@@ -53,7 +49,13 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert
 ) {
   const Icon = iconMap[tone ?? 'info'];
   return (
-    <div ref={ref} role="alert" data-surface="default" className={cn(alertVariants({ tone }), className)} {...rest}>
+    <div
+      ref={ref}
+      role="alert"
+      data-surface="default"
+      className={cn(alertVariants({ tone }), className)}
+      {...rest}
+    >
       {showIcon && (
         <Icon
           size={18}
@@ -66,14 +68,16 @@ export const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert
   );
 });
 
-export const AlertTitle = React.forwardRef<HTMLHeadingElement, React.HTMLAttributes<HTMLHeadingElement>>(
-  function AlertTitle({ className, ...rest }, ref) {
-    return <h5 ref={ref} className={cn('mb-1 font-semibold leading-none', className)} {...rest} />;
-  },
-);
+export const AlertTitle = React.forwardRef<
+  HTMLHeadingElement,
+  React.HTMLAttributes<HTMLHeadingElement>
+>(function AlertTitle({ className, ...rest }, ref) {
+  return <h5 ref={ref} className={cn('mb-1 font-semibold leading-none', className)} {...rest} />;
+});
 
-export const AlertDescription = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  function AlertDescription({ className, ...rest }, ref) {
-    return <div ref={ref} className={cn('text-[#3b4150]', className)} {...rest} />;
-  },
-);
+export const AlertDescription = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(function AlertDescription({ className, ...rest }, ref) {
+  return <div ref={ref} className={cn('text-[#3b4150]', className)} {...rest} />;
+});

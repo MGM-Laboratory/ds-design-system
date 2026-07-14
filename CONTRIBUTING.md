@@ -3,6 +3,7 @@
 Thanks for helping build the MGM Laboratory design system. This monorepo uses **pnpm**, **Turborepo**, and **Changesets**.
 
 > **TL;DR for experienced contributors**
+>
 > ```bash
 > nvm use && pnpm install && pnpm build
 > git checkout -b feat/my-thing
@@ -104,11 +105,11 @@ CI runs **lint / typecheck / test / build** on every PR. A green PR is a mergeab
 - **Tailwind classes only** in component code. No raw inline `style={…}` except for measured values (positioning math, dynamic sizes).
 - **Use MGM tokens.** Yes:
   ```html
-  <div class="bg-surface text-ink border border-line rounded-lg shadow-2">
+  <div class="bg-surface text-ink border-line shadow-2 rounded-lg border"></div>
   ```
   No:
   ```html
-  <div class="bg-white text-gray-900 border border-gray-200 rounded-2xl shadow-md">
+  <div class="rounded-2xl border border-gray-200 bg-white text-gray-900 shadow-md"></div>
   ```
 - **Literal hex for fixed colored backgrounds.** Components like Button primary, Badge solid-blue, Banner inverse, Toast tints, Tooltip — use `text-white` or `text-[#0e1116]` literally. Variable-routed `text-ink` flips inside an inverse scope and breaks contrast.
 - **Self-contained surfaces declare scope.** Card (non-inverse), Dialog content, Popover content, Alert, Callout, Toast item set `data-surface="default"` so they reset properly even when nested in an inverse Section. Card inverse and Tooltip set `data-surface="inverse"`.
@@ -122,20 +123,16 @@ import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@labmgm/utils';
 
-export const myThingVariants = cva(
-  'base classes',
-  {
-    variants: {
-      tone: { primary: '…', secondary: '…' },
-      size: { sm: '…', md: '…', lg: '…' },
-    },
-    defaultVariants: { tone: 'primary', size: 'md' },
+export const myThingVariants = cva('base classes', {
+  variants: {
+    tone: { primary: '…', secondary: '…' },
+    size: { sm: '…', md: '…', lg: '…' },
   },
-);
+  defaultVariants: { tone: 'primary', size: 'md' },
+});
 
 export interface MyThingProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof myThingVariants> {
+  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof myThingVariants> {
   asChild?: boolean;
 }
 
@@ -170,6 +167,7 @@ export const MyThing = React.forwardRef<HTMLDivElement, MyThingProps>(function M
 1. Pick a package: a layout primitive → `@labmgm/layout`; a form primitive → `@labmgm/forms`; everything else → `@labmgm/react`.
 
 2. Create the file:
+
    ```
    packages/react/src/MyThing/MyThing.tsx
    ```
@@ -179,17 +177,21 @@ export const MyThing = React.forwardRef<HTMLDivElement, MyThingProps>(function M
 4. Export from `packages/<pkg>/src/index.ts`.
 
 5. Add a Storybook story:
+
    ```
    apps/storybook/stories/MyThing.stories.tsx
    ```
+
    Stories: a default, every variant, an interactive controls example, and (if applicable) an `inverse` scope test.
 
 6. Add tests if it has logic:
+
    ```
    packages/react/src/MyThing/MyThing.test.tsx
    ```
 
 7. Add a changeset:
+
    ```bash
    pnpm changeset
    ```

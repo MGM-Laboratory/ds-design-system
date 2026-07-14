@@ -32,15 +32,15 @@ ds-design-system/
 
 ## Critical files to know
 
-| File | Why it matters |
-|---|---|
-| [`DESIGN_SYSTEM.md`](./DESIGN_SYSTEM.md) | Brand spec. Canonical truth for colors, type, motion, iconography. |
-| [`packages/tokens/src/`](./packages/tokens/src) | Source of truth for token values. Edit here, `tokens.css` and `tokens.json` regenerate at build. |
-| [`packages/tailwind-config/src/index.ts`](./packages/tailwind-config/src/index.ts) | Tailwind preset. Contextual tokens use `var(--…)`, brand colors stay literal. |
-| [`packages/utils/src/cn.ts`](./packages/utils/src/cn.ts) | `cn()` uses `extendTailwindMerge()` with MGM custom tokens registered (font-size, rounded, shadow, duration, ease). Stock tailwind-merge silently drops `text-white` next to `text-body` — don't revert this. |
-| [`packages/tokens/scripts/build-css.mjs`](./packages/tokens/scripts/build-css.mjs) | Generates `tokens.css` + `tokens.json`. The `[data-surface="inverse"]` rule only redefines CSS variables — it does NOT force `color`/`background-color` (that would fight components' own Tailwind classes). |
-| [`.changeset/config.json`](./.changeset/config.json) | Changesets config. Independent versioning, public access. Ignore list includes apps + private packages. |
-| [`turbo.json`](./turbo.json) | Pipeline: `lint` / `typecheck` / `test` / `build`. `build` depends on `^build`. |
+| File                                                                               | Why it matters                                                                                                                                                                                                |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`DESIGN_SYSTEM.md`](./DESIGN_SYSTEM.md)                                           | Brand spec. Canonical truth for colors, type, motion, iconography.                                                                                                                                            |
+| [`packages/tokens/src/`](./packages/tokens/src)                                    | Source of truth for token values. Edit here, `tokens.css` and `tokens.json` regenerate at build.                                                                                                              |
+| [`packages/tailwind-config/src/index.ts`](./packages/tailwind-config/src/index.ts) | Tailwind preset. Contextual tokens use `var(--…)`, brand colors stay literal.                                                                                                                                 |
+| [`packages/utils/src/cn.ts`](./packages/utils/src/cn.ts)                           | `cn()` uses `extendTailwindMerge()` with MGM custom tokens registered (font-size, rounded, shadow, duration, ease). Stock tailwind-merge silently drops `text-white` next to `text-body` — don't revert this. |
+| [`packages/tokens/scripts/build-css.mjs`](./packages/tokens/scripts/build-css.mjs) | Generates `tokens.css` + `tokens.json`. The `[data-surface="inverse"]` rule only redefines CSS variables — it does NOT force `color`/`background-color` (that would fight components' own Tailwind classes).  |
+| [`.changeset/config.json`](./.changeset/config.json)                               | Changesets config. Independent versioning, public access. Ignore list includes apps + private packages.                                                                                                       |
+| [`turbo.json`](./turbo.json)                                                       | Pipeline: `lint` / `typecheck` / `test` / `build`. `build` depends on `^build`.                                                                                                                               |
 
 ## Per-component conventions
 
@@ -52,7 +52,7 @@ When adding or editing a primitive in `@labmgm/react`:
 - Self-contained surfaces (Dialog content, Popover content, Card non-inverse, Alert, Callout, Toast item) set `data-surface="default"` on their root so they reset the scope when nested inside an inverse `<Surface>`.
 - Tooltip sets `data-surface="inverse"`.
 - Components with **always-light** backgrounds (Toast, Alert, Callout, Card tints, Banner warning, Badge solid-yellow) use **literal hex** for text colors (`text-[#0e1116]`, `text-[#3b4150]`, `text-[#6b7280]`). The variable-routed `text-ink` would flip to white inside an inverse scope and make the text invisible on the light tint.
-- Components with **fixed dark/colored** backgrounds (Banner inverse, Button primary, Badge solid-*, Tooltip) use literal `text-white`.
+- Components with **fixed dark/colored** backgrounds (Banner inverse, Button primary, Badge solid-\*, Tooltip) use literal `text-white`.
 
 ## Calendar gotcha
 
@@ -61,6 +61,7 @@ When adding or editing a primitive in `@labmgm/react`:
 ## Build pipeline
 
 Every publishable package uses **tsup** to emit:
+
 - `dist/index.js` (ESM) + `dist/index.cjs` (CJS) + sourcemaps
 - `dist/index.d.ts` + `dist/index.d.cts`
 - `sideEffects: false` (except `*.css` files)
@@ -93,13 +94,13 @@ pnpm changeset                  # describe affected packages + bump type
 
 ## Common pitfalls
 
-| Pitfall | Symptom | Fix |
-|---|---|---|
-| Used default tailwind-merge | `text-white` silently dropped when paired with `text-body` | `cn()` in `@labmgm/utils` uses `extendTailwindMerge()` with custom tokens registered |
-| Stale GitHub Pages cache | Verified-correct fix appears broken in browser | Hard refresh (Cmd+Shift+R) or open in incognito |
-| Forced `color:` in inverse scope | Banner/Tooltip/Button dark backgrounds invisible | The `[data-surface="inverse"]` rule only redefines variables; never forces `color:` |
-| `bg-ink` used for dark backgrounds | Backgrounds flip to white inside inverse scope | Use `bg-surface-inverse` (literal) instead |
-| Cell modifier classes on `<td>` | Button inside ignores parent's `!important color` | Target the inner element via `[&>button]:` |
+| Pitfall                            | Symptom                                                    | Fix                                                                                  |
+| ---------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Used default tailwind-merge        | `text-white` silently dropped when paired with `text-body` | `cn()` in `@labmgm/utils` uses `extendTailwindMerge()` with custom tokens registered |
+| Stale GitHub Pages cache           | Verified-correct fix appears broken in browser             | Hard refresh (Cmd+Shift+R) or open in incognito                                      |
+| Forced `color:` in inverse scope   | Banner/Tooltip/Button dark backgrounds invisible           | The `[data-surface="inverse"]` rule only redefines variables; never forces `color:`  |
+| `bg-ink` used for dark backgrounds | Backgrounds flip to white inside inverse scope             | Use `bg-surface-inverse` (literal) instead                                           |
+| Cell modifier classes on `<td>`    | Button inside ignores parent's `!important color`          | Target the inner element via `[&>button]:`                                           |
 
 ## Useful one-liners
 

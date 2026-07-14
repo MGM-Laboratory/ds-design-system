@@ -26,8 +26,7 @@ export const linkVariants = cva(
 );
 
 export interface LinkProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    VariantProps<typeof linkVariants> {
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof linkVariants> {
   asChild?: boolean;
   /** Open in new tab. Automatically adds `rel="noopener noreferrer"`. */
   external?: boolean;

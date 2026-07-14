@@ -49,16 +49,7 @@ const justifyMap = {
  * Helper `<VStack>` and `<HStack>` available for the common cases.
  */
 export const Stack = React.forwardRef<HTMLDivElement, StackProps>(function Stack(
-  {
-    as: Tag = 'div',
-    direction = 'col',
-    gap = 4,
-    align,
-    justify,
-    wrap,
-    className,
-    ...rest
-  },
+  { as: Tag = 'div', direction = 'col', gap = 4, align, justify, wrap, className, ...rest },
   ref,
 ) {
   return (
@@ -78,16 +69,14 @@ export const Stack = React.forwardRef<HTMLDivElement, StackProps>(function Stack
   );
 });
 
-export const VStack = React.forwardRef<HTMLDivElement, Omit<StackProps, 'direction'>>(function VStack(
-  props,
-  ref,
-) {
-  return <Stack ref={ref} {...props} direction="col" />;
-});
+export const VStack = React.forwardRef<HTMLDivElement, Omit<StackProps, 'direction'>>(
+  function VStack(props, ref) {
+    return <Stack ref={ref} {...props} direction="col" />;
+  },
+);
 
-export const HStack = React.forwardRef<HTMLDivElement, Omit<StackProps, 'direction'>>(function HStack(
-  props,
-  ref,
-) {
-  return <Stack ref={ref} {...props} direction="row" />;
-});
+export const HStack = React.forwardRef<HTMLDivElement, Omit<StackProps, 'direction'>>(
+  function HStack(props, ref) {
+    return <Stack ref={ref} {...props} direction="row" />;
+  },
+);

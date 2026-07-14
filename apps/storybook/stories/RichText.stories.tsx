@@ -16,7 +16,7 @@ export const Editor: Story = {
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <RichTextEditor defaultValue={html} onUpdate={setHtml} />
         <div className="rounded-md border border-line p-4">
-          <h3 className="text-caption uppercase text-ink-3 mb-2">Rendered output</h3>
+          <h3 className="mb-2 text-caption uppercase text-ink-3">Rendered output</h3>
           <RichTextRenderer html={html} />
         </div>
       </div>

@@ -15,17 +15,7 @@ export interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
  * Flexbox primitive. Lower-level than <Stack>: exposes every option but does no opinionated defaults.
  */
 export const Flex = React.forwardRef<HTMLDivElement, FlexProps>(function Flex(
-  {
-    as: Tag = 'div',
-    direction = 'row',
-    align,
-    justify,
-    wrap,
-    inline,
-    gap,
-    className,
-    ...rest
-  },
+  { as: Tag = 'div', direction = 'row', align, justify, wrap, inline, gap, className, ...rest },
   ref,
 ) {
   return (

@@ -12,8 +12,18 @@ pnpm add @labmgm/layout
 
 ```tsx
 import {
-  Container, Section, Stack, HStack, VStack, Grid, Flex,
-  Box, Center, Spacer, AspectRatio, Divider,
+  Container,
+  Section,
+  Stack,
+  HStack,
+  VStack,
+  Grid,
+  Flex,
+  Box,
+  Center,
+  Spacer,
+  AspectRatio,
+  Divider,
 } from '@labmgm/layout';
 
 <Section tone="muted" padding="lg">
@@ -21,25 +31,27 @@ import {
     <Stack gap={8}>
       <h1 className="text-display-lg">Hello</h1>
       <Grid cols={1} responsive={{ base: 1, md: 3 }} gap={6}>
-        <Box>1</Box><Box>2</Box><Box>3</Box>
+        <Box>1</Box>
+        <Box>2</Box>
+        <Box>3</Box>
       </Grid>
     </Stack>
   </Container>
-</Section>
+</Section>;
 ```
 
-| Component | Purpose |
-|---|---|
-| `<Box>` | Polymorphic div (use sparingly) |
-| `<Container>` | Centered max-width wrapper (`prose` / `default` / `wide` / `full`) |
-| `<Section>` | Page section with brand padding + tone (`default` / `muted` / `inverse`) |
-| `<Stack>` / `<VStack>` / `<HStack>` | Linear layout with consistent gap, alignment, and direction |
-| `<Grid>` | CSS grid with `cols` or `responsive: { base, sm, md, lg, xl }` |
-| `<Flex>` | Low-level flex primitive |
-| `<Center>` | Center children on both axes |
-| `<Spacer>` | Eat remaining flex space (push siblings apart) |
-| `<AspectRatio>` | Lock children to a width-to-height ratio |
-| `<Divider>` | Hairline rule (`orientation`, `strong`) |
+| Component                           | Purpose                                                                  |
+| ----------------------------------- | ------------------------------------------------------------------------ |
+| `<Box>`                             | Polymorphic div (use sparingly)                                          |
+| `<Container>`                       | Centered max-width wrapper (`prose` / `default` / `wide` / `full`)       |
+| `<Section>`                         | Page section with brand padding + tone (`default` / `muted` / `inverse`) |
+| `<Stack>` / `<VStack>` / `<HStack>` | Linear layout with consistent gap, alignment, and direction              |
+| `<Grid>`                            | CSS grid with `cols` or `responsive: { base, sm, md, lg, xl }`           |
+| `<Flex>`                            | Low-level flex primitive                                                 |
+| `<Center>`                          | Center children on both axes                                             |
+| `<Spacer>`                          | Eat remaining flex space (push siblings apart)                           |
+| `<AspectRatio>`                     | Lock children to a width-to-height ratio                                 |
+| `<Divider>`                         | Hairline rule (`orientation`, `strong`)                                  |
 
 ## License
 

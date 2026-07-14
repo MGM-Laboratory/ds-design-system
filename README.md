@@ -1,6 +1,6 @@
 <div align="center">
 
-# @labmgm/* — MGM Laboratory Design System
+# @labmgm/\* — MGM Laboratory Design System
 
 A complete, opinionated React design system for MGM Laboratory.<br/>
 Ship product UIs and websites with brand-correct components, patterns, icons, fonts, and tokens — **without ever installing a second UI library.**
@@ -39,52 +39,52 @@ All packages live under the `@labmgm` npm org and are published from this monore
 <details open>
 <summary><b>Foundations</b> — tokens, theme, fonts, utilities</summary>
 
-| Package | Size (gzip) | Purpose |
-|---|---|---|
-| [`@labmgm/tokens`](./packages/tokens) | ~2 KB | Single source of truth: colors, type scale, shadows, radii, motion. Ships CSS variables + TS objects + JSON. |
-| [`@labmgm/tailwind-config`](./packages/tailwind-config) | ~1 KB | Tailwind preset wiring every token + custom keyframes / animations. |
-| [`@labmgm/fonts`](./packages/fonts) | ~1 KB | `next/font` loaders for Bricolage Grotesque, Geist, Geist Mono. Raw CSS variant for non-Next stacks. |
-| [`@labmgm/utils`](./packages/utils) | ~3 KB | `cn()` (Tailwind-aware merge with MGM tokens registered), formatters, polymorphic helpers. |
-| [`@labmgm/theme`](./packages/theme) | ~1 KB | `<ThemeProvider>`, `<Surface tone="default \| muted \| inverse">`, `useSurface()`. |
-| [`@labmgm/hooks`](./packages/hooks) | ~2 KB | `useMediaQuery`, `useDebounce`, `useLocalStorage`, `useClickOutside`, `useReducedMotion`, … |
-| [`@labmgm/a11y`](./packages/a11y) | ~1 KB | `<VisuallyHidden>`, `<FocusTrap>`, `useFocusVisible`, live-region announcer. |
-| [`@labmgm/motion`](./packages/motion) | (peer) | Framer Motion + presets bound to MGM durations / easings. |
+| Package                                                 | Size (gzip) | Purpose                                                                                                      |
+| ------------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------ |
+| [`@labmgm/tokens`](./packages/tokens)                   | ~2 KB       | Single source of truth: colors, type scale, shadows, radii, motion. Ships CSS variables + TS objects + JSON. |
+| [`@labmgm/tailwind-config`](./packages/tailwind-config) | ~1 KB       | Tailwind preset wiring every token + custom keyframes / animations.                                          |
+| [`@labmgm/fonts`](./packages/fonts)                     | ~1 KB       | `next/font` loaders for Bricolage Grotesque, Geist, Geist Mono. Raw CSS variant for non-Next stacks.         |
+| [`@labmgm/utils`](./packages/utils)                     | ~3 KB       | `cn()` (Tailwind-aware merge with MGM tokens registered), formatters, polymorphic helpers.                   |
+| [`@labmgm/theme`](./packages/theme)                     | ~1 KB       | `<ThemeProvider>`, `<Surface tone="default \| muted \| inverse">`, `useSurface()`.                           |
+| [`@labmgm/hooks`](./packages/hooks)                     | ~2 KB       | `useMediaQuery`, `useDebounce`, `useLocalStorage`, `useClickOutside`, `useReducedMotion`, …                  |
+| [`@labmgm/a11y`](./packages/a11y)                       | ~1 KB       | `<VisuallyHidden>`, `<FocusTrap>`, `useFocusVisible`, live-region announcer.                                 |
+| [`@labmgm/motion`](./packages/motion)                   | (peer)      | Framer Motion + presets bound to MGM durations / easings.                                                    |
 
 </details>
 
 <details open>
 <summary><b>Brand</b> — logo, patterns, icons</summary>
 
-| Package | Size (gzip) | Purpose |
-|---|---|---|
-| [`@labmgm/brand`](./packages/brand) | ~3 KB | `<Logo>`, `<Wordmark>`, `<ShapeSignature>`, `<FooterStrip>`. |
-| [`@labmgm/patterns`](./packages/patterns) | ~28 KB | 80-tile Bauhaus pattern catalog + `<PatternGrid>` composer (deterministic, no-adjacent-repeat). |
-| [`@labmgm/icons`](./packages/icons) | (peer) | Lucide pre-configured with the MGM 2.25 stroke width + 16/20/24 size tokens. |
+| Package                                   | Size (gzip) | Purpose                                                                                         |
+| ----------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------- |
+| [`@labmgm/brand`](./packages/brand)       | ~3 KB       | `<Logo>`, `<Wordmark>`, `<ShapeSignature>`, `<FooterStrip>`.                                    |
+| [`@labmgm/patterns`](./packages/patterns) | ~28 KB      | 80-tile Bauhaus pattern catalog + `<PatternGrid>` composer (deterministic, no-adjacent-repeat). |
+| [`@labmgm/icons`](./packages/icons)       | (peer)      | Lucide pre-configured with the MGM 2.25 stroke width + 16/20/24 size tokens.                    |
 
 </details>
 
 <details open>
 <summary><b>Components</b> — UI primitives</summary>
 
-| Package | Size (gzip) | Purpose |
-|---|---|---|
-| [`@labmgm/react`](./packages/react) | ~28 KB | The core library. Buttons, cards, dialogs, navigation, feedback, media, ~70 primitives. |
-| [`@labmgm/layout`](./packages/layout) | ~3 KB | `<Container>`, `<Section>`, `<Stack>`, `<HStack>`, `<VStack>`, `<Grid>`, `<Flex>`, `<Box>`, `<Center>`, `<Spacer>`, `<AspectRatio>`, `<Divider>`. |
+| Package                               | Size (gzip) | Purpose                                                                                                                                           |
+| ------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`@labmgm/react`](./packages/react)   | ~28 KB      | The core library. Buttons, cards, dialogs, navigation, feedback, media, ~70 primitives.                                                           |
+| [`@labmgm/layout`](./packages/layout) | ~3 KB       | `<Container>`, `<Section>`, `<Stack>`, `<HStack>`, `<VStack>`, `<Grid>`, `<Flex>`, `<Box>`, `<Center>`, `<Spacer>`, `<AspectRatio>`, `<Divider>`. |
 
 </details>
 
 <details open>
 <summary><b>Specialized</b> — forms, data, content</summary>
 
-| Package | Size (gzip) | Purpose |
-|---|---|---|
-| [`@labmgm/forms`](./packages/forms) | ~10 KB | React Hook Form + Zod, `<Field>`, `<Wizard>`, every input primitive. |
-| [`@labmgm/data-table`](./packages/data-table) | ~2 KB | TanStack Table v8 + MGM styling. |
-| [`@labmgm/charts`](./packages/charts) | ~4 KB | Recharts wrappers — Bar, Line, Area, Pie, Donut, Sparkline. |
-| [`@labmgm/rich-text`](./packages/rich-text) | ~4 KB | Tiptap editor + renderer with StarterKit, Link, Image, Code, Mention, Table, YouTube. |
-| [`@labmgm/calendar`](./packages/calendar) | ~2 KB | `<Calendar>`, `<DatePicker>`, `<DateRangePicker>`, `<TimePicker>` powered by react-day-picker. |
-| [`@labmgm/command`](./packages/command) | ~3 KB | ⌘K command palette built on cmdk. |
-| [`@labmgm/toast`](./packages/toast) | ~1 KB | Sonner-wrapped toasts with MGM tones. |
+| Package                                       | Size (gzip) | Purpose                                                                                        |
+| --------------------------------------------- | ----------- | ---------------------------------------------------------------------------------------------- |
+| [`@labmgm/forms`](./packages/forms)           | ~10 KB      | React Hook Form + Zod, `<Field>`, `<Wizard>`, every input primitive.                           |
+| [`@labmgm/data-table`](./packages/data-table) | ~2 KB       | TanStack Table v8 + MGM styling.                                                               |
+| [`@labmgm/charts`](./packages/charts)         | ~4 KB       | Recharts wrappers — Bar, Line, Area, Pie, Donut, Sparkline.                                    |
+| [`@labmgm/rich-text`](./packages/rich-text)   | ~4 KB       | Tiptap editor + renderer with StarterKit, Link, Image, Code, Mention, Table, YouTube.          |
+| [`@labmgm/calendar`](./packages/calendar)     | ~2 KB       | `<Calendar>`, `<DatePicker>`, `<DateRangePicker>`, `<TimePicker>` powered by react-day-picker. |
+| [`@labmgm/command`](./packages/command)       | ~3 KB       | ⌘K command palette built on cmdk.                                                              |
+| [`@labmgm/toast`](./packages/toast)           | ~1 KB       | Sonner-wrapped toasts with MGM tones.                                                          |
 
 </details>
 
@@ -106,7 +106,7 @@ pnpm add @labmgm/react @labmgm/tokens @labmgm/tailwind-config @labmgm/fonts
 <tr>
 <td>
 
-**Option A — Tailwind preset** *(recommended)*
+**Option A — Tailwind preset** _(recommended)_
 
 ```ts
 // tailwind.config.ts
@@ -114,10 +114,7 @@ import preset from '@labmgm/tailwind-config';
 
 export default {
   presets: [preset],
-  content: [
-    './src/**/*.{ts,tsx}',
-    './node_modules/@labmgm/**/dist/**/*.{js,mjs}',
-  ],
+  content: ['./src/**/*.{ts,tsx}', './node_modules/@labmgm/**/dist/**/*.{js,mjs}'],
 };
 ```
 
@@ -212,9 +209,9 @@ function Hero() {
     <Section tone="muted" padding="lg">
       <Container>
         <Stack gap={6}>
-          <span className="text-eyebrow uppercase text-ink-3">Publish</span>
+          <span className="text-eyebrow text-ink-3 uppercase">Publish</span>
           <h1 className="text-display-xl">Add a new asset.</h1>
-          <p className="max-w-prose text-body-lg text-ink-2">
+          <p className="text-body-lg text-ink-2 max-w-prose">
             Four steps, all validated, brand-correct.
           </p>
           <PatternBanner rows={2} cols={6} tileSize={56} seed="publish-hero" />
@@ -287,8 +284,14 @@ function Step({ title }: { title: string }) {
 
 ```tsx
 import {
-  Form, FormProvider, useMgmForm,
-  Field, Input, Textarea, Select, TagInput,
+  Form,
+  FormProvider,
+  useMgmForm,
+  Field,
+  Input,
+  Textarea,
+  Select,
+  TagInput,
 } from '@labmgm/forms';
 import { z, slugSchema } from '@labmgm/forms/schemas';
 import { Button } from '@labmgm/react';
@@ -315,7 +318,12 @@ function BasicsStep() {
         <Field label="Asset name" required error={form.formState.errors.name?.message}>
           <Input {...form.register('name')} />
         </Field>
-        <Field label="URL slug" required help="lowercase-with-hyphens" error={form.formState.errors.slug?.message}>
+        <Field
+          label="URL slug"
+          required
+          help="lowercase-with-hyphens"
+          error={form.formState.errors.slug?.message}
+        >
           <Input {...form.register('slug')} />
         </Field>
         <Field label="Category" required error={form.formState.errors.category?.message}>
@@ -335,7 +343,9 @@ function BasicsStep() {
         <Field label="Tags" required>
           <TagInput onChange={(v) => form.setValue('tags', v)} />
         </Field>
-        <Button type="submit" fullWidth>Continue</Button>
+        <Button type="submit" fullWidth>
+          Continue
+        </Button>
       </Form>
     </FormProvider>
   );
@@ -365,7 +375,7 @@ function FilesStep() {
 // somewhere near your root
 import { Toaster } from '@labmgm/toast';
 
-<Toaster />
+<Toaster />;
 ```
 
 **That's the entire flow** — five files, no third-party UI dependencies, fully validated, brand-correct.
@@ -380,31 +390,31 @@ The full token spec lives in [`DESIGN_SYSTEM.md`](./DESIGN_SYSTEM.md). At a glan
 
 ### Color palette (closed)
 
-| Token | Hex | Use |
-|---|---|---|
-| `brand-blue` | <code>#3a6dc5</code> | Primary action, links |
-| `brand-yellow` | <code>#f7bf33</code> | Highlight, attention, warmth |
-| `brand-red` | <code>#f94141</code> | Emphasis, energy, error |
-| `brand-green` | <code>#0f8657</code> | Success, positive states |
-| `bg` / `surface` | <code>#ffffff</code> | Page / panel surface |
-| `surface-muted` | <code>#f7f7f5</code> | Off-white zoning |
-| `surface-inverse` | <code>#0e1116</code> | Dark sections |
-| `ink` / `ink-2/3/4` | <code>#0e1116</code> → <code>#9aa1ad</code> | Text hierarchy |
+| Token               | Hex                                         | Use                          |
+| ------------------- | ------------------------------------------- | ---------------------------- |
+| `brand-blue`        | <code>#3a6dc5</code>                        | Primary action, links        |
+| `brand-yellow`      | <code>#f7bf33</code>                        | Highlight, attention, warmth |
+| `brand-red`         | <code>#f94141</code>                        | Emphasis, energy, error      |
+| `brand-green`       | <code>#0f8657</code>                        | Success, positive states     |
+| `bg` / `surface`    | <code>#ffffff</code>                        | Page / panel surface         |
+| `surface-muted`     | <code>#f7f7f5</code>                        | Off-white zoning             |
+| `surface-inverse`   | <code>#0e1116</code>                        | Dark sections                |
+| `ink` / `ink-2/3/4` | <code>#0e1116</code> → <code>#9aa1ad</code> | Text hierarchy               |
 
 > No purple, teal, pink, or orange. **The palette is closed.**
 
 ### Typography
 
-| Token | Size | Use |
-|---|---|---|
-| `display-2xl` | 72px | Marketing hero |
-| `display-xl` | 56px | Sub-hero |
-| `display-lg` | 40px | Page H1 in product |
-| `h1` – `h4` | 32 / 24 / 20 / 17px | Section / subsection / card / inline |
-| `body-lg` / `body` / `body-sm` | 18 / 16 / 15px | Body copy |
-| `caption` | 13px | Labels, helper, table heads |
-| `mono` | 14px | Code, technical numerals |
-| `eyebrow` | 12px | All-caps section labels |
+| Token                          | Size                | Use                                  |
+| ------------------------------ | ------------------- | ------------------------------------ |
+| `display-2xl`                  | 72px                | Marketing hero                       |
+| `display-xl`                   | 56px                | Sub-hero                             |
+| `display-lg`                   | 40px                | Page H1 in product                   |
+| `h1` – `h4`                    | 32 / 24 / 20 / 17px | Section / subsection / card / inline |
+| `body-lg` / `body` / `body-sm` | 18 / 16 / 15px      | Body copy                            |
+| `caption`                      | 13px                | Labels, helper, table heads          |
+| `mono`                         | 14px                | Code, technical numerals             |
+| `eyebrow`                      | 12px                | All-caps section labels              |
 
 Fonts: **Bricolage Grotesque** (display), **Geist** (UI), **Geist Mono** (code). No substitutes.
 
@@ -432,10 +442,10 @@ import { Surface } from '@labmgm/theme';
 <Surface tone="inverse" as="section" className="py-24">
   <h2 className="text-display-lg">High-contrast section.</h2>
   <p className="text-body text-ink-2">
-    Children using contextual tokens (text-ink, border-line, …) flip
-    automatically. Brand colors stay constant.
+    Children using contextual tokens (text-ink, border-line, …) flip automatically. Brand colors
+    stay constant.
   </p>
-</Surface>
+</Surface>;
 ```
 
 Cards, dialogs, popovers, and other self-contained surfaces reset back to `data-surface="default"` so they always render correctly even when nested inside a dark section.
@@ -610,15 +620,15 @@ pnpm --filter docs dev                    # docs site at http://localhost:3001
 
 ### Useful scripts
 
-| Command | What it does |
-|---|---|
-| `pnpm build` | Build every package via Turbo |
-| `pnpm lint` | ESLint flat config across the workspace |
-| `pnpm typecheck` | `tsc --noEmit` everywhere |
-| `pnpm test` | Vitest across the workspace (with `--passWithNoTests`) |
-| `pnpm format` | Prettier across all files |
-| `pnpm changeset` | Add a release note before opening a PR |
-| `pnpm release` | Build + publish (only run by CI) |
+| Command          | What it does                                           |
+| ---------------- | ------------------------------------------------------ |
+| `pnpm build`     | Build every package via Turbo                          |
+| `pnpm lint`      | ESLint flat config across the workspace                |
+| `pnpm typecheck` | `tsc --noEmit` everywhere                              |
+| `pnpm test`      | Vitest across the workspace (with `--passWithNoTests`) |
+| `pnpm format`    | Prettier across all files                              |
+| `pnpm changeset` | Add a release note before opening a PR                 |
+| `pnpm release`   | Build + publish (only run by CI)                       |
 
 > CI runs the same `lint + typecheck + test + build` matrix on every PR — see [`.github/workflows/ci.yml`](./.github/workflows/ci.yml).
 

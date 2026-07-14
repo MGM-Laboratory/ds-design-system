@@ -22,8 +22,8 @@ export const Chip = React.forwardRef<HTMLButtonElement, ChipProps>(function Chip
         'inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-body-sm transition-colors duration-200 ease-out-soft',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2',
         active
-          ? 'bg-surface-inverse text-white border-surface-inverse'
-          : 'bg-surface text-ink-2 border-line hover:bg-surface-muted hover:border-line-strong',
+          ? 'border-surface-inverse bg-surface-inverse text-white'
+          : 'border-line bg-surface text-ink-2 hover:border-line-strong hover:bg-surface-muted',
         className,
       )}
       {...rest}

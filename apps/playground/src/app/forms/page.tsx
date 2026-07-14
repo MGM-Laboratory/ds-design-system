@@ -59,12 +59,12 @@ export default function FormsPage() {
                     onSubmit={form.handleSubmit((v) => toast.success(`Welcome, ${v.email}`))}
                     className="space-y-4"
                   >
-                    <Field
-                      label="Email"
-                      required
-                      error={form.formState.errors.email?.message}
-                    >
-                      <Input type="email" placeholder="you@labmgm.com" {...form.register('email')} />
+                    <Field label="Email" required error={form.formState.errors.email?.message}>
+                      <Input
+                        type="email"
+                        placeholder="you@labmgm.com"
+                        {...form.register('email')}
+                      />
                     </Field>
                     <Field
                       label="Password"
@@ -88,10 +88,18 @@ export default function FormsPage() {
               </CardHeader>
               <CardContent>
                 <Stack gap={4}>
-                  <Field label="Search"><SearchInput placeholder="Filter…" /></Field>
-                  <Field label="Bio"><Textarea placeholder="Tell us about yourself" /></Field>
-                  <Field label="Quantity"><NumberInput defaultValue={1} min={0} max={10} /></Field>
-                  <Field label="Verify code"><PinInput length={6} /></Field>
+                  <Field label="Search">
+                    <SearchInput placeholder="Filter…" />
+                  </Field>
+                  <Field label="Bio">
+                    <Textarea placeholder="Tell us about yourself" />
+                  </Field>
+                  <Field label="Quantity">
+                    <NumberInput defaultValue={1} min={0} max={10} />
+                  </Field>
+                  <Field label="Verify code">
+                    <PinInput length={6} />
+                  </Field>
                   <Field label="Engine">
                     <Select
                       options={[
@@ -121,12 +129,20 @@ export default function FormsPage() {
                       ]}
                     />
                   </Field>
-                  <Field label="Hashtags"><TagInput defaultValue={['#mgm']} /></Field>
-                  <Field label="Color"><ColorPicker /></Field>
-                  <Field label="Upload"><FileDropzone onFiles={(f) => toast(`${f.length} file(s)`)} /></Field>
+                  <Field label="Hashtags">
+                    <TagInput defaultValue={['#mgm']} />
+                  </Field>
+                  <Field label="Color">
+                    <ColorPicker />
+                  </Field>
+                  <Field label="Upload">
+                    <FileDropzone onFiles={(f) => toast(`${f.length} file(s)`)} />
+                  </Field>
                   <Checkbox label="I agree to the terms" />
                   <Switch label="Email notifications" />
-                  <Field label="Volume"><Slider defaultValue={[60]} max={100} /></Field>
+                  <Field label="Volume">
+                    <Slider defaultValue={[60]} max={100} />
+                  </Field>
                   <Field label="Plan">
                     <RadioGroup defaultValue="pro">
                       <Radio value="free" label="Free" />
@@ -177,7 +193,9 @@ function WizardBody({ step }: { step: string }) {
       />
       <Stack gap={4}>
         <h3 className="text-h3">{step}</h3>
-        <p className="text-body text-ink-2">Step {w.current + 1} of {w.count}</p>
+        <p className="text-body text-ink-2">
+          Step {w.current + 1} of {w.count}
+        </p>
         <div className="flex justify-between">
           <Button variant="ghost" onClick={w.prev} disabled={w.isFirst}>
             Back

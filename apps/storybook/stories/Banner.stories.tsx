@@ -5,12 +5,16 @@ const meta = {
   title: 'Feedback/Banner',
   component: Banner,
   tags: ['autodocs'],
-  argTypes: { tone: { control: 'select', options: ['info', 'success', 'warning', 'danger', 'inverse'] } },
+  argTypes: {
+    tone: { control: 'select', options: ['info', 'success', 'warning', 'danger', 'inverse'] },
+  },
 } satisfies Meta<typeof Banner>;
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Info: Story = { args: { tone: 'info', children: 'New feature: collaborative editing is now live.' } };
+export const Info: Story = {
+  args: { tone: 'info', children: 'New feature: collaborative editing is now live.' },
+};
 export const AllTones: Story = {
   render: () => (
     <div className="flex flex-col gap-3">
@@ -24,7 +28,14 @@ export const AllTones: Story = {
 };
 export const WithAction: Story = {
   render: () => (
-    <Banner tone="info" action={<Button size="sm" variant="secondary">Learn more</Button>}>
+    <Banner
+      tone="info"
+      action={
+        <Button size="sm" variant="secondary">
+          Learn more
+        </Button>
+      }
+    >
       Now in public beta.
     </Banner>
   ),

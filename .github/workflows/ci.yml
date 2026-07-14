@@ -57,6 +57,9 @@ jobs:
       - name: Build packages
         run: pnpm turbo run build --filter='./packages/*'
 
+      - name: Verify published package contracts
+        run: pnpm check:packages
+
       - name: Verify changeset present (PR only)
         if: github.event_name == 'pull_request'
         run: pnpm changeset status --since=origin/main

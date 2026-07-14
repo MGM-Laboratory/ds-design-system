@@ -33,7 +33,9 @@ export const Basic: Story = {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>Make changes to your profile here. Click save when done.</DialogDescription>
+          <DialogDescription>
+            Make changes to your profile here. Click save when done.
+          </DialogDescription>
         </DialogHeader>
         <p className="text-body text-ink-2">Dialog content goes here.</p>
         <DialogFooter>

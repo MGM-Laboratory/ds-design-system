@@ -5,10 +5,6 @@
  *
  * Defaults applied per MGM brand: strokeWidth 2.25, size 20, linecap/linejoin round.
  */
-export {
-  /* eslint-disable @typescript-eslint/no-restricted-imports */
-} from 'lucide-react';
-
 // We re-export the entire lucide-react surface so that consumers don't need to install
 // it themselves. The tsup build externalizes `lucide-react`, so the dist file is a
 // thin re-export module.

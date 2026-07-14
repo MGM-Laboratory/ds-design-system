@@ -10,6 +10,8 @@ pnpm add @labmgm/charts
 
 > [Storybook (Charts)](https://ds.labmgm.org/?path=/docs/charts-all--docs) · [Source](./src)
 
+Built and tested against Recharts 3.
+
 ---
 
 ## Examples
@@ -43,14 +45,14 @@ The default categorical palette pulls from `@labmgm/tokens` brand colors. Overri
 
 ## Components
 
-| Component | Props highlights |
-|---|---|
-| `<BarChart>` | `xKey`, `yKeys`, `stacked`, `colors`, `legend`, `grid` |
-| `<LineChart>` | `xKey`, `yKeys`, `curve: 'linear' \| 'monotone'`, `colors`, `legend` |
-| `<AreaChart>` | `xKey`, `yKeys`, `stacked`, `colors`, `legend` |
-| `<PieChart>` | `data: {name,value}[]`, `innerRadius`, `outerRadius`, `colors` |
-| `<DonutChart>` | Same as PieChart with default `innerRadius={60}` |
-| `<Sparkline>` | `data: number[]`, `color`, `width`, `height`, `strokeWidth` |
+| Component          | Props highlights                                                        |
+| ------------------ | ----------------------------------------------------------------------- |
+| `<BarChart>`       | `xKey`, `yKeys`, `stacked`, `colors`, `legend`, `grid`                  |
+| `<LineChart>`      | `xKey`, `yKeys`, `curve: 'linear' \| 'monotone'`, `colors`, `legend`    |
+| `<AreaChart>`      | `xKey`, `yKeys`, `stacked`, `colors`, `legend`                          |
+| `<PieChart>`       | `data: {name,value}[]`, `innerRadius`, `outerRadius`, `colors`          |
+| `<DonutChart>`     | Same as PieChart with default `innerRadius={60}`                        |
+| `<Sparkline>`      | `data: number[]`, `color`, `width`, `height`, `strokeWidth`             |
 | `<ChartContainer>` | Generic ResponsiveContainer wrapper if you need a custom Recharts setup |
 
 All wrappers respect the design tokens (font family, axis colors, tooltip styling).

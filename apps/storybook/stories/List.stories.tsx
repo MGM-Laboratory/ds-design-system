@@ -19,7 +19,7 @@ export const Lists: Story = {
   render: () => (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
       <div>
-        <h3 className="text-h3 mb-2">Plain</h3>
+        <h3 className="mb-2 text-h3">Plain</h3>
         <List>
           <ListItem>First</ListItem>
           <ListItem>Second</ListItem>
@@ -27,21 +27,21 @@ export const Lists: Story = {
         </List>
       </div>
       <div>
-        <h3 className="text-h3 mb-2">Bulleted</h3>
+        <h3 className="mb-2 text-h3">Bulleted</h3>
         <List variant="bullet">
           <ListItem>First</ListItem>
           <ListItem>Second</ListItem>
         </List>
       </div>
       <div>
-        <h3 className="text-h3 mb-2">Numbered</h3>
+        <h3 className="mb-2 text-h3">Numbered</h3>
         <List variant="number">
           <ListItem>First</ListItem>
           <ListItem>Second</ListItem>
         </List>
       </div>
       <div>
-        <h3 className="text-h3 mb-2">Divided</h3>
+        <h3 className="mb-2 text-h3">Divided</h3>
         <List variant="divided">
           <ListItem>First</ListItem>
           <ListItem>Second</ListItem>

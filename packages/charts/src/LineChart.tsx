@@ -44,8 +44,15 @@ export function LineChart({
           tick={{ fontSize: 12, fontFamily: 'var(--font-sans)' }}
           tickLine={false}
         />
-        <YAxis stroke="#6b7280" tick={{ fontSize: 12, fontFamily: 'var(--font-sans)' }} tickLine={false} axisLine={false} />
-        <Tooltip contentStyle={{ borderRadius: 8, borderColor: '#ececea', fontFamily: 'var(--font-sans)' }} />
+        <YAxis
+          stroke="#6b7280"
+          tick={{ fontSize: 12, fontFamily: 'var(--font-sans)' }}
+          tickLine={false}
+          axisLine={false}
+        />
+        <Tooltip
+          contentStyle={{ borderRadius: 8, borderColor: '#ececea', fontFamily: 'var(--font-sans)' }}
+        />
         {legend && <Legend wrapperStyle={{ fontFamily: 'var(--font-sans)', fontSize: 12 }} />}
         {yKeys.map((key, i) => (
           <Line

@@ -34,7 +34,7 @@ export function RichTextEditor({
   return (
     <div
       className={cn(
-        'rounded-md border border-line bg-surface focus-within:ring-2 focus-within:ring-focus focus-within:ring-offset-1 focus-within:border-focus',
+        'border-line bg-surface focus-within:ring-focus focus-within:border-focus rounded-md border focus-within:ring-2 focus-within:ring-offset-1',
         className,
       )}
     >
@@ -47,8 +47,8 @@ export function RichTextEditor({
           '[&_.ProseMirror]:min-h-[var(--mgm-rt-min-h)]',
           '[&_h1]:text-h1 [&_h2]:text-h2 [&_h3]:text-h3',
           '[&_a]:text-brand-blue [&_a]:underline [&_a]:underline-offset-[3px]',
-          '[&_blockquote]:border-l-2 [&_blockquote]:border-line-strong [&_blockquote]:pl-3 [&_blockquote]:italic',
-          '[&_code]:rounded-sm [&_code]:bg-surface-muted [&_code]:px-1 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-mono',
+          '[&_blockquote]:border-line-strong [&_blockquote]:border-l-2 [&_blockquote]:pl-3 [&_blockquote]:italic',
+          '[&_code]:bg-surface-muted [&_code]:text-mono [&_code]:rounded-sm [&_code]:px-1 [&_code]:py-0.5 [&_code]:font-mono',
           '[&_p.is-editor-empty:first-child::before]:text-ink-4',
           '[&_p.is-editor-empty:first-child::before]:float-left',
           '[&_p.is-editor-empty:first-child::before]:content-[attr(data-placeholder)]',

@@ -75,12 +75,7 @@ export const Field = React.forwardRef<HTMLDivElement, FieldProps>(function Field
 
 export function FieldError({ id, className, ...rest }: React.HTMLAttributes<HTMLParagraphElement>) {
   return (
-    <p
-      id={id}
-      role="alert"
-      className={cn('text-caption text-brand-red', className)}
-      {...rest}
-    />
+    <p id={id} role="alert" className={cn('text-caption text-brand-red', className)} {...rest} />
   );
 }
 

@@ -31,8 +31,7 @@ export const cardVariants = cva(
 );
 
 export interface CardProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof cardVariants> {
+  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof cardVariants> {
   as?: React.ElementType;
 }
 
@@ -62,17 +61,19 @@ export const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<
   },
 );
 
-export const CardTitle = React.forwardRef<HTMLHeadingElement, React.HTMLAttributes<HTMLHeadingElement>>(
-  function CardTitle({ className, ...rest }, ref) {
-    return <h3 ref={ref} className={cn('text-h3 font-semibold text-ink', className)} {...rest} />;
-  },
-);
+export const CardTitle = React.forwardRef<
+  HTMLHeadingElement,
+  React.HTMLAttributes<HTMLHeadingElement>
+>(function CardTitle({ className, ...rest }, ref) {
+  return <h3 ref={ref} className={cn('text-h3 font-semibold text-ink', className)} {...rest} />;
+});
 
-export const CardDescription = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLParagraphElement>>(
-  function CardDescription({ className, ...rest }, ref) {
-    return <p ref={ref} className={cn('text-body-sm text-ink-3', className)} {...rest} />;
-  },
-);
+export const CardDescription = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(function CardDescription({ className, ...rest }, ref) {
+  return <p ref={ref} className={cn('text-body-sm text-ink-3', className)} {...rest} />;
+});
 
 export const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   function CardContent({ className, ...rest }, ref) {
@@ -83,7 +84,11 @@ export const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes
 export const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   function CardFooter({ className, ...rest }, ref) {
     return (
-      <div ref={ref} className={cn('flex items-center justify-between gap-3 pt-4', className)} {...rest} />
+      <div
+        ref={ref}
+        className={cn('flex items-center justify-between gap-3 pt-4', className)}
+        {...rest}
+      />
     );
   },
 );

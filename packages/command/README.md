@@ -36,7 +36,7 @@ import {
   <CommandGroup heading="Actions">
     <CommandItem onSelect={signOut}>Sign out</CommandItem>
   </CommandGroup>
-</CommandPalette>
+</CommandPalette>;
 ```
 
 ## Props

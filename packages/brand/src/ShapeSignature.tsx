@@ -17,7 +17,10 @@ export interface ShapeSignatureProps extends React.HTMLAttributes<HTMLDivElement
  * used as an empty-state accent or favicon-scale brand mark.
  */
 export const ShapeSignature = React.forwardRef<HTMLDivElement, ShapeSignatureProps>(
-  function ShapeSignature({ tileSize = 28, rows = 2, cols = 2, seed = 'signature', className, ...rest }, ref) {
+  function ShapeSignature(
+    { tileSize = 28, rows = 2, cols = 2, seed = 'signature', className, ...rest },
+    ref,
+  ) {
     return (
       <div ref={ref} className={cn('inline-block', className)} {...rest}>
         <PatternGrid rows={rows} cols={cols} tileSize={tileSize} seed={seed} />

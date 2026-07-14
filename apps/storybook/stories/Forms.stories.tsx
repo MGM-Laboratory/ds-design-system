@@ -43,12 +43,22 @@ const ENGINE_OPTIONS = [
 export const InputStory: Story = {
   name: 'Input',
   render: () => (
-    <div className="grid grid-cols-1 gap-4 max-w-md">
-      <Field label="Default"><Input placeholder="Type here" /></Field>
-      <Field label="With helper" help="We'll never share it."><Input type="email" placeholder="you@labmgm.com" /></Field>
-      <Field label="Required" required><Input /></Field>
-      <Field label="Invalid" error="Field is invalid"><Input defaultValue="bad" /></Field>
-      <Field label="Disabled"><Input disabled defaultValue="Locked" /></Field>
+    <div className="grid max-w-md grid-cols-1 gap-4">
+      <Field label="Default">
+        <Input placeholder="Type here" />
+      </Field>
+      <Field label="With helper" help="We'll never share it.">
+        <Input type="email" placeholder="you@labmgm.com" />
+      </Field>
+      <Field label="Required" required>
+        <Input />
+      </Field>
+      <Field label="Invalid" error="Field is invalid">
+        <Input defaultValue="bad" />
+      </Field>
+      <Field label="Disabled">
+        <Input disabled defaultValue="Locked" />
+      </Field>
       <Field label="Sizes">
         <div className="flex flex-col gap-2">
           <Input size="sm" placeholder="sm" />
@@ -73,14 +83,21 @@ export const SearchInputStory: Story = {
   name: 'SearchInput',
   render: () => {
     const [v, setV] = useState('');
-    return <SearchInput value={v} onChange={(e) => setV(e.target.value)} onClear={() => setV('')} placeholder="Search assets…" />;
+    return (
+      <SearchInput
+        value={v}
+        onChange={(e) => setV(e.target.value)}
+        onClear={() => setV('')}
+        placeholder="Search assets…"
+      />
+    );
   },
 };
 
 export const NumberInputStory: Story = {
   name: 'NumberInput',
   render: () => (
-    <div className="flex flex-col gap-3 max-w-xs">
+    <div className="flex max-w-xs flex-col gap-3">
       <NumberInput defaultValue={1} min={0} max={10} />
       <NumberInput defaultValue={50} min={0} max={100} step={5} controls={false} />
     </div>
@@ -207,7 +224,7 @@ export const ColorPickerStory: Story = {
     return (
       <div className="flex items-center gap-3">
         <ColorPicker value={color} onChange={setColor} />
-        <span className="text-caption font-mono text-ink-3">{color}</span>
+        <span className="font-mono text-caption text-ink-3">{color}</span>
       </div>
     );
   },
@@ -221,18 +238,16 @@ export const ValidatedForm: Story = {
     const form = useMgmForm(signupSchema, { defaultValues: { email: '', password: '' } });
     return (
       <Card className="max-w-md">
-        <CardHeader><CardTitle>Sign up</CardTitle></CardHeader>
+        <CardHeader>
+          <CardTitle>Sign up</CardTitle>
+        </CardHeader>
         <CardContent>
           <FormProvider {...form}>
             <Form
               onSubmit={form.handleSubmit((v) => alert(`Welcome, ${v.email}`))}
               className="space-y-4"
             >
-              <Field
-                label="Email"
-                required
-                error={form.formState.errors.email?.message}
-              >
+              <Field label="Email" required error={form.formState.errors.email?.message}>
                 <Input type="email" {...form.register('email')} />
               </Field>
               <Field
@@ -243,7 +258,9 @@ export const ValidatedForm: Story = {
               >
                 <Input type="password" {...form.register('password')} />
               </Field>
-              <Button type="submit" fullWidth>Create account</Button>
+              <Button type="submit" fullWidth>
+                Create account
+              </Button>
             </Form>
           </FormProvider>
         </CardContent>
@@ -266,10 +283,16 @@ function WizardBody({ step }: { step: string }) {
       />
       <div className="flex flex-col gap-4">
         <h3 className="text-h3">{step}</h3>
-        <p className="text-body text-ink-2">Step {w.current + 1} of {w.count}</p>
+        <p className="text-body text-ink-2">
+          Step {w.current + 1} of {w.count}
+        </p>
         <div className="flex justify-between">
-          <Button variant="ghost" onClick={w.prev} disabled={w.isFirst}>Back</Button>
-          <Button onClick={w.next} disabled={w.isLast}>{w.isLast ? 'Finish' : 'Next'}</Button>
+          <Button variant="ghost" onClick={w.prev} disabled={w.isFirst}>
+            Back
+          </Button>
+          <Button onClick={w.next} disabled={w.isLast}>
+            {w.isLast ? 'Finish' : 'Next'}
+          </Button>
         </div>
       </div>
     </div>
@@ -280,12 +303,20 @@ export const WizardStory: Story = {
   name: 'Wizard + StepRail',
   render: () => (
     <Card>
-      <CardHeader><CardTitle>Multi-step form</CardTitle></CardHeader>
+      <CardHeader>
+        <CardTitle>Multi-step form</CardTitle>
+      </CardHeader>
       <CardContent>
         <Wizard defaultCurrent={0}>
-          <WizardStep><WizardBody step="Basics" /></WizardStep>
-          <WizardStep><WizardBody step="Files" /></WizardStep>
-          <WizardStep><WizardBody step="Review" /></WizardStep>
+          <WizardStep>
+            <WizardBody step="Basics" />
+          </WizardStep>
+          <WizardStep>
+            <WizardBody step="Files" />
+          </WizardStep>
+          <WizardStep>
+            <WizardBody step="Review" />
+          </WizardStep>
         </Wizard>
       </CardContent>
     </Card>

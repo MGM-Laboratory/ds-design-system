@@ -54,8 +54,8 @@ export function DateRangePicker({
           id={id}
           disabled={disabled}
           className={cn(
-            'inline-flex h-10 w-full items-center justify-between gap-2 rounded-md border border-line bg-surface px-3 text-body text-ink outline-none transition-colors',
-            'hover:border-line-strong focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1 focus-visible:border-focus',
+            'border-line bg-surface text-body text-ink inline-flex h-10 w-full items-center justify-between gap-2 rounded-md border px-3 transition-colors outline-none',
+            'hover:border-line-strong focus-visible:ring-focus focus-visible:border-focus focus-visible:ring-2 focus-visible:ring-offset-1',
             'disabled:opacity-50',
             !current?.from && 'text-ink-4',
             className,
@@ -69,7 +69,7 @@ export function DateRangePicker({
         <Popover.Content
           align="start"
           sideOffset={6}
-          className="z-50 rounded-md border border-line bg-surface shadow-2 outline-none"
+          className="border-line bg-surface shadow-2 z-50 rounded-md border outline-none"
         >
           <Calendar
             mode="range"

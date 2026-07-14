@@ -21,8 +21,7 @@ const sectionVariants = cva('w-full', {
 });
 
 export interface SectionProps
-  extends React.HTMLAttributes<HTMLElement>,
-    VariantProps<typeof sectionVariants> {
+  extends React.HTMLAttributes<HTMLElement>, VariantProps<typeof sectionVariants> {
   as?: React.ElementType;
 }
 

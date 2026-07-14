@@ -37,7 +37,9 @@ export default function DataTablePage() {
           const status = info.getValue();
           return (
             <Badge
-              tone={status === 'published' ? 'success' : status === 'pending' ? 'warning' : 'danger'}
+              tone={
+                status === 'published' ? 'success' : status === 'pending' ? 'warning' : 'danger'
+              }
             >
               {status}
             </Badge>

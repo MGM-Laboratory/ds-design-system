@@ -49,8 +49,8 @@ export function ColorPicker({
             aria-pressed={current === color}
             onClick={() => pick(color)}
             className={cn(
-              'h-6 w-6 rounded-sm border border-line transition-all',
-              current === color && 'ring-2 ring-focus ring-offset-1',
+              'border-line h-6 w-6 rounded-sm border transition-all',
+              current === color && 'ring-focus ring-2 ring-offset-1',
             )}
             style={{ backgroundColor: color }}
           />
@@ -62,7 +62,7 @@ export function ColorPicker({
             type="color"
             value={current ?? '#000000'}
             onChange={(e) => pick(e.target.value)}
-            className="h-6 w-6 cursor-pointer rounded-sm border border-line bg-transparent"
+            className="border-line h-6 w-6 cursor-pointer rounded-sm border bg-transparent"
           />
           <span className="sr-only">Custom color</span>
         </label>

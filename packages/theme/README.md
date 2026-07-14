@@ -33,22 +33,22 @@ import { Surface } from '@labmgm/theme';
   <p className="text-body text-ink-2">
     Children using contextual tokens flip to light automatically.
   </p>
-</Surface>
+</Surface>;
 ```
 
 > Use `tone="inverse"` **sparingly** — at most once per long page (`DESIGN_SYSTEM.md` §2.2).
 
-| Tone | Background | Text |
-|---|---|---|
-| `default` | `#ffffff` | dark ink |
-| `muted` | `#f7f7f5` | dark ink |
-| `inverse` | `#0e1116` | light ink |
+| Tone      | Background | Text      |
+| --------- | ---------- | --------- |
+| `default` | `#ffffff`  | dark ink  |
+| `muted`   | `#f7f7f5`  | dark ink  |
+| `inverse` | `#0e1116`  | light ink |
 
 ## Hook
 
 ```tsx
 import { useSurface } from '@labmgm/theme';
-const tone = useSurface();   // 'default' | 'muted' | 'inverse'
+const tone = useSurface(); // 'default' | 'muted' | 'inverse'
 ```
 
 Components rarely need this — prefer plain CSS via the `[data-surface="inverse"]` selector.

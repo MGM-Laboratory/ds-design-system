@@ -30,7 +30,7 @@
   "dependencies": {
     "@labmgm/tokens": "workspace:*",
     "@labmgm/utils": "workspace:*",
-    "recharts": "^2.13.0"
+    "recharts": "^3.9.2"
   },
   "peerDependencies": {
     "react": ">=18",

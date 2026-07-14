@@ -24,7 +24,7 @@ export const Wordmark = React.forwardRef<HTMLElement, WordmarkProps>(function Wo
     <>
       <Logo size={size} label="MGM Laboratory" />
       {showName && (
-        <span className="font-display font-semibold tracking-tight text-ink text-h3 leading-none">
+        <span className="font-display text-ink text-h3 leading-none font-semibold tracking-tight">
           {name}
         </span>
       )}
@@ -44,7 +44,11 @@ export const Wordmark = React.forwardRef<HTMLElement, WordmarkProps>(function Wo
     );
   }
   return (
-    <div ref={ref as React.Ref<HTMLDivElement>} className={wrapperClass} {...(rest as React.HTMLAttributes<HTMLDivElement>)}>
+    <div
+      ref={ref as React.Ref<HTMLDivElement>}
+      className={wrapperClass}
+      {...(rest as React.HTMLAttributes<HTMLDivElement>)}
+    >
       {content}
     </div>
   );

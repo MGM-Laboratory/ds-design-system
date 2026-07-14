@@ -6,21 +6,21 @@ Motion at MGM is **calm, intentional, and short**. No springs flopping around. N
 
 ## Durations
 
-| Token | ms | Use |
-|---|---|---|
+| Token     | ms  | Use                          |
+| --------- | --- | ---------------------------- |
 | `--dur-1` | 120 | Quick UI, micro-interactions |
-| `--dur-2` | 200 | Default transitions |
-| `--dur-3` | 320 | Medium animations |
-| `--dur-4` | 520 | Longer reveals, fade-ups |
-| `--dur-5` | 800 | Slow, emphasis |
+| `--dur-2` | 200 | Default transitions          |
+| `--dur-3` | 320 | Medium animations            |
+| `--dur-4` | 520 | Longer reveals, fade-ups     |
+| `--dur-5` | 800 | Slow, emphasis               |
 
 ## Easings
 
-| Token | Curve | Use |
-|---|---|---|
-| `--ease-out-soft`    | `cubic-bezier(0.22, 1, 0.36, 1)` | Default exit |
-| `--ease-in-out-soft` | `cubic-bezier(0.65, 0, 0.35, 1)` | Two-way transitions |
-| `--ease-spring`      | `cubic-bezier(0.34, 1.56, 0.64, 1)` | Bouncy, playful |
+| Token                | Curve                               | Use                 |
+| -------------------- | ----------------------------------- | ------------------- |
+| `--ease-out-soft`    | `cubic-bezier(0.22, 1, 0.36, 1)`    | Default exit        |
+| `--ease-in-out-soft` | `cubic-bezier(0.65, 0, 0.35, 1)`    | Two-way transitions |
+| `--ease-spring`      | `cubic-bezier(0.34, 1.56, 0.64, 1)` | Bouncy, playful     |
 
 ## Tailwind utilities
 
@@ -38,7 +38,7 @@ import { motion, fadeUp, staggerContainer, staggerItem } from '@labmgm/motion';
 <motion.section variants={staggerContainer(0, 0.1)} initial="hidden" animate="show">
   <motion.h1 variants={staggerItem}>Hello</motion.h1>
   <motion.p variants={fadeUp}>World</motion.p>
-</motion.section>
+</motion.section>;
 ```
 
 ## Reduced motion

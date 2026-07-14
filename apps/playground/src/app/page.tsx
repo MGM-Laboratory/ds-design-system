@@ -5,11 +5,27 @@ import { Button, Card, CardHeader, CardTitle, CardDescription, Badge } from '@la
 import { PatternGrid } from '@labmgm/patterns';
 
 const PAGES = [
-  { href: '/components', title: 'Components', description: 'Buttons, cards, dialogs, navigation, feedback.' },
-  { href: '/forms', title: 'Forms', description: 'Inputs, selects, the Field wrapper, multi-step wizard.' },
-  { href: '/patterns', title: 'Patterns', description: 'The 80-tile catalog and the PatternGrid composer.' },
+  {
+    href: '/components',
+    title: 'Components',
+    description: 'Buttons, cards, dialogs, navigation, feedback.',
+  },
+  {
+    href: '/forms',
+    title: 'Forms',
+    description: 'Inputs, selects, the Field wrapper, multi-step wizard.',
+  },
+  {
+    href: '/patterns',
+    title: 'Patterns',
+    description: 'The 80-tile catalog and the PatternGrid composer.',
+  },
   { href: '/charts', title: 'Charts', description: 'Bar, line, area, pie, donut, sparkline.' },
-  { href: '/data-table', title: 'Data table', description: 'Sortable, filterable, paginated TanStack Table.' },
+  {
+    href: '/data-table',
+    title: 'Data table',
+    description: 'Sortable, filterable, paginated TanStack Table.',
+  },
   { href: '/rich-text', title: 'Rich text', description: 'Tiptap editor + renderer.' },
 ];
 
@@ -20,7 +36,9 @@ export default function Home() {
         <Container>
           <div className="flex h-14 items-center justify-between">
             <Wordmark href="/" />
-            <Badge tone="info" size="sm">v0.1 canary</Badge>
+            <Badge tone="info" size="sm">
+              v0.1 canary
+            </Badge>
           </div>
         </Container>
       </header>
@@ -32,7 +50,8 @@ export default function Home() {
                 Build the <span className="text-brand-red">loud</span> internet.
               </h1>
               <p className="max-w-prose text-body-lg text-ink-2">
-                A playground for @labmgm/* — every package is hot-reloaded from the monorepo. Pick a page to see the components in their natural habitat.
+                A playground for @labmgm/* — every package is hot-reloaded from the monorepo. Pick a
+                page to see the components in their natural habitat.
               </p>
               <div className="flex gap-3 pt-2">
                 <Button asChild size="lg">
@@ -46,7 +65,7 @@ export default function Home() {
             <PatternGrid rows={2} cols={8} tileSize={56} seed="home-hero" />
             <Grid cols={1} responsive={{ base: 1, md: 2, lg: 3 }} gap={4}>
               {PAGES.map((page) => (
-                <Card key={page.href} interactive asChild={false}>
+                <Card key={page.href} interactive>
                   <Link href={page.href} className="block">
                     <CardHeader>
                       <CardTitle>{page.title}</CardTitle>

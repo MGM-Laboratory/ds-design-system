@@ -52,11 +52,11 @@ function Assets({ data }: { data: Asset[] }) {
 
 ## API
 
-| Export | Purpose |
-|---|---|
-| `useDataTable({ data, columns, pageSize, enableSorting, enableFiltering, enableSelection })` | Wraps `useReactTable` with MGM defaults |
-| `<DataTable table stickyHeader empty>` | Renders the table with brand styling |
-| `createColumnHelper`, `flexRender` + type re-exports | Pass-throughs from `@tanstack/react-table` |
+| Export                                                                                       | Purpose                                    |
+| -------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| `useDataTable({ data, columns, pageSize, enableSorting, enableFiltering, enableSelection })` | Wraps `useReactTable` with MGM defaults    |
+| `<DataTable table stickyHeader empty>`                                                       | Renders the table with brand styling       |
+| `createColumnHelper`, `flexRender` + type re-exports                                         | Pass-throughs from `@tanstack/react-table` |
 
 Built-in features: sorting (click header), filtering, pagination, column visibility, row selection, sticky header.
 

@@ -8,7 +8,10 @@ export function seededRandom(seed: string | number): SeededRandom {
   let state =
     typeof seed === 'number'
       ? seed >>> 0
-      : Array.from(String(seed)).reduce((acc, ch) => (Math.imul(acc, 31) + ch.charCodeAt(0)) | 0, 7) >>> 0;
+      : Array.from(String(seed)).reduce(
+          (acc, ch) => (Math.imul(acc, 31) + ch.charCodeAt(0)) | 0,
+          7,
+        ) >>> 0;
   return function rng(): number {
     state = (state + 0x6d2b79f5) >>> 0;
     let t = state;

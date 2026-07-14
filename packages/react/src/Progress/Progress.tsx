@@ -17,21 +17,25 @@ const toneFill = {
   ink: 'bg-surface-inverse',
 } as const;
 
-export const Progress = React.forwardRef<React.ElementRef<typeof RadixProgress.Root>, ProgressProps>(
-  function Progress({ value = 0, size = 6, tone = 'ink', className, ...rest }, ref) {
-    return (
-      <RadixProgress.Root
-        ref={ref}
-        value={value ?? undefined}
-        className={cn('relative w-full overflow-hidden rounded-full bg-line', className)}
-        style={{ height: size }}
-        {...rest}
-      >
-        <RadixProgress.Indicator
-          className={cn('h-full w-full rounded-full transition-transform duration-320 ease-out-soft', toneFill[tone])}
-          style={{ transform: `translateX(-${100 - (value ?? 0)}%)` }}
-        />
-      </RadixProgress.Root>
-    );
-  },
-);
+export const Progress = React.forwardRef<
+  React.ElementRef<typeof RadixProgress.Root>,
+  ProgressProps
+>(function Progress({ value = 0, size = 6, tone = 'ink', className, ...rest }, ref) {
+  return (
+    <RadixProgress.Root
+      ref={ref}
+      value={value ?? undefined}
+      className={cn('relative w-full overflow-hidden rounded-full bg-line', className)}
+      style={{ height: size }}
+      {...rest}
+    >
+      <RadixProgress.Indicator
+        className={cn(
+          'h-full w-full rounded-full transition-transform duration-320 ease-out-soft',
+          toneFill[tone],
+        )}
+        style={{ transform: `translateX(-${100 - (value ?? 0)}%)` }}
+      />
+    </RadixProgress.Root>
+  );
+});

@@ -23,7 +23,7 @@ import {
   TabsTrigger,
   TabsContent,
 } from '@labmgm/react';
-import { Heart, Sparkles, Settings } from 'lucide-react';
+import { Heart, Sparkles, Settings } from '@labmgm/icons';
 import { toast } from '@labmgm/toast';
 
 export default function ComponentsPage() {
@@ -40,7 +40,7 @@ export default function ComponentsPage() {
           </Stack>
 
           <section>
-            <h2 className="text-h2 mb-4">Buttons</h2>
+            <h2 className="mb-4 text-h2">Buttons</h2>
             <HStack gap={3} wrap>
               <Button>Primary</Button>
               <Button variant="secondary">Secondary</Button>
@@ -56,7 +56,7 @@ export default function ComponentsPage() {
           </section>
 
           <section>
-            <h2 className="text-h2 mb-4">Badges</h2>
+            <h2 className="mb-4 text-h2">Badges</h2>
             <HStack gap={2} wrap>
               <Badge tone="neutral">Neutral</Badge>
               <Badge tone="info">Info</Badge>
@@ -72,7 +72,7 @@ export default function ComponentsPage() {
           </section>
 
           <section>
-            <h2 className="text-h2 mb-4">Cards</h2>
+            <h2 className="mb-4 text-h2">Cards</h2>
             <Grid cols={1} responsive={{ base: 1, md: 3 }} gap={4}>
               <Card>
                 <CardHeader>
@@ -95,14 +95,16 @@ export default function ComponentsPage() {
               <Card variant="inverse">
                 <CardHeader>
                   <CardTitle className="text-white">Inverse</CardTitle>
-                  <CardDescription className="text-white/70">High-contrast surface.</CardDescription>
+                  <CardDescription className="text-white/70">
+                    High-contrast surface.
+                  </CardDescription>
                 </CardHeader>
               </Card>
             </Grid>
           </section>
 
           <section>
-            <h2 className="text-h2 mb-4">Avatars</h2>
+            <h2 className="mb-4 text-h2">Avatars</h2>
             <HStack gap={3} align="center">
               <Avatar name="Jane Doe" />
               <Avatar name="Bob Smith" size="lg" />
@@ -117,7 +119,7 @@ export default function ComponentsPage() {
           </section>
 
           <section>
-            <h2 className="text-h2 mb-4">Alerts</h2>
+            <h2 className="mb-4 text-h2">Alerts</h2>
             <Stack gap={3}>
               <Alert tone="info">
                 <AlertTitle>Heads up</AlertTitle>
@@ -129,17 +131,17 @@ export default function ComponentsPage() {
               </Alert>
               <Alert tone="warning">
                 <AlertTitle>Heads up</AlertTitle>
-                <AlertDescription>You're nearing your quota.</AlertDescription>
+                <AlertDescription>You&apos;re nearing your quota.</AlertDescription>
               </Alert>
               <Alert tone="danger">
-                <AlertTitle>Couldn't save</AlertTitle>
+                <AlertTitle>Couldn&apos;t save</AlertTitle>
                 <AlertDescription>Network unreachable. Try again.</AlertDescription>
               </Alert>
             </Stack>
           </section>
 
           <section>
-            <h2 className="text-h2 mb-4">Progress + Skeletons</h2>
+            <h2 className="mb-4 text-h2">Progress + Skeletons</h2>
             <Stack gap={3}>
               <Progress value={42} />
               <Progress value={72} tone="brand-green" size={8} />
@@ -152,7 +154,7 @@ export default function ComponentsPage() {
           </section>
 
           <section>
-            <h2 className="text-h2 mb-4">Tabs</h2>
+            <h2 className="mb-4 text-h2">Tabs</h2>
             <Tabs defaultValue="overview">
               <TabsList>
                 <TabsTrigger value="overview">Overview</TabsTrigger>
@@ -168,7 +170,7 @@ export default function ComponentsPage() {
           </section>
 
           <section>
-            <h2 className="text-h2 mb-4">Toast</h2>
+            <h2 className="mb-4 text-h2">Toast</h2>
             <HStack gap={2}>
               <Button onClick={() => toast.success('Asset published')}>Success</Button>
               <Button variant="danger" onClick={() => toast.error('Upload failed')}>

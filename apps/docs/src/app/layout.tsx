@@ -26,15 +26,20 @@ const NAV = [
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${bricolageGrotesque.variable} ${geist.variable} ${geistMono.variable}`}>
+    <html
+      lang="en"
+      className={`${bricolageGrotesque.variable} ${geist.variable} ${geistMono.variable}`}
+    >
       <body>
         <ThemeProvider>
-          <header className="sticky top-0 z-40 border-b border-line bg-bg/90 backdrop-blur">
+          <header className="bg-bg/90 sticky top-0 z-40 border-b border-line backdrop-blur">
             <Container>
               <div className="flex h-14 items-center justify-between">
                 <Wordmark href="/" />
                 <div className="hidden items-center gap-3 sm:flex">
-                  <Badge tone="info" size="sm">v0.1</Badge>
+                  <Badge tone="info" size="sm">
+                    v0.1
+                  </Badge>
                   <a
                     href="https://github.com/labmgm/ds-design-system"
                     target="_blank"
@@ -52,13 +57,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <nav className="flex flex-col gap-1">
                 <span className="px-2 pb-2 text-eyebrow uppercase text-ink-3">Foundations</span>
                 {NAV.slice(0, 7).map((item) => (
-                  <Link key={item.href} href={item.href} className="rounded-sm px-2 py-1.5 text-body-sm text-ink-2 hover:bg-surface-muted hover:text-ink">
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-sm px-2 py-1.5 text-body-sm text-ink-2 hover:bg-surface-muted hover:text-ink"
+                  >
                     {item.label}
                   </Link>
                 ))}
                 <span className="px-2 pb-2 pt-4 text-eyebrow uppercase text-ink-3">Guides</span>
                 {NAV.slice(7).map((item) => (
-                  <Link key={item.href} href={item.href} className="rounded-sm px-2 py-1.5 text-body-sm text-ink-2 hover:bg-surface-muted hover:text-ink">
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-sm px-2 py-1.5 text-body-sm text-ink-2 hover:bg-surface-muted hover:text-ink"
+                  >
                     {item.label}
                   </Link>
                 ))}
@@ -69,7 +82,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <FooterStrip />
           <footer className="py-8">
             <Container>
-              <p className="text-caption text-ink-3">© MGM Laboratory — design system documentation.</p>
+              <p className="text-caption text-ink-3">
+                © MGM Laboratory — design system documentation.
+              </p>
             </Container>
           </footer>
         </ThemeProvider>

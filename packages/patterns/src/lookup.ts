@@ -1,4 +1,10 @@
-import { CATALOG, PATTERN_IDS, type PatternEntry, type PatternScheme, type PatternShape } from './catalog.js';
+import {
+  CATALOG,
+  PATTERN_IDS,
+  type PatternEntry,
+  type PatternScheme,
+  type PatternShape,
+} from './catalog.js';
 import { pickIndex, seededRandom, type SeededRandom } from './rng.js';
 
 export function getPatternTile(shape: PatternShape, scheme: PatternScheme): PatternEntry {

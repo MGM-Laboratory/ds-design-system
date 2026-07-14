@@ -7,7 +7,11 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   splitting: false,
-  treeshake: true,
+  // The Rollup tree-shake pass drops module directives.
+  treeshake: false,
   target: 'es2022',
   external: ['react', 'react-dom'],
+  banner: {
+    js: "'use client';",
+  },
 });

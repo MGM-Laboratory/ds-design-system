@@ -8,11 +8,7 @@ export const emailSchema = z
   .min(1, 'Email is required')
   .email('Enter a valid email address');
 
-export const urlSchema = z
-  .string()
-  .trim()
-  .min(1, 'URL is required')
-  .url('Enter a valid URL');
+export const urlSchema = z.string().trim().min(1, 'URL is required').url('Enter a valid URL');
 
 export const phoneSchema = z
   .string()

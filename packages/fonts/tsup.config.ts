@@ -6,8 +6,12 @@ export default defineConfig({
   dts: true,
   sourcemap: true,
   clean: true,
+  // `next/font` validates that loader calls are assigned with `const`.
+  // A bundled entry rewrites exported bindings to `var`, so preserve the
+  // module structure for this package instead.
+  bundle: false,
   splitting: false,
-  treeshake: true,
+  treeshake: false,
   target: 'es2022',
   external: ['next/font/google'],
 });

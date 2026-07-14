@@ -11,13 +11,22 @@ export const Demo: Story = {
     <>
       <div className="flex flex-wrap gap-2">
         <Button onClick={() => toast('Saved')}>Default</Button>
-        <Button variant="accent" onClick={() => toast.info('New version available')}>Info</Button>
+        <Button variant="accent" onClick={() => toast.info('New version available')}>
+          Info
+        </Button>
         <Button onClick={() => toast.success('Asset published')}>Success</Button>
-        <Button variant="secondary" onClick={() => toast.warning('Almost out of space')}>Warning</Button>
-        <Button variant="danger" onClick={() => toast.error('Upload failed', { description: 'Network unreachable' })}>
+        <Button variant="secondary" onClick={() => toast.warning('Almost out of space')}>
+          Warning
+        </Button>
+        <Button
+          variant="danger"
+          onClick={() => toast.error('Upload failed', { description: 'Network unreachable' })}
+        >
           Error
         </Button>
-        <Button variant="ghost" onClick={() => toast.loading('Generating thumbnails…')}>Loading</Button>
+        <Button variant="ghost" onClick={() => toast.loading('Generating thumbnails…')}>
+          Loading
+        </Button>
       </div>
       <Toaster />
     </>

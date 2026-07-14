@@ -63,16 +63,18 @@ export function FileDropzone({
       }}
       className={cn(
         'flex flex-col items-center justify-center gap-3 rounded-lg border-2 border-dashed px-6 py-10 text-center transition-colors',
-        'cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2',
-        isOver ? 'border-brand-blue bg-brand-blue-50' : 'border-line bg-surface hover:border-line-strong',
+        'focus-visible:ring-focus cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
+        isOver
+          ? 'border-brand-blue bg-brand-blue-50'
+          : 'border-line bg-surface hover:border-line-strong',
         invalid && 'border-brand-red',
-        disabled && 'opacity-50 cursor-not-allowed',
+        disabled && 'cursor-not-allowed opacity-50',
         className,
       )}
     >
       <Upload size={24} className="text-ink-3" />
       <div className="flex flex-col gap-1">
-        <div className="text-body font-medium text-ink">{title}</div>
+        <div className="text-body text-ink font-medium">{title}</div>
         <div className="text-caption text-ink-3">{description}</div>
         {maxSize && <div className="text-caption text-ink-4">Max {formatBytes(maxSize)}</div>}
       </div>

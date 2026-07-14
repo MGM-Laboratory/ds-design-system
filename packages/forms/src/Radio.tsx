@@ -2,7 +2,9 @@ import * as React from 'react';
 import * as RadixRadioGroup from '@radix-ui/react-radio-group';
 import { cn } from '@labmgm/utils';
 
-export interface RadioGroupProps extends React.ComponentPropsWithoutRef<typeof RadixRadioGroup.Root> {
+export interface RadioGroupProps extends React.ComponentPropsWithoutRef<
+  typeof RadixRadioGroup.Root
+> {
   orientation?: 'horizontal' | 'vertical';
 }
 
@@ -15,7 +17,7 @@ export const RadioGroup = React.forwardRef<
       ref={ref}
       className={cn(
         'flex',
-        orientation === 'vertical' ? 'flex-col gap-2' : 'flex-row gap-4 flex-wrap',
+        orientation === 'vertical' ? 'flex-col gap-2' : 'flex-row flex-wrap gap-4',
         className,
       )}
       {...rest}
@@ -38,15 +40,15 @@ export const Radio = React.forwardRef<React.ElementRef<typeof RadixRadioGroup.It
         id={radioId}
         value={value}
         className={cn(
-          'peer inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-line bg-surface',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2',
+          'peer border-line bg-surface inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full border',
+          'focus-visible:ring-focus focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
           'data-[state=checked]:border-surface-inverse',
           'data-[disabled]:opacity-50',
           className,
         )}
         {...rest}
       >
-        <RadixRadioGroup.Indicator className="block h-2 w-2 rounded-full bg-surface-inverse" />
+        <RadixRadioGroup.Indicator className="bg-surface-inverse block h-2 w-2 rounded-full" />
       </RadixRadioGroup.Item>
     );
     if (!label && !description) return control;

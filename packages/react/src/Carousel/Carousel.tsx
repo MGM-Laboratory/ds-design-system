@@ -1,5 +1,6 @@
 import * as React from 'react';
-import useEmblaCarousel, { type UseEmblaCarouselType } from 'embla-carousel-react';
+import useEmblaCarousel from 'embla-carousel-react';
+export type { UseEmblaCarouselType } from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@labmgm/utils';
 import { IconButton } from '../Button/IconButton.js';
@@ -87,5 +88,3 @@ export const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(function
     </div>
   );
 });
-
-export type { UseEmblaCarouselType };

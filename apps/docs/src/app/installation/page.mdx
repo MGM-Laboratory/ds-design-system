@@ -14,7 +14,7 @@ pnpm add @labmgm/react @labmgm/tokens @labmgm/tailwind-config @labmgm/fonts
 
 ```bash
 # Forms
-pnpm add @labmgm/forms
+pnpm add @labmgm/forms react-hook-form zod
 
 # Data tables
 pnpm add @labmgm/data-table
@@ -46,7 +46,7 @@ pnpm add @labmgm/a11y
 
 ## Styling — pick one
 
-### Option A: Tailwind preset (recommended for new projects)
+### Option A: Tailwind 3 preset
 
 ```ts
 // tailwind.config.ts
@@ -54,26 +54,29 @@ import preset from '@labmgm/tailwind-config';
 
 export default {
   presets: [preset],
-  content: [
-    './src/**/*.{ts,tsx}',
-    './node_modules/@labmgm/**/dist/**/*.{js,mjs}',
-  ],
+  content: ['./src/**/*.{ts,tsx}', './node_modules/@labmgm/*/dist/**/*.{js,mjs}'],
 };
 ```
 
-### Option B: Pre-compiled CSS (no Tailwind needed)
+### Option B: Pre-compiled CSS (recommended for Tailwind 4 or no Tailwind)
 
 ```ts
 import '@labmgm/tokens/tokens.css';
 import '@labmgm/react/styles.css';
 ```
 
+`@labmgm/react/styles.css` contains only MGM component utilities. It deliberately does not
+include Tailwind Preflight or global `body` styles, so it can coexist with an app's Tailwind 4
+reset and CSS.
+
 ## Requirements
 
 - Node.js 20+
 - React 18+
-- For Tailwind users: Tailwind CSS 3.4+
+- For the Tailwind preset: Tailwind CSS 3.4+
+- For Tailwind 4: use the pre-compiled CSS integration above
 - For Next.js: Next.js 14+ (15 recommended)
+- For `@labmgm/forms`: React Hook Form 7.55+ and Zod 3.25+ or 4+
 
 ## Tree-shaking
 

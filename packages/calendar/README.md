@@ -38,14 +38,14 @@ function Demo() {
 
 ## Components
 
-| Component | Purpose |
-|---|---|
-| `<Calendar>` | The day-picker grid. All `react-day-picker` props pass through. |
-| `<DatePicker>` | Single date selection in a popover. |
-| `<DateRangePicker>` | From-to selection across two months. |
-| `<TimePicker>` | Native `<input type="time">` with MGM styling. |
+| Component           | Purpose                                                         |
+| ------------------- | --------------------------------------------------------------- |
+| `<Calendar>`        | The day-picker grid. All `react-day-picker` props pass through. |
+| `<DatePicker>`      | Single date selection in a popover.                             |
+| `<DateRangePicker>` | From-to selection across two months.                            |
+| `<TimePicker>`      | Native `<input type="time">` with MGM styling.                  |
 
-The modifier classes (today / selected / outside / disabled / range_*) target the inner `<button>` via `[&>button]:` so the cell renders correctly — see [CLAUDE.md → Calendar gotcha](../../CLAUDE.md#calendar-gotcha).
+The modifier classes (today / selected / outside / disabled / range\_\*) target the inner `<button>` via `[&>button]:` so the cell renders correctly — see [CLAUDE.md → Calendar gotcha](../../CLAUDE.md#calendar-gotcha).
 
 ## See also
 

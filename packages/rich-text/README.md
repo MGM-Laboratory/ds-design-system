@@ -45,6 +45,9 @@ const editor = useMgmEditor({
 <EditorContent editor={editor} />
 ```
 
+`useMgmEditor` defaults to `immediatelyRender: false`, which is safe in Next.js and other SSR
+frameworks. Pass `immediatelyRender: true` only for a deliberately client-only integration.
+
 ## Security
 
 > ⚠️ **Always sanitize HTML at the trust boundary** before passing it to `<RichTextRenderer>` (e.g., DOMPurify, isomorphic-dompurify, rehype-sanitize). The renderer uses `dangerouslySetInnerHTML` directly.

@@ -24,7 +24,9 @@ export const Image = React.forwardRef<HTMLImageElement, ImageProps>(function Ima
       className={cn('relative overflow-hidden bg-surface-muted', ratio && 'w-full')}
       style={ratio ? { aspectRatio: ratio } : undefined}
     >
-      {showSkeleton && !loaded && <div className="absolute inset-0 mgm-shimmer" aria-hidden="true" />}
+      {showSkeleton && !loaded && (
+        <div className="mgm-shimmer absolute inset-0" aria-hidden="true" />
+      )}
       <img
         ref={ref}
         loading="lazy"

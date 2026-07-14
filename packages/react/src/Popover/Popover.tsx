@@ -20,7 +20,7 @@ export const PopoverContent = React.forwardRef<
         data-surface="default"
         className={cn(
           'z-50 w-72 rounded-md border border-line bg-surface p-4 text-ink shadow-2 outline-none',
-          'data-[state=open]:animate-scale-in data-[state=closed]:animate-fade-in',
+          'data-[state=closed]:animate-fade-in data-[state=open]:animate-scale-in',
           className,
         )}
         {...rest}

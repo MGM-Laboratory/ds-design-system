@@ -4,7 +4,8 @@ import { cn } from '@labmgm/utils';
 import { buttonVariants, type ButtonProps } from './Button.js';
 
 export interface ToggleButtonProps
-  extends Omit<React.ComponentPropsWithoutRef<typeof Toggle.Root>, 'asChild'>,
+  extends
+    Omit<React.ComponentPropsWithoutRef<typeof Toggle.Root>, 'asChild'>,
     Pick<ButtonProps, 'variant' | 'size'> {
   label?: string;
 }
@@ -15,7 +16,10 @@ export interface ToggleButtonProps
 export const ToggleButton = React.forwardRef<
   React.ElementRef<typeof Toggle.Root>,
   ToggleButtonProps
->(function ToggleButton({ variant = 'ghost', size = 'md', className, label, children, ...rest }, ref) {
+>(function ToggleButton(
+  { variant = 'ghost', size = 'md', className, label, children, ...rest },
+  ref,
+) {
   return (
     <Toggle.Root
       ref={ref}

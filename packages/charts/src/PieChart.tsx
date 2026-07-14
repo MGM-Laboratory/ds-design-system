@@ -25,12 +25,20 @@ export function PieChart({
   return (
     <ChartContainer height={height} className={className}>
       <RechartsPieChart>
-        <Pie data={data} dataKey="value" innerRadius={innerRadius} outerRadius={outerRadius} paddingAngle={2}>
+        <Pie
+          data={data}
+          dataKey="value"
+          innerRadius={innerRadius}
+          outerRadius={outerRadius}
+          paddingAngle={2}
+        >
           {data.map((_, i) => (
             <Cell key={i} fill={colors[i % colors.length]} />
           ))}
         </Pie>
-        <Tooltip contentStyle={{ borderRadius: 8, borderColor: '#ececea', fontFamily: 'var(--font-sans)' }} />
+        <Tooltip
+          contentStyle={{ borderRadius: 8, borderColor: '#ececea', fontFamily: 'var(--font-sans)' }}
+        />
         {legend && <Legend wrapperStyle={{ fontFamily: 'var(--font-sans)', fontSize: 12 }} />}
       </RechartsPieChart>
     </ChartContainer>

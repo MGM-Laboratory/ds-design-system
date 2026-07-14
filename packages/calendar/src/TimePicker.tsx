@@ -12,7 +12,15 @@ export interface TimePickerProps {
 }
 
 /** Simple native time input wrapped in MGM styling. For full hour/minute scroll wheels, see @labmgm/forms. */
-export function TimePicker({ value, defaultValue, onChange, step = 60, disabled, className, id }: TimePickerProps) {
+export function TimePicker({
+  value,
+  defaultValue,
+  onChange,
+  step = 60,
+  disabled,
+  className,
+  id,
+}: TimePickerProps) {
   const [internal, setInternal] = React.useState(defaultValue ?? '');
   const isControlled = value !== undefined;
   const current = isControlled ? (value ?? '') : internal;
@@ -30,9 +38,9 @@ export function TimePicker({ value, defaultValue, onChange, step = 60, disabled,
         onChange?.(next);
       }}
       className={cn(
-        'inline-flex h-10 rounded-md border border-line bg-surface px-3 text-body text-ink outline-none transition-colors',
-        'hover:border-line-strong focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1 focus-visible:border-focus',
-        'disabled:opacity-50 font-mono tabular-nums',
+        'border-line bg-surface text-body text-ink inline-flex h-10 rounded-md border px-3 transition-colors outline-none',
+        'hover:border-line-strong focus-visible:ring-focus focus-visible:border-focus focus-visible:ring-2 focus-visible:ring-offset-1',
+        'font-mono tabular-nums disabled:opacity-50',
         className,
       )}
     />

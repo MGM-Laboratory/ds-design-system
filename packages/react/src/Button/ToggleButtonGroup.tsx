@@ -6,29 +6,30 @@ import { buttonVariants, type ButtonProps } from './Button.js';
 type ToggleGroupRootProps = React.ComponentPropsWithoutRef<typeof ToggleGroup.Root>;
 
 export interface ToggleButtonGroupProps
-  extends Omit<ToggleGroupRootProps, 'asChild'>,
-    Pick<ButtonProps, 'size'> {
+  extends Omit<ToggleGroupRootProps, 'asChild'>, Pick<ButtonProps, 'size'> {
   itemClassName?: string;
 }
 
 export const ToggleButtonGroup = React.forwardRef<
   React.ElementRef<typeof ToggleGroup.Root>,
   ToggleButtonGroupProps
->(function ToggleButtonGroup({ size = 'md', className, itemClassName: _i, children, ...rest }, ref) {
+>(function ToggleButtonGroup(
+  { size = 'md', className, itemClassName: _i, children, ...rest },
+  ref,
+) {
   return (
     <ToggleGroup.Root
       ref={ref}
-      className={cn(
-        'inline-flex rounded-md border border-line bg-surface p-1 gap-1',
-        className,
-      )}
+      className={cn('inline-flex gap-1 rounded-md border border-line bg-surface p-1', className)}
       data-size={size}
       {...(rest as ToggleGroupRootProps)}
     >
       {children}
     </ToggleGroup.Root>
   );
-}) as React.ForwardRefExoticComponent<ToggleButtonGroupProps & React.RefAttributes<HTMLDivElement>> & {
+}) as React.ForwardRefExoticComponent<
+  ToggleButtonGroupProps & React.RefAttributes<HTMLDivElement>
+> & {
   Item: typeof ToggleGroupItem;
 };
 

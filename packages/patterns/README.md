@@ -43,13 +43,13 @@ import {
 
 **10 shapes** × **8 color schemes** = 80 SVG tiles.
 
-| Shape | |
-|---|---|
-| `arcs` · `circle` · `clover` · `domes` · `fans` · `leaves` · `plus` · `quads` · `square` · `x` | |
+| Shape                                                                                          |     |
+| ---------------------------------------------------------------------------------------------- | --- |
+| `arcs` · `circle` · `clover` · `domes` · `fans` · `leaves` · `plus` · `quads` · `square` · `x` |     |
 
-| Scheme | |
-|---|---|
-| `blue-on-white` · `green-on-white` · `red-on-white` · `yellow-on-white` | colored shape on white |
+| Scheme                                                                  |                             |
+| ----------------------------------------------------------------------- | --------------------------- |
+| `blue-on-white` · `green-on-white` · `red-on-white` · `yellow-on-white` | colored shape on white      |
 | `white-on-blue` · `white-on-green` · `white-on-red` · `white-on-yellow` | white shape on colored fill |
 
 Each tile is **100 × 100 px** at viewBox, tiles seamlessly when repeated, and works at any rendered size.
@@ -57,28 +57,36 @@ Each tile is **100 × 100 px** at viewBox, tiles seamlessly when repeated, and w
 ### Catalog access
 
 ```ts
-import { CATALOG, SHAPES, COLORS, SCHEMES, getPatternTile, getPatternSvg, randomPattern } from '@labmgm/patterns';
+import {
+  CATALOG,
+  SHAPES,
+  COLORS,
+  SCHEMES,
+  getPatternTile,
+  getPatternSvg,
+  randomPattern,
+} from '@labmgm/patterns';
 
-CATALOG['circle-blue-on-white'];           // { shape, scheme, fg, bg, svg }
+CATALOG['circle-blue-on-white']; // { shape, scheme, fg, bg, svg }
 getPatternTile('circle', 'blue-on-white'); // same entry by lookup
-getPatternSvg('plus', 'white-on-red');     // raw SVG string
-randomPattern();                            // any of the 80
+getPatternSvg('plus', 'white-on-red'); // raw SVG string
+randomPattern(); // any of the 80
 ```
 
 ---
 
 ## Components
 
-| Component | Use case |
-|---|---|
-| `<PatternGrid rows cols seed>` | Compose any N×M grid. Deterministic via `seed`. No adjacent repeats of shape or color. |
-| `<PatternTile shape scheme>` | A single 100×100 tile. |
-| `<PatternCorner placement size>` | 2×2 / 3×3 / 4×4 block anchored absolutely to a corner of its parent. |
-| `<PatternBanner rows cols>` | Wide banner block (default 2×6). |
-| `<PatternStrip tiles tileSize>` | Single-row horizontal strip. |
-| `<PatternDado tiles tileSize>` | Thin solid-color Bauhaus strip for footer dividers. |
-| `<PatternPyramid height>` | Stepped pyramid — row 1 has 1 tile, row 2 has 2, etc. |
-| `<PatternTriangle direction>` | Pyramid with `up` / `down` orientation. |
+| Component                        | Use case                                                                               |
+| -------------------------------- | -------------------------------------------------------------------------------------- |
+| `<PatternGrid rows cols seed>`   | Compose any N×M grid. Deterministic via `seed`. No adjacent repeats of shape or color. |
+| `<PatternTile shape scheme>`     | A single 100×100 tile.                                                                 |
+| `<PatternCorner placement size>` | 2×2 / 3×3 / 4×4 block anchored absolutely to a corner of its parent.                   |
+| `<PatternBanner rows cols>`      | Wide banner block (default 2×6).                                                       |
+| `<PatternStrip tiles tileSize>`  | Single-row horizontal strip.                                                           |
+| `<PatternDado tiles tileSize>`   | Thin solid-color Bauhaus strip for footer dividers.                                    |
+| `<PatternPyramid height>`        | Stepped pyramid — row 1 has 1 tile, row 2 has 2, etc.                                  |
+| `<PatternTriangle direction>`    | Pyramid with `up` / `down` orientation.                                                |
 
 All compositions are **decorative** (`role="presentation"`, `aria-hidden="true"`).
 

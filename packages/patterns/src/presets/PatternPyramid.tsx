@@ -83,7 +83,6 @@ export function PatternPyramid({
               key={c}
               className="leading-none"
               style={{ width: tileSize, height: tileSize }}
-              // eslint-disable-next-line react/no-danger
               dangerouslySetInnerHTML={{
                 __html: entry.svg
                   .replace(/width="100"/, `width="${tileSize}"`)

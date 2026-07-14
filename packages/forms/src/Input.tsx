@@ -17,41 +17,48 @@ const sizeMap = {
 } as const;
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(function Input(
-  { size = 'md', leading, trailing, invalid: invalidProp, className, id, 'aria-describedby': describedByProp, ...rest },
+  {
+    size = 'md',
+    leading,
+    trailing,
+    invalid: invalidProp,
+    className,
+    id,
+    'aria-describedby': describedByProp,
+    ...rest
+  },
   ref,
 ) {
   const field = useOptionalFieldContext();
   const invalid = invalidProp ?? field?.invalid ?? false;
   const inputId = id ?? field?.id;
-  const describedBy = [describedByProp, field?.invalid ? field.errorId : field?.helpId].filter(Boolean).join(' ') || undefined;
+  const describedBy =
+    [describedByProp, field?.invalid ? field.errorId : field?.helpId].filter(Boolean).join(' ') ||
+    undefined;
 
   if (leading || trailing) {
     return (
       <div
         className={cn(
-          'flex items-stretch rounded-md border bg-surface transition-colors',
-          'focus-within:ring-2 focus-within:ring-focus focus-within:ring-offset-1 focus-within:border-focus',
+          'bg-surface flex items-stretch rounded-md border transition-colors',
+          'focus-within:ring-focus focus-within:border-focus focus-within:ring-2 focus-within:ring-offset-1',
           invalid ? 'border-brand-red' : 'border-line hover:border-line-strong',
           sizeMap[size],
         )}
       >
-        {leading && (
-          <span className="inline-flex items-center pl-3 text-ink-3">{leading}</span>
-        )}
+        {leading && <span className="text-ink-3 inline-flex items-center pl-3">{leading}</span>}
         <input
           ref={ref}
           id={inputId}
           aria-invalid={invalid || undefined}
           aria-describedby={describedBy}
           className={cn(
-            'w-full bg-transparent px-3 outline-none placeholder:text-ink-4 text-ink',
+            'placeholder:text-ink-4 text-ink w-full bg-transparent px-3 outline-none',
             className,
           )}
           {...rest}
         />
-        {trailing && (
-          <span className="inline-flex items-center pr-3 text-ink-3">{trailing}</span>
-        )}
+        {trailing && <span className="text-ink-3 inline-flex items-center pr-3">{trailing}</span>}
       </div>
     );
   }
@@ -63,9 +70,9 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(function Inp
       aria-invalid={invalid || undefined}
       aria-describedby={describedBy}
       className={cn(
-        'block w-full rounded-md border bg-surface px-3 outline-none transition-colors',
+        'bg-surface block w-full rounded-md border px-3 transition-colors outline-none',
         'placeholder:text-ink-4 text-ink',
-        'focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1 focus-visible:border-focus',
+        'focus-visible:ring-focus focus-visible:border-focus focus-visible:ring-2 focus-visible:ring-offset-1',
         invalid ? 'border-brand-red' : 'border-line hover:border-line-strong',
         sizeMap[size],
         className,
@@ -74,4 +81,3 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(function Inp
     />
   );
 });
-

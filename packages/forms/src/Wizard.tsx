@@ -29,7 +29,13 @@ export interface WizardProps {
   className?: string;
 }
 
-export function Wizard({ current, defaultCurrent = 0, onChange, children, className }: WizardProps) {
+export function Wizard({
+  current,
+  defaultCurrent = 0,
+  onChange,
+  children,
+  className,
+}: WizardProps) {
   const [internal, setInternal] = React.useState(defaultCurrent);
   const isControlled = current !== undefined;
   const value = isControlled ? (current ?? 0) : internal;

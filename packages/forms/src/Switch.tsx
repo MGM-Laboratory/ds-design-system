@@ -17,14 +17,14 @@ export const Switch = React.forwardRef<React.ElementRef<typeof RadixSwitch.Root>
         id={switchId}
         className={cn(
           'peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2',
+          'focus-visible:ring-focus focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
           'data-[state=checked]:bg-surface-inverse data-[state=unchecked]:bg-line-strong',
-          'data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed',
+          'data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50',
           className,
         )}
         {...rest}
       >
-        <RadixSwitch.Thumb className="pointer-events-none block h-4 w-4 rounded-full bg-white shadow-1 ring-0 transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0" />
+        <RadixSwitch.Thumb className="shadow-1 pointer-events-none block h-4 w-4 rounded-full bg-white ring-0 transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0" />
       </RadixSwitch.Root>
     );
     if (!label && !description) return control;

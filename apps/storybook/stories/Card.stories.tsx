@@ -1,5 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, Button } from '@labmgm/react';
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+  Button,
+} from '@labmgm/react';
 
 const meta = {
   title: 'Components/Card',
@@ -8,7 +16,16 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['outlined', 'flat', 'tinted', 'tint-blue', 'tint-yellow', 'tint-red', 'tint-green', 'inverse'],
+      options: [
+        'outlined',
+        'flat',
+        'tinted',
+        'tint-blue',
+        'tint-yellow',
+        'tint-red',
+        'tint-green',
+        'inverse',
+      ],
     },
     padding: { control: 'select', options: ['none', 'sm', 'md', 'lg'] },
     interactive: { control: 'boolean' },

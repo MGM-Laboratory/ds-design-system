@@ -2,7 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Carousel, Card, CardHeader, CardTitle, CardDescription } from '@labmgm/react';
 import { PatternGrid } from '@labmgm/patterns';
 
-const meta = { title: 'Media/Carousel', component: Carousel, tags: ['autodocs'] } satisfies Meta<typeof Carousel>;
+const meta = { title: 'Media/Carousel', component: Carousel, tags: ['autodocs'] } satisfies Meta<
+  typeof Carousel
+>;
 export default meta;
 type Story = StoryObj<typeof meta>;
 
@@ -15,7 +17,7 @@ export const Default: Story = {
             <CardTitle>Slide {i}</CardTitle>
             <CardDescription>Embla-backed horizontal carousel.</CardDescription>
           </CardHeader>
-          <div className="flex justify-center mt-4">
+          <div className="mt-4 flex justify-center">
             <PatternGrid rows={2} cols={4} tileSize={40} seed={`slide-${i}`} />
           </div>
         </Card>

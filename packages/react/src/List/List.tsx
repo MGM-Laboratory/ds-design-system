@@ -16,8 +16,8 @@ export const List = React.forwardRef<HTMLUListElement, ListProps>(function List(
       ref={ref as React.Ref<HTMLUListElement>}
       className={cn(
         'text-body text-ink-2',
-        variant === 'bullet' && 'list-disc pl-5 space-y-1',
-        variant === 'number' && 'list-decimal pl-5 space-y-1',
+        variant === 'bullet' && 'list-disc space-y-1 pl-5',
+        variant === 'number' && 'list-decimal space-y-1 pl-5',
         variant === 'divided' && 'divide-y divide-line [&>li]:py-3',
         variant === 'plain' && 'space-y-1',
         className,

@@ -29,7 +29,8 @@ const dialogContentVariants = cva(
 );
 
 export interface DialogContentProps
-  extends React.ComponentPropsWithoutRef<typeof RadixDialog.Content>,
+  extends
+    React.ComponentPropsWithoutRef<typeof RadixDialog.Content>,
     VariantProps<typeof dialogContentVariants> {
   /** Render a close (✕) button in the top-right. @default true */
   showClose?: boolean;
@@ -43,15 +44,20 @@ export const DialogContent = React.forwardRef<
     <RadixDialog.Portal>
       <RadixDialog.Overlay
         className={cn(
-          'fixed inset-0 z-50 bg-surface-inverse/40 backdrop-blur-sm',
-          'data-[state=open]:animate-fade-in data-[state=closed]:animate-fade-in',
+          'bg-surface-inverse/40 fixed inset-0 z-50 backdrop-blur-sm',
+          'data-[state=closed]:animate-fade-in data-[state=open]:animate-fade-in',
         )}
       />
-      <RadixDialog.Content ref={ref} data-surface="default" className={cn(dialogContentVariants({ size }), className)} {...rest}>
+      <RadixDialog.Content
+        ref={ref}
+        data-surface="default"
+        className={cn(dialogContentVariants({ size }), className)}
+        {...rest}
+      >
         {children}
         {showClose && (
           <RadixDialog.Close
-            className="absolute right-4 top-4 rounded-sm text-ink-3 transition-colors hover:bg-surface-muted hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 h-7 w-7 inline-flex items-center justify-center"
+            className="absolute right-4 top-4 inline-flex h-7 w-7 items-center justify-center rounded-sm text-ink-3 transition-colors hover:bg-surface-muted hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2"
             aria-label="Close"
           >
             <X size={18} />
@@ -72,7 +78,13 @@ export const DialogTitle = React.forwardRef<
   React.ElementRef<typeof RadixDialog.Title>,
   React.ComponentPropsWithoutRef<typeof RadixDialog.Title>
 >(function DialogTitle({ className, ...rest }, ref) {
-  return <RadixDialog.Title ref={ref} className={cn('text-h3 font-semibold text-ink', className)} {...rest} />;
+  return (
+    <RadixDialog.Title
+      ref={ref}
+      className={cn('text-h3 font-semibold text-ink', className)}
+      {...rest}
+    />
+  );
 });
 
 export const DialogDescription = React.forwardRef<
@@ -93,7 +105,10 @@ export const DialogFooter = React.forwardRef<HTMLDivElement, React.HTMLAttribute
     return (
       <div
         ref={ref}
-        className={cn('flex flex-col-reverse sm:flex-row sm:items-center sm:justify-end gap-2', className)}
+        className={cn(
+          'flex flex-col-reverse gap-2 sm:flex-row sm:items-center sm:justify-end',
+          className,
+        )}
         {...rest}
       />
     );

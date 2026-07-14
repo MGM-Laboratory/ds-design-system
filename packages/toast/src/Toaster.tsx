@@ -28,9 +28,12 @@ export function Toaster(props: ToasterProps) {
           actionButton: 'ml-auto bg-[#0e1116] text-white px-2 py-1 rounded-sm text-caption',
           cancelButton: 'bg-[#f7f7f5] text-[#3b4150] px-2 py-1 rounded-sm text-caption',
           closeButton: 'absolute top-2 right-2 text-[#6b7280] hover:text-[#0e1116]',
-          success: 'bg-brand-green-50 border-brand-green/30 text-[#0e1116] [&_[data-icon]]:text-brand-green',
-          error: 'bg-brand-red-50 border-brand-red/30 text-[#0e1116] [&_[data-icon]]:text-brand-red',
-          warning: 'bg-brand-yellow-50 border-brand-yellow/40 text-[#0e1116] [&_[data-icon]]:text-[#8a6d18]',
+          success:
+            'bg-brand-green-50 border-brand-green/30 text-[#0e1116] [&_[data-icon]]:text-brand-green',
+          error:
+            'bg-brand-red-50 border-brand-red/30 text-[#0e1116] [&_[data-icon]]:text-brand-red',
+          warning:
+            'bg-brand-yellow-50 border-brand-yellow/40 text-[#0e1116] [&_[data-icon]]:text-[#8a6d18]',
           info: 'bg-brand-blue-50 border-brand-blue/30 text-[#0e1116] [&_[data-icon]]:text-brand-blue',
           loading: 'bg-white border-[#ececea] text-[#0e1116] [&_[data-icon]]:text-brand-blue',
         },

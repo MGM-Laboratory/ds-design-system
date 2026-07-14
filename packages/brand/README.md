@@ -23,12 +23,12 @@ import { Logo, Wordmark, ShapeSignature, FooterStrip } from '@labmgm/brand';
 <FooterStrip tileSize={8} />
 ```
 
-| Component | Use |
-|---|---|
-| `<Logo>` | The geometric monogram. Fixed brand colors — do not recolor. |
-| `<Wordmark>` | Logo + "MGM Laboratory" text lockup. Can render as a link via `href`. |
-| `<ShapeSignature>` | Small 2×2 (or N×M) pattern accent. Good for empty states. |
-| `<FooterStrip>` | Thin Bauhaus dado used above page footers. |
+| Component          | Use                                                                   |
+| ------------------ | --------------------------------------------------------------------- |
+| `<Logo>`           | The geometric monogram. Fixed brand colors — do not recolor.          |
+| `<Wordmark>`       | Logo + "MGM Laboratory" text lockup. Can render as a link via `href`. |
+| `<ShapeSignature>` | Small 2×2 (or N×M) pattern accent. Good for empty states.             |
+| `<FooterStrip>`    | Thin Bauhaus dado used above page footers.                            |
 
 ## Brand-correct usage
 

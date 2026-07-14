@@ -22,7 +22,10 @@ export const Empty = React.forwardRef<HTMLDivElement, EmptyProps>(function Empty
   return (
     <div
       ref={ref}
-      className={cn('mx-auto flex max-w-md flex-col items-center gap-5 py-12 text-center', className)}
+      className={cn(
+        'mx-auto flex max-w-md flex-col items-center gap-5 py-12 text-center',
+        className,
+      )}
       {...rest}
     >
       {visual ?? <ShapeSignature rows={2} cols={2} tileSize={28} seed="empty" />}

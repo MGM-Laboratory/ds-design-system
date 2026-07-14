@@ -30,7 +30,7 @@ export const Stat = React.forwardRef<HTMLDivElement, StatProps>(function Stat(
     >
       <div className="text-eyebrow uppercase text-ink-3">{label}</div>
       <div className="flex items-baseline gap-2">
-        <div className="text-display-lg font-semibold text-ink leading-none">{value}</div>
+        <div className="text-display-lg font-semibold leading-none text-ink">{value}</div>
         {delta && (
           <span
             className={cn(

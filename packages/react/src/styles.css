@@ -1,29 +1,16 @@
 /**
  * @labmgm/react — pre-compiled component styles.
- * Consumers who don't use Tailwind can import this once:
+ * Consumers can import this once for component styling:
  *
  *   import '@labmgm/react/styles.css';
  *
- * Tailwind users should instead extend the preset (@labmgm/tailwind-config) — that
- * route gives full utility composition and avoids shipping duplicate CSS.
+ * This intentionally omits Tailwind Preflight and all global body styles, so it is
+ * safe alongside an app's own reset — including Tailwind 4. Tailwind 3 consumers
+ * may instead extend @labmgm/tailwind-config for utility composition.
  */
 
-@tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-  body {
-    font-family: var(--font-sans);
-    color: var(--ink);
-    background-color: var(--bg);
-  }
-
-  ::selection {
-    background-color: rgba(58, 109, 197, 0.22);
-    color: var(--ink);
-  }
-}
 
 @layer components {
   .mgm-shimmer {

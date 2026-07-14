@@ -20,11 +20,14 @@ export function DataTable<TData>({
 }: DataTableProps<TData>) {
   const rows = table.getRowModel().rows;
   return (
-    <div className={cn('overflow-auto rounded-md border border-line bg-surface', className)} {...rest}>
+    <div
+      className={cn('border-line bg-surface overflow-auto rounded-md border', className)}
+      {...rest}
+    >
       <table className="w-full border-collapse">
         <thead className={cn(stickyHeader && 'sticky top-0 z-10')}>
           {table.getHeaderGroups().map((group) => (
-            <tr key={group.id} className="border-b border-line bg-surface-muted">
+            <tr key={group.id} className="border-line bg-surface-muted border-b">
               {group.headers.map((header) => {
                 const sortable = header.column.getCanSort();
                 const sorted = header.column.getIsSorted();
@@ -33,13 +36,13 @@ export function DataTable<TData>({
                     key={header.id}
                     colSpan={header.colSpan}
                     style={{ width: header.column.getSize() }}
-                    className="px-3 py-2.5 text-left text-eyebrow uppercase text-ink-3 font-semibold"
+                    className="text-eyebrow text-ink-3 px-3 py-2.5 text-left font-semibold uppercase"
                   >
                     {sortable ? (
                       <button
                         type="button"
                         onClick={header.column.getToggleSortingHandler()}
-                        className="inline-flex items-center gap-1.5 hover:text-ink"
+                        className="hover:text-ink inline-flex items-center gap-1.5"
                       >
                         {flexRender(header.column.columnDef.header, header.getContext())}
                         {sorted === 'asc' ? (
@@ -62,7 +65,10 @@ export function DataTable<TData>({
         <tbody>
           {rows.length === 0 ? (
             <tr>
-              <td colSpan={table.getAllLeafColumns().length} className="py-10 text-center text-ink-3">
+              <td
+                colSpan={table.getAllLeafColumns().length}
+                className="text-ink-3 py-10 text-center"
+              >
                 {empty ?? 'No results.'}
               </td>
             </tr>
@@ -71,10 +77,10 @@ export function DataTable<TData>({
               <tr
                 key={row.id}
                 data-selected={row.getIsSelected() || undefined}
-                className="border-b border-line transition-colors hover:bg-surface-muted data-[selected]:bg-brand-blue-50"
+                className="border-line hover:bg-surface-muted data-[selected]:bg-brand-blue-50 border-b transition-colors"
               >
                 {row.getVisibleCells().map((cell) => (
-                  <td key={cell.id} className="px-3 py-2.5 text-body-sm text-ink">
+                  <td key={cell.id} className="text-body-sm text-ink px-3 py-2.5">
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 ))}

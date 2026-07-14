@@ -6,7 +6,9 @@ const meta = {
   title: 'Feedback/Callout',
   component: Callout,
   tags: ['autodocs'],
-  argTypes: { tone: { control: 'select', options: ['info', 'success', 'warning', 'danger', 'neutral'] } },
+  argTypes: {
+    tone: { control: 'select', options: ['info', 'success', 'warning', 'danger', 'neutral'] },
+  },
 } satisfies Meta<typeof Callout>;
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -23,11 +25,21 @@ export const Default: Story = {
 export const AllTones: Story = {
   render: () => (
     <div className="flex flex-col gap-3">
-      <Callout tone="info" title="Info">Informational note.</Callout>
-      <Callout tone="success" title="Success">Operation completed.</Callout>
-      <Callout tone="warning" title="Warning">Heads up — review the details.</Callout>
-      <Callout tone="danger" title="Danger">Destructive action ahead.</Callout>
-      <Callout tone="neutral" title="Neutral">Just plain context.</Callout>
+      <Callout tone="info" title="Info">
+        Informational note.
+      </Callout>
+      <Callout tone="success" title="Success">
+        Operation completed.
+      </Callout>
+      <Callout tone="warning" title="Warning">
+        Heads up — review the details.
+      </Callout>
+      <Callout tone="danger" title="Danger">
+        Destructive action ahead.
+      </Callout>
+      <Callout tone="neutral" title="Neutral">
+        Just plain context.
+      </Callout>
     </div>
   ),
 };

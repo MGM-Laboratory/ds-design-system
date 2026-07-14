@@ -7,7 +7,7 @@ export const Navbar = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLEle
       <header
         ref={ref}
         className={cn(
-          'sticky top-0 z-40 w-full border-b border-line bg-bg/90 backdrop-blur',
+          'bg-bg/90 sticky top-0 z-40 w-full border-b border-line backdrop-blur',
           className,
         )}
         {...rest}
@@ -28,20 +28,21 @@ export const NavbarSection = React.forwardRef<HTMLDivElement, React.HTMLAttribut
   },
 );
 
-export const NavbarItem = React.forwardRef<HTMLAnchorElement, React.AnchorHTMLAttributes<HTMLAnchorElement>>(
-  function NavbarItem({ className, ...rest }, ref) {
-    return (
-      <a
-        ref={ref}
-        className={cn(
-          'inline-flex h-9 items-center rounded-sm px-3 text-body-sm font-medium text-ink-2 transition-colors',
-          'hover:bg-surface-muted hover:text-ink',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus',
-          'aria-[current=page]:text-ink aria-[current=page]:bg-surface-muted',
-          className,
-        )}
-        {...rest}
-      />
-    );
-  },
-);
+export const NavbarItem = React.forwardRef<
+  HTMLAnchorElement,
+  React.AnchorHTMLAttributes<HTMLAnchorElement>
+>(function NavbarItem({ className, ...rest }, ref) {
+  return (
+    <a
+      ref={ref}
+      className={cn(
+        'inline-flex h-9 items-center rounded-sm px-3 text-body-sm font-medium text-ink-2 transition-colors',
+        'hover:bg-surface-muted hover:text-ink',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus',
+        'aria-[current=page]:bg-surface-muted aria-[current=page]:text-ink',
+        className,
+      )}
+      {...rest}
+    />
+  );
+});

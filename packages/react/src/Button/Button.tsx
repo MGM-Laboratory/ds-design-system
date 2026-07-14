@@ -17,30 +17,15 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: [
-          'bg-surface-inverse text-white hover:bg-[#3b4150]',
-          'shadow-1 hover:shadow-2',
-        ],
-        secondary: [
-          'bg-surface-muted text-ink border-line hover:bg-bg hover:border-line-strong',
-        ],
+        primary: ['bg-surface-inverse text-white hover:bg-[#3b4150]', 'shadow-1 hover:shadow-2'],
+        secondary: ['bg-surface-muted text-ink border-line hover:bg-bg hover:border-line-strong'],
         outline: [
           'bg-transparent text-ink border-line hover:bg-surface-muted hover:border-line-strong',
         ],
-        ghost: [
-          'bg-transparent text-ink hover:bg-surface-muted',
-        ],
-        accent: [
-          'bg-brand-blue text-white hover:bg-brand-blue/90',
-          'shadow-1',
-        ],
-        danger: [
-          'bg-brand-red text-white hover:bg-brand-red/90',
-          'shadow-1',
-        ],
-        link: [
-          'bg-transparent text-brand-blue underline-offset-4 hover:underline px-0 border-0',
-        ],
+        ghost: ['bg-transparent text-ink hover:bg-surface-muted'],
+        accent: ['bg-brand-blue text-white hover:bg-brand-blue/90', 'shadow-1'],
+        danger: ['bg-brand-red text-white hover:bg-brand-red/90', 'shadow-1'],
+        link: ['bg-transparent text-brand-blue underline-offset-4 hover:underline px-0 border-0'],
       },
       size: {
         sm: 'h-8 px-3 text-body-sm',
@@ -59,8 +44,7 @@ export const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   /** Render as the child element (composition via Radix Slot). */
   asChild?: boolean;
   /** Show a spinner and set aria-busy. */

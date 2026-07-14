@@ -28,7 +28,10 @@ export const CodeBlock = React.forwardRef<HTMLPreElement, CodeBlockProps>(functi
       )}
       <pre
         ref={ref}
-        className={cn('overflow-x-auto p-4 font-mono text-mono text-ink-2 leading-relaxed', className)}
+        className={cn(
+          'overflow-x-auto p-4 font-mono text-mono leading-relaxed text-ink-2',
+          className,
+        )}
         {...rest}
       >
         <code>{code}</code>

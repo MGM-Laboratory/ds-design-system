@@ -14,7 +14,10 @@ import {
 
 export interface UseDataTableOptions<TData> {
   data: TData[];
-  columns: ColumnDef<TData, unknown>[];
+  // TanStack column definitions are invariant in TValue. `any` is intentional
+  // here so one table can combine accessors for strings, numbers, and JSX cells.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  columns: ColumnDef<TData, any>[];
   pageSize?: number;
   enableSorting?: boolean;
   enableFiltering?: boolean;
@@ -37,7 +40,12 @@ export function useDataTable<TData>({
   const table = useReactTable<TData>({
     data,
     columns,
-    state: { sorting, columnFilters: filters, rowSelection: selection, columnVisibility: visibility },
+    state: {
+      sorting,
+      columnFilters: filters,
+      rowSelection: selection,
+      columnVisibility: visibility,
+    },
     initialState: { pagination: { pageSize } },
     enableRowSelection: enableSelection,
     onSortingChange: setSorting,

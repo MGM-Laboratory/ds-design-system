@@ -7,8 +7,11 @@
 Field primitives, **React Hook Form + Zod** wiring, a polished `<Field>` wrapper, and a `<Wizard>` for multi-step flows.
 
 ```bash
-pnpm add @labmgm/forms
+pnpm add @labmgm/forms react-hook-form zod
 ```
+
+`@labmgm/forms` supports Zod 3.25+ and Zod 4. It uses the Zod and React Hook Form
+instances already installed by your application, avoiding duplicate validation runtimes.
 
 > [Storybook (Forms / Primitives)](https://ds.labmgm.org/?path=/docs/forms-primitives--docs) · [Source](./src)
 
@@ -33,7 +36,7 @@ export function SignupForm() {
     <FormProvider {...form}>
       <Form
         onSubmit={form.handleSubmit(({ email }) => toast.success(`Welcome, ${email}`))}
-        className="space-y-4 max-w-md"
+        className="max-w-md space-y-4"
       >
         <Field label="Email" required error={form.formState.errors.email?.message}>
           <Input type="email" placeholder="you@labmgm.com" {...form.register('email')} />
@@ -46,7 +49,9 @@ export function SignupForm() {
         >
           <Input type="password" {...form.register('password')} />
         </Field>
-        <Button type="submit" fullWidth>Create account</Button>
+        <Button type="submit" fullWidth>
+          Create account
+        </Button>
       </Form>
     </FormProvider>
   );
@@ -57,26 +62,26 @@ export function SignupForm() {
 
 ## Primitive components
 
-| Component | Purpose |
-|---|---|
-| `Label` | `<label>` with optional `required` asterisk |
-| `Field` | Wraps Label + input + help/error, wires `aria-invalid` / `aria-describedby` |
-| `FieldError` · `FieldHelp` | Sub-components for custom layouts |
-| `Input` | Text/email/url input with optional `leading` / `trailing` slots |
-| `Textarea` | Multi-line input |
-| `SearchInput` | Pre-wired with search icon + clear button |
-| `NumberInput` | Spinner with min/max/step, optional `controls={false}` |
-| `PinInput` | One-time-code input (default 6 digits) |
-| `Checkbox` · `CheckboxGroup` | Radix-backed, label + description slots |
-| `Radio` · `RadioGroup` | Radix-backed |
-| `Switch` | Radix-backed toggle |
-| `Slider` | Radix-backed range |
-| `Select` | Native-feeling Radix Select |
-| `Combobox` | Filterable single-select (cmdk) |
-| `MultiSelect` | Filterable multi-select with chip display |
-| `TagInput` | Free-form tag entry — Enter/comma to add |
-| `FileDropzone` | Drag-and-drop file picker with `accept` / `maxSize` |
-| `ColorPicker` | Brand presets + native color picker fallback |
+| Component                    | Purpose                                                                     |
+| ---------------------------- | --------------------------------------------------------------------------- |
+| `Label`                      | `<label>` with optional `required` asterisk                                 |
+| `Field`                      | Wraps Label + input + help/error, wires `aria-invalid` / `aria-describedby` |
+| `FieldError` · `FieldHelp`   | Sub-components for custom layouts                                           |
+| `Input`                      | Text/email/url input with optional `leading` / `trailing` slots             |
+| `Textarea`                   | Multi-line input                                                            |
+| `SearchInput`                | Pre-wired with search icon + clear button                                   |
+| `NumberInput`                | Spinner with min/max/step, optional `controls={false}`                      |
+| `PinInput`                   | One-time-code input (default 6 digits)                                      |
+| `Checkbox` · `CheckboxGroup` | Radix-backed, label + description slots                                     |
+| `Radio` · `RadioGroup`       | Radix-backed                                                                |
+| `Switch`                     | Radix-backed toggle                                                         |
+| `Slider`                     | Radix-backed range                                                          |
+| `Select`                     | Native-feeling Radix Select                                                 |
+| `Combobox`                   | Filterable single-select (cmdk)                                             |
+| `MultiSelect`                | Filterable multi-select with chip display                                   |
+| `TagInput`                   | Free-form tag entry — Enter/comma to add                                    |
+| `FileDropzone`               | Drag-and-drop file picker with `accept` / `maxSize`                         |
+| `ColorPicker`                | Brand presets + native color picker fallback                                |
 
 ---
 
@@ -104,10 +109,16 @@ import { Wizard, WizardStep, StepRail, useWizard } from '@labmgm/forms';
 import { Button } from '@labmgm/react';
 
 <Wizard defaultCurrent={0}>
-  <WizardStep><Step title="Basics" /></WizardStep>
-  <WizardStep><Step title="Files" /></WizardStep>
-  <WizardStep><Step title="Review" /></WizardStep>
-</Wizard>
+  <WizardStep>
+    <Step title="Basics" />
+  </WizardStep>
+  <WizardStep>
+    <Step title="Files" />
+  </WizardStep>
+  <WizardStep>
+    <Step title="Review" />
+  </WizardStep>
+</Wizard>;
 
 function Step({ title }) {
   const w = useWizard();
@@ -123,8 +134,10 @@ function Step({ title }) {
       />
       <div>
         <h2 className="text-h2">{title}</h2>
-        <div className="flex justify-between mt-6">
-          <Button variant="ghost" onClick={w.prev} disabled={w.isFirst}>Back</Button>
+        <div className="mt-6 flex justify-between">
+          <Button variant="ghost" onClick={w.prev} disabled={w.isFirst}>
+            Back
+          </Button>
           <Button onClick={w.next} disabled={w.isLast}>
             {w.isLast ? 'Finish' : 'Next'}
           </Button>
@@ -154,11 +167,11 @@ import {
 
 const schema = z.object({
   email: emailSchema,
-  password: passwordSchema,        // ≥8 chars, with upper/lower/number
-  slug: slugSchema,                // lowercase-with-hyphens
+  password: passwordSchema, // ≥8 chars, with upper/lower/number
+  slug: slugSchema, // lowercase-with-hyphens
   url: urlSchema,
   phone: phoneSchema,
-  name: nonEmptyString('Name'),    // configurable error message
+  name: nonEmptyString('Name'), // configurable error message
 });
 ```
 

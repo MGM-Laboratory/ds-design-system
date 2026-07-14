@@ -20,7 +20,9 @@ export const Demo: Story = {
       <>
         <div className="flex items-center gap-3">
           <Button onClick={() => setOpen(true)}>Open palette</Button>
-          <span className="text-caption text-ink-3">or press <kbd>⌘K</kbd></span>
+          <span className="text-caption text-ink-3">
+            or press <kbd>⌘K</kbd>
+          </span>
         </div>
         <CommandPalette open={open} onOpenChange={setOpen}>
           <CommandGroup heading="Pages">

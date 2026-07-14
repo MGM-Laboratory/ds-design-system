@@ -21,8 +21,7 @@ const containerVariants = cva('mx-auto w-full', {
 });
 
 export interface ContainerProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof containerVariants> {
+  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof containerVariants> {
   as?: React.ElementType;
 }
 
@@ -31,5 +30,7 @@ export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(functi
   { as: Tag = 'div', width, padding, className, ...rest },
   ref,
 ) {
-  return <Tag ref={ref} className={cn(containerVariants({ width, padding }), className)} {...rest} />;
+  return (
+    <Tag ref={ref} className={cn(containerVariants({ width, padding }), className)} {...rest} />
+  );
 });

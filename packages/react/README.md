@@ -19,8 +19,8 @@ pnpm add @labmgm/react @labmgm/tokens @labmgm/tailwind-config
 
 <table>
 <tr>
-<td><b>A — Tailwind preset</b> (recommended)</td>
-<td><b>B — Pre-compiled CSS</b> (no Tailwind needed)</td>
+<td><b>A — Tailwind 3 preset</b></td>
+<td><b>B — Pre-compiled CSS</b> (Tailwind 4 / no Tailwind)</td>
 </tr>
 <tr>
 <td>
@@ -31,10 +31,7 @@ import preset from '@labmgm/tailwind-config';
 
 export default {
   presets: [preset],
-  content: [
-    './src/**/*.{ts,tsx}',
-    './node_modules/@labmgm/**/dist/**/*.{js,mjs}',
-  ],
+  content: ['./src/**/*.{ts,tsx}', './node_modules/@labmgm/*/dist/**/*.{js,mjs}'],
 };
 ```
 
@@ -47,6 +44,9 @@ import '@labmgm/tokens/tokens.css';
 import '@labmgm/react/styles.css';
 ```
 
+`styles.css` deliberately excludes Tailwind Preflight and global `body` styles, so it can be
+imported alongside a Tailwind 4 application without competing resets.
+
 </td>
 </tr>
 </table>
@@ -56,7 +56,16 @@ import '@labmgm/react/styles.css';
 ## Quick example
 
 ```tsx
-import { Container, Section, Stack, Button, Card, CardHeader, CardTitle, CardContent } from '@labmgm/react';
+import {
+  Container,
+  Section,
+  Stack,
+  Button,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+} from '@labmgm/react';
 
 export default function Home() {
   return (
@@ -67,7 +76,9 @@ export default function Home() {
             Build the <span className="text-brand-red">loud</span> internet.
           </h1>
           <Card>
-            <CardHeader><CardTitle>Out of the box</CardTitle></CardHeader>
+            <CardHeader>
+              <CardTitle>Out of the box</CardTitle>
+            </CardHeader>
             <CardContent>No extra setup.</CardContent>
           </Card>
           <Button size="lg">Get started</Button>
@@ -84,19 +95,19 @@ export default function Home() {
 
 > Open the [Storybook](https://ds.labmgm.org/) for live examples of every component and every variant.
 
-| Category | Components |
-|---|---|
-| **Buttons & actions** | `Button` · `IconButton` · `ButtonGroup` · `ToggleButton` · `ToggleButtonGroup` · `Link` · `Kbd` · `CopyButton` · `BackButton` |
-| **Display** | `Card` (+ Header/Title/Description/Content/Footer) · `Badge` · `Tag` · `Chip` · `Avatar` · `AvatarGroup` · `Stat` · `Empty` · `Skeleton` · `Spinner` · `Code` · `CodeBlock` |
-| **Overlays** | `Dialog` · `AlertDialog` · `Drawer` · `Popover` · `HoverCard` · `Tooltip` · `DropdownMenu` · `ContextMenu` |
-| **Navigation** | `Tabs` · `Accordion` · `Breadcrumb` · `Pagination` · `Stepper` · `Navbar` |
-| **Feedback** | `Alert` · `Banner` · `Progress` · `ProgressCircle` · `Callout` |
-| **Data display** | `List` · `DescriptionList` · `Timeline` · `Separator` |
-| **Media** | `Image` · `Carousel` |
-| **Layout** *(from `@labmgm/layout`, re-exported)* | `Container` · `Section` · `Stack` · `VStack` · `HStack` · `Grid` · `Flex` · `Box` · `Center` · `Spacer` · `AspectRatio` · `Divider` |
-| **Brand** *(from `@labmgm/brand`, re-exported)* | `Logo` · `Wordmark` · `ShapeSignature` · `FooterStrip` |
-| **Theme** *(from `@labmgm/theme`, re-exported)* | `ThemeProvider` · `Surface` · `useSurface` |
-| **Patterns** *(from `@labmgm/patterns`, re-exported)* | `PatternGrid` · `PatternTile` · `PatternCorner` · `PatternBanner` · `PatternDado` · `PatternStrip` · `PatternPyramid` · `PatternTriangle` |
+| Category                                              | Components                                                                                                                                                                  |
+| ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Buttons & actions**                                 | `Button` · `IconButton` · `ButtonGroup` · `ToggleButton` · `ToggleButtonGroup` · `Link` · `Kbd` · `CopyButton` · `BackButton`                                               |
+| **Display**                                           | `Card` (+ Header/Title/Description/Content/Footer) · `Badge` · `Tag` · `Chip` · `Avatar` · `AvatarGroup` · `Stat` · `Empty` · `Skeleton` · `Spinner` · `Code` · `CodeBlock` |
+| **Overlays**                                          | `Dialog` · `AlertDialog` · `Drawer` · `Popover` · `HoverCard` · `Tooltip` · `DropdownMenu` · `ContextMenu`                                                                  |
+| **Navigation**                                        | `Tabs` · `Accordion` · `Breadcrumb` · `Pagination` · `Stepper` · `Navbar`                                                                                                   |
+| **Feedback**                                          | `Alert` · `Banner` · `Progress` · `ProgressCircle` · `Callout`                                                                                                              |
+| **Data display**                                      | `List` · `DescriptionList` · `Timeline` · `Separator`                                                                                                                       |
+| **Media**                                             | `Image` · `Carousel`                                                                                                                                                        |
+| **Layout** _(from `@labmgm/layout`, re-exported)_     | `Container` · `Section` · `Stack` · `VStack` · `HStack` · `Grid` · `Flex` · `Box` · `Center` · `Spacer` · `AspectRatio` · `Divider`                                         |
+| **Brand** _(from `@labmgm/brand`, re-exported)_       | `Logo` · `Wordmark` · `ShapeSignature` · `FooterStrip`                                                                                                                      |
+| **Theme** _(from `@labmgm/theme`, re-exported)_       | `ThemeProvider` · `Surface` · `useSurface`                                                                                                                                  |
+| **Patterns** _(from `@labmgm/patterns`, re-exported)_ | `PatternGrid` · `PatternTile` · `PatternCorner` · `PatternBanner` · `PatternDado` · `PatternStrip` · `PatternPyramid` · `PatternTriangle`                                   |
 
 Specialized packages live separately:
 

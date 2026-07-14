@@ -14,13 +14,13 @@ import { VisuallyHidden, Announcer, announce, FocusTrap, useFocusVisible } from 
 
 ## Exports
 
-| Export | Purpose |
-|---|---|
-| `<VisuallyHidden>` | Hide content visually while keeping it for screen readers (re-export from Radix). |
-| `<Announcer>` | Mount once at the root. Renders polite + assertive live regions. |
-| `announce(message, urgency?)` | Push a message to the live region from anywhere. |
-| `<FocusTrap>` | Lightweight Tab / Shift+Tab trap. For full Radix-grade behavior use `Dialog` from `@labmgm/react`. |
-| `useFocusVisible()` | True after the user's last interaction was via keyboard. |
+| Export                        | Purpose                                                                                            |
+| ----------------------------- | -------------------------------------------------------------------------------------------------- |
+| `<VisuallyHidden>`            | Hide content visually while keeping it for screen readers (re-export from Radix).                  |
+| `<Announcer>`                 | Mount once at the root. Renders polite + assertive live regions.                                   |
+| `announce(message, urgency?)` | Push a message to the live region from anywhere.                                                   |
+| `<FocusTrap>`                 | Lightweight Tab / Shift+Tab trap. For full Radix-grade behavior use `Dialog` from `@labmgm/react`. |
+| `useFocusVisible()`           | True after the user's last interaction was via keyboard.                                           |
 
 ## License
 

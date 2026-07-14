@@ -19,7 +19,9 @@ const donutData = [
 export const Bar: Story = {
   render: () => (
     <Card padding="md">
-      <CardHeader className="mb-3"><CardTitle>Bar chart</CardTitle></CardHeader>
+      <CardHeader className="mb-3">
+        <CardTitle>Bar chart</CardTitle>
+      </CardHeader>
       <BarChart data={barData} xKey="month" yKeys={['revenue', 'costs']} />
     </Card>
   ),
@@ -28,7 +30,9 @@ export const Bar: Story = {
 export const Line: Story = {
   render: () => (
     <Card padding="md">
-      <CardHeader className="mb-3"><CardTitle>Line chart</CardTitle></CardHeader>
+      <CardHeader className="mb-3">
+        <CardTitle>Line chart</CardTitle>
+      </CardHeader>
       <LineChart data={lineData} xKey="month" yKeys={['users']} legend={false} />
     </Card>
   ),
@@ -37,7 +41,9 @@ export const Line: Story = {
 export const Area: Story = {
   render: () => (
     <Card padding="md">
-      <CardHeader className="mb-3"><CardTitle>Area chart</CardTitle></CardHeader>
+      <CardHeader className="mb-3">
+        <CardTitle>Area chart</CardTitle>
+      </CardHeader>
       <AreaChart data={lineData} xKey="month" yKeys={['users']} legend={false} />
     </Card>
   ),
@@ -46,7 +52,9 @@ export const Area: Story = {
 export const Pie: Story = {
   render: () => (
     <Card padding="md">
-      <CardHeader className="mb-3"><CardTitle>Pie chart</CardTitle></CardHeader>
+      <CardHeader className="mb-3">
+        <CardTitle>Pie chart</CardTitle>
+      </CardHeader>
       <PieChart data={donutData} />
     </Card>
   ),
@@ -55,7 +63,9 @@ export const Pie: Story = {
 export const Donut: Story = {
   render: () => (
     <Card padding="md">
-      <CardHeader className="mb-3"><CardTitle>Donut chart</CardTitle></CardHeader>
+      <CardHeader className="mb-3">
+        <CardTitle>Donut chart</CardTitle>
+      </CardHeader>
       <DonutChart data={donutData} />
     </Card>
   ),
@@ -65,7 +75,9 @@ export const SparklineDemo: Story = {
   name: 'Sparkline',
   render: () => (
     <Card padding="md">
-      <CardHeader className="mb-3"><CardTitle>Sparkline (inline)</CardTitle></CardHeader>
+      <CardHeader className="mb-3">
+        <CardTitle>Sparkline (inline)</CardTitle>
+      </CardHeader>
       <div className="flex items-center gap-4">
         <Sparkline data={[3, 4, 2, 8, 5, 9, 7, 6, 10, 12, 11, 14]} />
         <Sparkline data={[12, 9, 14, 8, 11, 5]} color="#0f8657" />
@@ -78,7 +90,9 @@ export const SparklineDemo: Story = {
 export const Stacked: Story = {
   render: () => (
     <Card padding="md">
-      <CardHeader className="mb-3"><CardTitle>Stacked bars</CardTitle></CardHeader>
+      <CardHeader className="mb-3">
+        <CardTitle>Stacked bars</CardTitle>
+      </CardHeader>
       <BarChart data={barData} xKey="month" yKeys={['revenue', 'costs']} stacked />
     </Card>
   ),

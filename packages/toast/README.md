@@ -38,14 +38,14 @@ toast.loading('Generating thumbnails…');
 
 ## Tones
 
-| Method | Background | Use |
-|---|---|---|
-| `toast(…)` | neutral | Default acknowledgement |
-| `toast.success(…)` | brand-green-50 | Operation completed |
-| `toast.error(…)` | brand-red-50 | Operation failed |
-| `toast.warning(…)` | brand-yellow-50 | Approaching limit |
-| `toast.info(…)` | brand-blue-50 | New information |
-| `toast.loading(…)` | white | In-flight async work |
+| Method             | Background      | Use                     |
+| ------------------ | --------------- | ----------------------- |
+| `toast(…)`         | neutral         | Default acknowledgement |
+| `toast.success(…)` | brand-green-50  | Operation completed     |
+| `toast.error(…)`   | brand-red-50    | Operation failed        |
+| `toast.warning(…)` | brand-yellow-50 | Approaching limit       |
+| `toast.info(…)`    | brand-blue-50   | New information         |
+| `toast.loading(…)` | white           | In-flight async work    |
 
 All toast variants use **literal hex** text colors so they read correctly regardless of the surrounding surface scope.
 

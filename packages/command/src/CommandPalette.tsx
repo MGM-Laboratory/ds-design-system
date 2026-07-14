@@ -46,11 +46,11 @@ export function CommandPalette({
   return (
     <Dialog.Root open={isOpen} onOpenChange={setOpen}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-50 bg-surface-inverse/40 backdrop-blur-sm data-[state=open]:animate-fade-in" />
+        <Dialog.Overlay className="bg-surface-inverse/40 data-[state=open]:animate-fade-in fixed inset-0 z-50 backdrop-blur-sm" />
         <Dialog.Content
           aria-label="Command palette"
           data-surface="default"
-          className="fixed left-[50%] top-[20%] z-50 w-full max-w-xl -translate-x-1/2 rounded-md border border-line bg-surface shadow-3 outline-none data-[state=open]:animate-scale-in"
+          className="border-line bg-surface shadow-3 data-[state=open]:animate-scale-in fixed top-[20%] left-[50%] z-50 w-full max-w-xl -translate-x-1/2 rounded-md border outline-none"
         >
           <Command className="flex flex-col">
             <CommandInput placeholder={placeholder} />
@@ -67,14 +67,13 @@ export const CommandInput = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof Command.Input>
 >(function CommandInput({ className, ...rest }, ref) {
   return (
-    <div className="flex items-center gap-2 border-b border-line px-4">
+    <div className="border-line flex items-center gap-2 border-b px-4">
       <Search size={16} className="text-ink-3" />
       <Command.Input
         ref={ref}
-        // eslint-disable-next-line jsx-a11y/no-autofocus
         autoFocus
         className={cn(
-          'h-12 w-full bg-transparent text-body text-ink outline-none placeholder:text-ink-4',
+          'text-body text-ink placeholder:text-ink-4 h-12 w-full bg-transparent outline-none',
           className,
         )}
         {...rest}
@@ -87,7 +86,13 @@ export const CommandList = React.forwardRef<
   React.ElementRef<typeof Command.List>,
   React.ComponentPropsWithoutRef<typeof Command.List>
 >(function CommandList({ className, ...rest }, ref) {
-  return <Command.List ref={ref} className={cn('max-h-[400px] overflow-auto p-2', className)} {...rest} />;
+  return (
+    <Command.List
+      ref={ref}
+      className={cn('max-h-[400px] overflow-auto p-2', className)}
+      {...rest}
+    />
+  );
 });
 
 export const CommandEmpty = React.forwardRef<
@@ -95,7 +100,11 @@ export const CommandEmpty = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof Command.Empty>
 >(function CommandEmpty({ className, ...rest }, ref) {
   return (
-    <Command.Empty ref={ref} className={cn('py-8 text-center text-caption text-ink-3', className)} {...rest} />
+    <Command.Empty
+      ref={ref}
+      className={cn('text-caption text-ink-3 py-8 text-center', className)}
+      {...rest}
+    />
   );
 });
 
@@ -107,7 +116,7 @@ export const CommandGroup = React.forwardRef<
     <Command.Group
       ref={ref}
       className={cn(
-        '[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-eyebrow [&_[cmdk-group-heading]]:uppercase [&_[cmdk-group-heading]]:text-ink-3',
+        '[&_[cmdk-group-heading]]:text-eyebrow [&_[cmdk-group-heading]]:text-ink-3 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:uppercase',
         className,
       )}
       {...rest}
@@ -123,7 +132,7 @@ export const CommandItem = React.forwardRef<
     <Command.Item
       ref={ref}
       className={cn(
-        'relative flex cursor-pointer select-none items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm text-ink outline-none',
+        'text-body-sm text-ink relative flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 outline-none select-none',
         'data-[selected=true]:bg-surface-muted',
         'data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50',
         className,
@@ -137,9 +146,14 @@ export const CommandSeparator = React.forwardRef<
   React.ElementRef<typeof Command.Separator>,
   React.ComponentPropsWithoutRef<typeof Command.Separator>
 >(function CommandSeparator({ className, ...rest }, ref) {
-  return <Command.Separator ref={ref} className={cn('-mx-1 my-1 h-px bg-line', className)} {...rest} />;
+  return (
+    <Command.Separator ref={ref} className={cn('bg-line -mx-1 my-1 h-px', className)} {...rest} />
+  );
 });
 
-export const CommandShortcut: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({ className, ...rest }) => (
-  <span className={cn('ml-auto text-caption tracking-widest text-ink-3', className)} {...rest} />
+export const CommandShortcut: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
+  className,
+  ...rest
+}) => (
+  <span className={cn('text-caption text-ink-3 ml-auto tracking-widest', className)} {...rest} />
 );

@@ -2,7 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@labmgm/react';
 import { Surface } from '@labmgm/theme';
 
-const meta = { title: 'Foundations/Color & Contrast', parameters: { layout: 'padded' } } satisfies Meta;
+const meta = {
+  title: 'Foundations/Color & Contrast',
+  parameters: { layout: 'padded' },
+} satisfies Meta;
 export default meta;
 type Story = StoryObj<typeof meta>;
 
@@ -10,7 +13,7 @@ export const Palette: Story = {
   render: () => (
     <div className="flex flex-col gap-8">
       <section>
-        <h2 className="text-h1 font-display mb-4">Brand</h2>
+        <h2 className="mb-4 font-display text-h1">Brand</h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {[
             ['brand-blue', '#3a6dc5'],
@@ -22,14 +25,14 @@ export const Palette: Story = {
               <div className="h-20" style={{ background: hex }} />
               <div className="p-3">
                 <div className="text-body-sm font-medium">{name}</div>
-                <code className="text-caption text-ink-3 font-mono">{hex}</code>
+                <code className="font-mono text-caption text-ink-3">{hex}</code>
               </div>
             </div>
           ))}
         </div>
       </section>
       <section>
-        <h2 className="text-h1 font-display mb-4">Tints</h2>
+        <h2 className="mb-4 font-display text-h1">Tints</h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {[
             ['brand-blue-50', '#ecf1fa'],
@@ -41,14 +44,14 @@ export const Palette: Story = {
               <div className="h-20" style={{ background: hex }} />
               <div className="p-3">
                 <div className="text-body-sm font-medium">{name}</div>
-                <code className="text-caption text-ink-3 font-mono">{hex}</code>
+                <code className="font-mono text-caption text-ink-3">{hex}</code>
               </div>
             </div>
           ))}
         </div>
       </section>
       <section>
-        <h2 className="text-h1 font-display mb-4">Surfaces & Ink</h2>
+        <h2 className="mb-4 font-display text-h1">Surfaces & Ink</h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {[
             ['bg / surface', '#ffffff'],
@@ -64,7 +67,7 @@ export const Palette: Story = {
               <div className="h-20" style={{ background: hex }} />
               <div className="p-3">
                 <div className="text-body-sm font-medium">{name}</div>
-                <code className="text-caption text-ink-3 font-mono">{hex}</code>
+                <code className="font-mono text-caption text-ink-3">{hex}</code>
               </div>
             </div>
           ))}
@@ -78,24 +81,25 @@ export const InverseScope: Story = {
   name: 'Inverse surface (contrast test)',
   render: () => (
     <div className="flex flex-col gap-6">
-      <Surface tone="default" className="p-6 rounded-md border border-line">
+      <Surface tone="default" className="rounded-md border border-line p-6">
         <h2 className="text-h2">Default surface</h2>
         <p className="text-body text-ink-2">
-          Text uses <code>text-ink</code> which resolves to <code>var(--ink)</code> = <b>#0e1116</b> here.
+          Text uses <code>text-ink</code> which resolves to <code>var(--ink)</code> = <b>#0e1116</b>{' '}
+          here.
         </p>
-        <p className="text-body-sm text-ink-3 mt-2">Secondary text uses ink-3 / ink-2.</p>
+        <p className="mt-2 text-body-sm text-ink-3">Secondary text uses ink-3 / ink-2.</p>
       </Surface>
-      <Surface tone="muted" className="p-6 rounded-md border border-line">
+      <Surface tone="muted" className="rounded-md border border-line p-6">
         <h2 className="text-h2">Muted surface</h2>
         <p className="text-body text-ink-2">Soft off-white zoning.</p>
       </Surface>
-      <Surface tone="inverse" className="p-6 rounded-md">
+      <Surface tone="inverse" className="rounded-md p-6">
         <h2 className="text-h2">Inverse surface</h2>
         <p className="text-body text-ink-2">
-          Same <code>text-ink</code> class — but the CSS variable now resolves to white because
-          this section sets <code>data-surface="inverse"</code>.
+          Same <code>text-ink</code> class — but the CSS variable now resolves to white because this
+          section sets <code>data-surface="inverse"</code>.
         </p>
-        <p className="text-body-sm text-ink-3 mt-2">
+        <p className="mt-2 text-body-sm text-ink-3">
           ink-3 is also lighter here so it still has contrast on the dark background.
         </p>
       </Surface>

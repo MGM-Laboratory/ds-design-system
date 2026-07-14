@@ -79,8 +79,8 @@ export function PinInput({
           onChange={(e) => handleChange(i, e.target.value)}
           onKeyDown={(e) => handleKey(i, e)}
           className={cn(
-            'h-12 w-10 rounded-md border bg-surface text-center font-mono text-body-lg text-ink outline-none transition-colors',
-            'focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1 focus-visible:border-focus',
+            'bg-surface text-body-lg text-ink h-12 w-10 rounded-md border text-center font-mono transition-colors outline-none',
+            'focus-visible:ring-focus focus-visible:border-focus focus-visible:ring-2 focus-visible:ring-offset-1',
             invalid ? 'border-brand-red' : 'border-line',
             disabled && 'opacity-50',
           )}

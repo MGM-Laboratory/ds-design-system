@@ -1,15 +1,17 @@
 import * as React from 'react';
 import {
-  FormProvider as RHFProvider,
   useForm,
   type FieldValues,
+  type Resolver,
   type UseFormProps,
   type UseFormReturn,
 } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { ZodTypeAny, infer as ZodInfer } from 'zod';
+import type { z } from 'zod';
 
-export const FormProvider = RHFProvider;
+// Preserve React Hook Form's own declaration rather than baking the workspace's
+// installed version into our emitted .d.ts file.
+export { FormProvider } from 'react-hook-form';
 
 /**
  * Wrapper around React Hook Form that pre-wires the Zod resolver. Use this for any form
@@ -24,13 +26,17 @@ export const FormProvider = RHFProvider;
  *     </Form>
  *   </FormProvider>
  */
-export function useMgmForm<TSchema extends ZodTypeAny>(
+type FormValues<TSchema extends z.ZodType> = z.output<TSchema> & FieldValues;
+
+export function useMgmForm<TSchema extends z.ZodType>(
   schema: TSchema,
-  options?: Omit<UseFormProps<ZodInfer<TSchema>>, 'resolver'>,
-): UseFormReturn<ZodInfer<TSchema>> {
-  return useForm<ZodInfer<TSchema>>({
+  options?: Omit<UseFormProps<FormValues<TSchema>>, 'resolver'>,
+): UseFormReturn<FormValues<TSchema>> {
+  return useForm<FormValues<TSchema>>({
     ...options,
-    resolver: zodResolver(schema),
+    // Resolver v5 detects Zod 3 and Zod 4 at runtime. Its overloads use separate
+    // version-specific types, so expose the shared inferred form-value contract here.
+    resolver: zodResolver(schema as never) as Resolver<FormValues<TSchema>>,
   });
 }
 

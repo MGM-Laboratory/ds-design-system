@@ -54,18 +54,18 @@ export function MultiSelect({
         aria-haspopup="listbox"
         aria-expanded={open}
         className={cn(
-          'flex min-h-10 w-full items-center justify-between gap-2 rounded-md border bg-surface px-2 py-1.5 text-body text-ink outline-none transition-colors',
-          'focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1 focus-visible:border-focus',
+          'bg-surface text-body text-ink flex min-h-10 w-full items-center justify-between gap-2 rounded-md border px-2 py-1.5 transition-colors outline-none',
+          'focus-visible:ring-focus focus-visible:border-focus focus-visible:ring-2 focus-visible:ring-offset-1',
           invalid ? 'border-brand-red' : 'border-line hover:border-line-strong',
           'disabled:opacity-50',
         )}
       >
         <div className="flex flex-1 flex-wrap items-center gap-1">
-          {current.length === 0 && <span className="px-1 text-ink-4">{placeholder}</span>}
+          {current.length === 0 && <span className="text-ink-4 px-1">{placeholder}</span>}
           {visible.map((opt) => (
             <span
               key={opt.value}
-              className="inline-flex items-center gap-1 rounded-sm bg-surface-muted px-1.5 py-0.5 text-caption text-ink"
+              className="bg-surface-muted text-caption text-ink inline-flex items-center gap-1 rounded-sm px-1.5 py-0.5"
             >
               {opt.label}
               <span
@@ -76,7 +76,7 @@ export function MultiSelect({
                   e.stopPropagation();
                   toggle(opt.value);
                 }}
-                className="cursor-pointer text-ink-3 hover:text-ink"
+                className="text-ink-3 hover:text-ink cursor-pointer"
               >
                 <X size={12} />
               </span>
@@ -87,18 +87,20 @@ export function MultiSelect({
         <ChevronDown size={16} className="text-ink-3" />
       </button>
       {open && (
-        <div className="absolute z-50 mt-2 w-full overflow-hidden rounded-md border border-line bg-surface shadow-2 animate-scale-in">
+        <div className="border-line bg-surface shadow-2 animate-scale-in absolute z-50 mt-2 w-full overflow-hidden rounded-md border">
           <Command shouldFilter>
-            <div className="flex items-center gap-2 border-b border-line px-3">
+            <div className="border-line flex items-center gap-2 border-b px-3">
               <Search size={14} className="text-ink-3" />
               <Command.Input
                 autoFocus
                 placeholder="Search…"
-                className="h-10 w-full bg-transparent text-body text-ink outline-none placeholder:text-ink-4"
+                className="text-body text-ink placeholder:text-ink-4 h-10 w-full bg-transparent outline-none"
               />
             </div>
             <Command.List className="max-h-72 overflow-auto p-1">
-              <Command.Empty className="p-2 text-center text-caption text-ink-3">{emptyMessage}</Command.Empty>
+              <Command.Empty className="text-caption text-ink-3 p-2 text-center">
+                {emptyMessage}
+              </Command.Empty>
               {options.map((opt) => {
                 const checked = current.includes(opt.value);
                 return (
@@ -108,11 +110,11 @@ export function MultiSelect({
                     disabled={opt.disabled}
                     onSelect={() => toggle(opt.value)}
                     className={cn(
-                      'relative flex cursor-pointer select-none items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm text-ink',
+                      'text-body-sm text-ink relative flex cursor-pointer items-center gap-2 rounded-sm px-2 py-1.5 select-none',
                       'data-[selected=true]:bg-surface-muted',
                     )}
                   >
-                    <span className="inline-flex h-4 w-4 items-center justify-center rounded-sm border border-line">
+                    <span className="border-line inline-flex h-4 w-4 items-center justify-center rounded-sm border">
                       {checked && <Check size={12} className="text-ink" />}
                     </span>
                     <span>{opt.label}</span>

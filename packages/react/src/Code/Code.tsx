@@ -11,7 +11,7 @@ export const Code = React.forwardRef<HTMLElement, CodeProps>(function Code(
     <code
       ref={ref}
       className={cn(
-        'rounded-sm bg-surface-muted px-1.5 py-0.5 font-mono text-mono text-ink-2 border border-line',
+        'rounded-sm border border-line bg-surface-muted px-1.5 py-0.5 font-mono text-mono text-ink-2',
         className,
       )}
       {...rest}

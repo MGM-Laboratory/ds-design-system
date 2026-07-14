@@ -2,7 +2,11 @@ import * as React from 'react';
 import * as RadixAvatar from '@radix-ui/react-avatar';
 import { cn, initials } from '@labmgm/utils';
 
-const sizeMap = { sm: 'h-6 w-6 text-[11px]', md: 'h-9 w-9 text-body-sm', lg: 'h-12 w-12 text-body-lg' } as const;
+const sizeMap = {
+  sm: 'h-6 w-6 text-[11px]',
+  md: 'h-9 w-9 text-body-sm',
+  lg: 'h-12 w-12 text-body-lg',
+} as const;
 
 export interface AvatarProps extends React.HTMLAttributes<HTMLSpanElement> {
   src?: string;
@@ -20,7 +24,7 @@ export const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(function Av
     <RadixAvatar.Root
       ref={ref}
       className={cn(
-        'relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-surface-muted text-ink-2 font-medium select-none',
+        'relative inline-flex shrink-0 select-none items-center justify-center overflow-hidden rounded-full bg-surface-muted font-medium text-ink-2',
         sizeMap[size],
         className,
       )}
@@ -33,7 +37,10 @@ export const Avatar = React.forwardRef<HTMLSpanElement, AvatarProps>(function Av
           className="aspect-square h-full w-full object-cover"
         />
       )}
-      <RadixAvatar.Fallback delayMs={300} className="flex h-full w-full items-center justify-center">
+      <RadixAvatar.Fallback
+        delayMs={300}
+        className="flex h-full w-full items-center justify-center"
+      >
         {name ? initials(name) : '?'}
       </RadixAvatar.Fallback>
     </RadixAvatar.Root>
@@ -54,14 +61,10 @@ export const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(fu
   const visible = items.slice(0, max);
   const hidden = items.length - visible.length;
   return (
-    <div
-      ref={ref}
-      className={cn('inline-flex items-center -space-x-2', className)}
-      {...rest}
-    >
+    <div ref={ref} className={cn('inline-flex items-center -space-x-2', className)} {...rest}>
       {visible.map((child, i) =>
         React.isValidElement(child) ? (
-          <span key={i} className="ring-2 ring-bg rounded-full">
+          <span key={i} className="rounded-full ring-2 ring-bg">
             {child}
           </span>
         ) : null,
@@ -69,7 +72,7 @@ export const AvatarGroup = React.forwardRef<HTMLDivElement, AvatarGroupProps>(fu
       {hidden > 0 && (
         <span
           className={cn(
-            'inline-flex items-center justify-center rounded-full bg-surface-muted text-ink-2 font-medium ring-2 ring-bg',
+            'inline-flex items-center justify-center rounded-full bg-surface-muted font-medium text-ink-2 ring-2 ring-bg',
             sizeMap[size],
           )}
         >

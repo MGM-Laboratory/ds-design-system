@@ -42,7 +42,13 @@ export const DropdownMenuItem = React.forwardRef<
   React.ElementRef<typeof RadixMenu.Item>,
   React.ComponentPropsWithoutRef<typeof RadixMenu.Item> & { inset?: boolean }
 >(function DropdownMenuItem({ className, inset, ...rest }, ref) {
-  return <RadixMenu.Item ref={ref} className={cn(menuItemClasses, inset && 'pl-8', className)} {...rest} />;
+  return (
+    <RadixMenu.Item
+      ref={ref}
+      className={cn(menuItemClasses, inset && 'pl-8', className)}
+      {...rest}
+    />
+  );
 });
 
 export const DropdownMenuCheckboxItem = React.forwardRef<
@@ -99,7 +105,9 @@ export const DropdownMenuSeparator = React.forwardRef<
   React.ElementRef<typeof RadixMenu.Separator>,
   React.ComponentPropsWithoutRef<typeof RadixMenu.Separator>
 >(function DropdownMenuSeparator({ className, ...rest }, ref) {
-  return <RadixMenu.Separator ref={ref} className={cn('-mx-1 my-1 h-px bg-line', className)} {...rest} />;
+  return (
+    <RadixMenu.Separator ref={ref} className={cn('-mx-1 my-1 h-px bg-line', className)} {...rest} />
+  );
 });
 
 export const DropdownMenuShortcut: React.FC<React.HTMLAttributes<HTMLSpanElement>> = ({
@@ -123,5 +131,12 @@ export const DropdownMenuSubContent = React.forwardRef<
   React.ElementRef<typeof RadixMenu.SubContent>,
   React.ComponentPropsWithoutRef<typeof RadixMenu.SubContent>
 >(function DropdownMenuSubContent({ className, ...rest }, ref) {
-  return <RadixMenu.SubContent ref={ref} data-surface="default" className={cn(menuContentClasses, className)} {...rest} />;
+  return (
+    <RadixMenu.SubContent
+      ref={ref}
+      data-surface="default"
+      className={cn(menuContentClasses, className)}
+      {...rest}
+    />
+  );
 });

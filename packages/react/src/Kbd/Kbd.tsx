@@ -14,8 +14,8 @@ export const Kbd = React.forwardRef<HTMLElement, KbdProps>(function Kbd(
     <kbd
       ref={ref}
       className={cn(
-        'inline-flex items-center justify-center font-mono text-ink-2 bg-surface-muted border border-line rounded-sm',
-        size === 'sm' ? 'min-w-5 h-5 px-1.5 text-[11px]' : 'min-w-6 h-6 px-2 text-mono',
+        'inline-flex items-center justify-center rounded-sm border border-line bg-surface-muted font-mono text-ink-2',
+        size === 'sm' ? 'h-5 min-w-5 px-1.5 text-[11px]' : 'h-6 min-w-6 px-2 text-mono',
         className,
       )}
       {...rest}

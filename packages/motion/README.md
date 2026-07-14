@@ -16,19 +16,19 @@ import { motion, AnimatePresence, fadeUp, staggerContainer, staggerItem } from '
 <motion.section variants={staggerContainer(0, 0.1)} initial="hidden" animate="show">
   <motion.h1 variants={staggerItem}>Hello</motion.h1>
   <motion.p variants={fadeUp}>World</motion.p>
-</motion.section>
+</motion.section>;
 ```
 
 ## Presets
 
-| Preset | Effect |
-|---|---|
-| `fadeIn` | Opacity 0 → 1 |
-| `fadeUp` | Opacity 0 → 1, translateY 8 → 0 |
-| `scaleIn` | Opacity 0 → 1, scale 0.96 → 1 |
-| `slideInRight` / `slideInLeft` | Translate + opacity |
+| Preset                                       | Effect                          |
+| -------------------------------------------- | ------------------------------- |
+| `fadeIn`                                     | Opacity 0 → 1                   |
+| `fadeUp`                                     | Opacity 0 → 1, translateY 8 → 0 |
+| `scaleIn`                                    | Opacity 0 → 1, scale 0.96 → 1   |
+| `slideInRight` / `slideInLeft`               | Translate + opacity             |
 | `staggerContainer(delayChildren?, stagger?)` | Container variants with stagger |
-| `staggerItem` | Same as `fadeUp` |
+| `staggerItem`                                | Same as `fadeUp`                |
 
 ## Token references
 

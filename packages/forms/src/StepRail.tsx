@@ -24,12 +24,13 @@ export function StepRail({ steps, navigable, orientation = 'vertical', className
       )}
     >
       {steps.map((s, i) => {
-        const status = i < wizard.current ? 'complete' : i === wizard.current ? 'active' : 'pending';
+        const status =
+          i < wizard.current ? 'complete' : i === wizard.current ? 'active' : 'pending';
         const content = (
           <div className="flex items-start gap-3">
             <span
               className={cn(
-                'inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-caption font-semibold',
+                'text-caption inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border font-semibold',
                 status === 'complete' && 'bg-brand-green border-brand-green text-white',
                 status === 'active' && 'bg-surface-inverse border-surface-inverse text-white',
                 status === 'pending' && 'bg-surface border-line text-ink-3',
@@ -56,7 +57,7 @@ export function StepRail({ steps, navigable, orientation = 'vertical', className
               <button
                 type="button"
                 onClick={() => wizard.goTo(i)}
-                className="text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:rounded-sm"
+                className="focus-visible:ring-focus text-left focus-visible:rounded-sm focus-visible:ring-2 focus-visible:outline-none"
               >
                 {content}
               </button>

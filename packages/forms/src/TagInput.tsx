@@ -51,8 +51,8 @@ export function TagInput({
   return (
     <div
       className={cn(
-        'flex flex-wrap items-center gap-1 rounded-md border bg-surface px-2 py-1.5 min-h-10 transition-colors',
-        'focus-within:ring-2 focus-within:ring-focus focus-within:ring-offset-1 focus-within:border-focus',
+        'bg-surface flex min-h-10 flex-wrap items-center gap-1 rounded-md border px-2 py-1.5 transition-colors',
+        'focus-within:ring-focus focus-within:border-focus focus-within:ring-2 focus-within:ring-offset-1',
         invalid ? 'border-brand-red' : 'border-line hover:border-line-strong',
         disabled && 'opacity-50',
         className,
@@ -61,7 +61,7 @@ export function TagInput({
       {current.map((tag) => (
         <span
           key={tag}
-          className="inline-flex items-center gap-1 rounded-sm bg-surface-muted px-1.5 py-0.5 text-caption text-ink"
+          className="bg-surface-muted text-caption text-ink inline-flex items-center gap-1 rounded-sm px-1.5 py-0.5"
         >
           {tag}
           <button
@@ -96,7 +96,7 @@ export function TagInput({
         }}
         placeholder={current.length === 0 ? placeholder : undefined}
         disabled={disabled}
-        className="min-w-[8ch] flex-1 bg-transparent px-1 text-body text-ink outline-none placeholder:text-ink-4"
+        className="text-body text-ink placeholder:text-ink-4 min-w-[8ch] flex-1 bg-transparent px-1 outline-none"
       />
     </div>
   );

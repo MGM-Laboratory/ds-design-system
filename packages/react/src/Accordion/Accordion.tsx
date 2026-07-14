@@ -9,7 +9,9 @@ export const AccordionItem = React.forwardRef<
   React.ElementRef<typeof RadixAccordion.Item>,
   React.ComponentPropsWithoutRef<typeof RadixAccordion.Item>
 >(function AccordionItem({ className, ...rest }, ref) {
-  return <RadixAccordion.Item ref={ref} className={cn('border-b border-line', className)} {...rest} />;
+  return (
+    <RadixAccordion.Item ref={ref} className={cn('border-b border-line', className)} {...rest} />
+  );
 });
 
 export const AccordionTrigger = React.forwardRef<
@@ -43,7 +45,7 @@ export const AccordionContent = React.forwardRef<
       ref={ref}
       className={cn(
         'overflow-hidden text-body text-ink-2',
-        'data-[state=open]:animate-fade-in data-[state=closed]:animate-fade-in',
+        'data-[state=closed]:animate-fade-in data-[state=open]:animate-fade-in',
         className,
       )}
       {...rest}

@@ -13,13 +13,17 @@ export const Label = React.forwardRef<React.ElementRef<typeof RadixLabel.Root>, 
       <RadixLabel.Root
         ref={ref}
         className={cn(
-          'inline-flex items-center gap-1 text-caption font-medium text-ink leading-none select-none',
+          'text-caption text-ink inline-flex items-center gap-1 leading-none font-medium select-none',
           className,
         )}
         {...rest}
       >
         {children}
-        {required && <span className="text-brand-red" aria-hidden="true">*</span>}
+        {required && (
+          <span className="text-brand-red" aria-hidden="true">
+            *
+          </span>
+        )}
       </RadixLabel.Root>
     );
   },

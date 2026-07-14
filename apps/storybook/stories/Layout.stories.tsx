@@ -28,7 +28,7 @@ export const StackDemo: Story = {
   render: () => (
     <div className="space-y-6">
       <div>
-        <h3 className="text-h3 mb-2">VStack (gap=4)</h3>
+        <h3 className="mb-2 text-h3">VStack (gap=4)</h3>
         <VStack gap={4}>
           <Box1>One</Box1>
           <Box1>Two</Box1>
@@ -36,7 +36,7 @@ export const StackDemo: Story = {
         </VStack>
       </div>
       <div>
-        <h3 className="text-h3 mb-2">HStack (gap=4)</h3>
+        <h3 className="mb-2 text-h3">HStack (gap=4)</h3>
         <HStack gap={4}>
           <Box1>One</Box1>
           <Box1>Two</Box1>
@@ -62,9 +62,15 @@ export const ContainerDemo: Story = {
   name: 'Container widths',
   render: () => (
     <div className="space-y-3">
-      <Container width="prose"><Box1>prose (640px)</Box1></Container>
-      <Container width="default"><Box1>default (1200px)</Box1></Container>
-      <Container width="wide"><Box1>wide (1360px)</Box1></Container>
+      <Container width="prose">
+        <Box1>prose (640px)</Box1>
+      </Container>
+      <Container width="default">
+        <Box1>default (1200px)</Box1>
+      </Container>
+      <Container width="wide">
+        <Box1>wide (1360px)</Box1>
+      </Container>
     </div>
   ),
 };
@@ -72,10 +78,24 @@ export const ContainerDemo: Story = {
 export const SectionDemo: Story = {
   name: 'Section tones',
   render: () => (
-    <div className="space-y-1 -mx-6">
-      <Section tone="default" padding="sm"><Container><Box1>default section</Box1></Container></Section>
-      <Section tone="muted" padding="sm"><Container><Box1>muted section</Box1></Container></Section>
-      <Section tone="inverse" padding="sm"><Container><div className="rounded-sm bg-white/10 px-3 py-2 text-body-sm">inverse section — children flip</div></Container></Section>
+    <div className="-mx-6 space-y-1">
+      <Section tone="default" padding="sm">
+        <Container>
+          <Box1>default section</Box1>
+        </Container>
+      </Section>
+      <Section tone="muted" padding="sm">
+        <Container>
+          <Box1>muted section</Box1>
+        </Container>
+      </Section>
+      <Section tone="inverse" padding="sm">
+        <Container>
+          <div className="rounded-sm bg-white/10 px-3 py-2 text-body-sm">
+            inverse section — children flip
+          </div>
+        </Container>
+      </Section>
     </div>
   ),
 };
@@ -94,7 +114,7 @@ export const FlexDemo: Story = {
 export const CenterAndAspect: Story = {
   name: 'Center + AspectRatio',
   render: () => (
-    <AspectRatio ratio={16 / 9} className="bg-surface-muted rounded-md">
+    <AspectRatio ratio={16 / 9} className="rounded-md bg-surface-muted">
       <Center fill>
         <span className="text-body text-ink-3">16:9 box, centered text</span>
       </Center>

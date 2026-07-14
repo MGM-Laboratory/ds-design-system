@@ -11,7 +11,8 @@ export const Single: Story = {
       <AccordionItem value="item-1">
         <AccordionTrigger>What is the MGM design system?</AccordionTrigger>
         <AccordionContent>
-          A complete React component library for MGM Laboratory products — colors, type, components, all opinionated.
+          A complete React component library for MGM Laboratory products — colors, type, components,
+          all opinionated.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">
@@ -33,9 +34,18 @@ export const Single: Story = {
 export const Multiple: Story = {
   render: () => (
     <Accordion type="multiple" className="max-w-md">
-      <AccordionItem value="a"><AccordionTrigger>Item A</AccordionTrigger><AccordionContent>Content A</AccordionContent></AccordionItem>
-      <AccordionItem value="b"><AccordionTrigger>Item B</AccordionTrigger><AccordionContent>Content B</AccordionContent></AccordionItem>
-      <AccordionItem value="c"><AccordionTrigger>Item C</AccordionTrigger><AccordionContent>Content C</AccordionContent></AccordionItem>
+      <AccordionItem value="a">
+        <AccordionTrigger>Item A</AccordionTrigger>
+        <AccordionContent>Content A</AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="b">
+        <AccordionTrigger>Item B</AccordionTrigger>
+        <AccordionContent>Content B</AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="c">
+        <AccordionTrigger>Item C</AccordionTrigger>
+        <AccordionContent>Content C</AccordionContent>
+      </AccordionItem>
     </Accordion>
   ),
 };

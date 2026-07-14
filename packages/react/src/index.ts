@@ -10,8 +10,32 @@
  *   import '@labmgm/react/styles.css';
  */
 
-// Layout primitives (re-exported from @labmgm/layout)
-export * from '@labmgm/layout';
+// Layout primitives (re-exported from @labmgm/layout). Keep these explicit:
+// Next.js cannot statically analyze `export *` from a client boundary.
+export {
+  Box,
+  Container,
+  Section,
+  Stack,
+  HStack,
+  VStack,
+  Grid,
+  Flex,
+  Center,
+  Spacer,
+  AspectRatio,
+  Divider,
+  type BoxProps,
+  type ContainerProps,
+  type SectionProps,
+  type StackProps,
+  type GridProps,
+  type FlexProps,
+  type CenterProps,
+  type SpacerProps,
+  type AspectRatioProps,
+  type DividerProps,
+} from '@labmgm/layout';
 
 // Brand
 export { Logo, Wordmark, ShapeSignature, FooterStrip } from '@labmgm/brand';
@@ -78,11 +102,7 @@ export {
   PopoverAnchor,
   PopoverClose,
 } from './Popover/Popover.js';
-export {
-  HoverCard,
-  HoverCardTrigger,
-  HoverCardContent,
-} from './HoverCard/HoverCard.js';
+export { HoverCard, HoverCardTrigger, HoverCardContent } from './HoverCard/HoverCard.js';
 export {
   Dialog,
   DialogTrigger,
@@ -162,7 +182,13 @@ export { Navbar, NavbarBrand, NavbarSection, NavbarItem } from './Navbar/Navbar.
 export { BackButton, type BackButtonProps } from './BackButton/BackButton.js';
 
 // Feedback
-export { Alert, AlertTitle, AlertDescription, alertVariants, type AlertProps } from './Alert/Alert.js';
+export {
+  Alert,
+  AlertTitle,
+  AlertDescription,
+  alertVariants,
+  type AlertProps,
+} from './Alert/Alert.js';
 export { Banner, type BannerProps } from './Banner/Banner.js';
 export { Progress, type ProgressProps } from './Progress/Progress.js';
 export { ProgressCircle, type ProgressCircleProps } from './Progress/ProgressCircle.js';
@@ -170,11 +196,7 @@ export { Callout, type CalloutProps } from './Callout/Callout.js';
 
 // Data display
 export { List, ListItem, type ListProps } from './List/List.js';
-export {
-  DescriptionList,
-  DescriptionTerm,
-  DescriptionDetails,
-} from './List/DescriptionList.js';
+export { DescriptionList, DescriptionTerm, DescriptionDetails } from './List/DescriptionList.js';
 export { Timeline, TimelineItem, type TimelineProps } from './Timeline/Timeline.js';
 export { Separator } from './Separator/Separator.js';
 

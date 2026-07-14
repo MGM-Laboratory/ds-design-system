@@ -1,7 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
 
 function buildStorageHook(storage: 'localStorage' | 'sessionStorage') {
-  return function useStorage<T>(key: string, initial: T): [T, (value: T | ((prev: T) => T)) => void] {
+  return function useStorage<T>(
+    key: string,
+    initial: T,
+  ): [T, (value: T | ((prev: T) => T)) => void] {
     const read = useCallback((): T => {
       if (typeof window === 'undefined') return initial;
       try {

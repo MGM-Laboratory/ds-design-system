@@ -26,7 +26,13 @@ export function Sparkline({
     <div className={cn('inline-block', className)} style={{ width, height }} aria-hidden="true">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={points}>
-          <Line type="monotone" dataKey="value" stroke={color} strokeWidth={strokeWidth} dot={false} />
+          <Line
+            type="monotone"
+            dataKey="value"
+            stroke={color}
+            strokeWidth={strokeWidth}
+            dot={false}
+          />
         </LineChart>
       </ResponsiveContainer>
     </div>

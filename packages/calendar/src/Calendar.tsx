@@ -12,7 +12,7 @@ export function Calendar({ className, classNames, ...rest }: CalendarProps) {
   return (
     <DayPicker
       showOutsideDays
-      className={cn('p-3 font-sans text-body-sm text-ink', className)}
+      className={cn('text-body-sm text-ink p-3 font-sans', className)}
       classNames={{
         months: 'flex flex-col sm:flex-row gap-4',
         month: 'space-y-3',

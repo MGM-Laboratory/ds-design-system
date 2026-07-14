@@ -18,7 +18,11 @@ function matches(e: KeyboardEvent, s: Shortcut): boolean {
   return true;
 }
 
-export function useKeyboardShortcut(shortcut: Shortcut, handler: (e: KeyboardEvent) => void, enabled = true): void {
+export function useKeyboardShortcut(
+  shortcut: Shortcut,
+  handler: (e: KeyboardEvent) => void,
+  enabled = true,
+): void {
   useEffect(() => {
     if (!enabled) return;
     const listener = (e: KeyboardEvent) => {

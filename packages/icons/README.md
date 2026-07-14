@@ -38,11 +38,11 @@ import { Sparkles } from 'lucide-react';
 
 ## Size tokens
 
-| Token | px | Use |
-|---|---|---|
-| `sm` | 16 | dense UI (tags, table cells, inline buttons) |
-| `md` | 20 | **default** — product UI |
-| `lg` | 24 | marketing, hero |
+| Token | px  | Use                                          |
+| ----- | --- | -------------------------------------------- |
+| `sm`  | 16  | dense UI (tags, table cells, inline buttons) |
+| `md`  | 20  | **default** — product UI                     |
+| `lg`  | 24  | marketing, hero                              |
 
 ## Brand rules ([`DESIGN_SYSTEM.md` §4](../../DESIGN_SYSTEM.md))
 

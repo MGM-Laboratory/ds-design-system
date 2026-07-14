@@ -29,21 +29,37 @@ export interface SelectProps {
  * use <Combobox> instead.
  */
 export const Select = React.forwardRef<HTMLButtonElement, SelectProps>(function Select(
-  { options, value, defaultValue, onChange, placeholder, disabled, invalid, className, id, ...rest },
+  {
+    options,
+    value,
+    defaultValue,
+    onChange,
+    placeholder,
+    disabled,
+    invalid,
+    className,
+    id,
+    ...rest
+  },
   ref,
 ) {
   return (
-    <RadixSelect.Root value={value} defaultValue={defaultValue} onValueChange={onChange} disabled={disabled}>
+    <RadixSelect.Root
+      value={value}
+      defaultValue={defaultValue}
+      onValueChange={onChange}
+      disabled={disabled}
+    >
       <RadixSelect.Trigger
         ref={ref}
         id={id}
         aria-invalid={invalid || undefined}
         className={cn(
-          'flex h-10 w-full items-center justify-between gap-2 rounded-md border bg-surface px-3 text-body text-ink outline-none transition-colors',
+          'bg-surface text-body text-ink flex h-10 w-full items-center justify-between gap-2 rounded-md border px-3 transition-colors outline-none',
           'data-[placeholder]:text-ink-4',
-          'focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1 focus-visible:border-focus',
+          'focus-visible:ring-focus focus-visible:border-focus focus-visible:ring-2 focus-visible:ring-offset-1',
           invalid ? 'border-brand-red' : 'border-line hover:border-line-strong',
-          'disabled:opacity-50 disabled:cursor-not-allowed',
+          'disabled:cursor-not-allowed disabled:opacity-50',
           className,
         )}
         {...rest}
@@ -57,7 +73,7 @@ export const Select = React.forwardRef<HTMLButtonElement, SelectProps>(function 
         <RadixSelect.Content
           position="popper"
           sideOffset={6}
-          className="z-50 max-h-[var(--radix-select-content-available-height)] min-w-[var(--radix-select-trigger-width)] overflow-hidden rounded-md border border-line bg-surface shadow-2"
+          className="border-line bg-surface shadow-2 z-50 max-h-[var(--radix-select-content-available-height)] min-w-[var(--radix-select-trigger-width)] overflow-hidden rounded-md border"
         >
           <RadixSelect.Viewport className="p-1">
             {options.map((opt) => (
@@ -66,7 +82,7 @@ export const Select = React.forwardRef<HTMLButtonElement, SelectProps>(function 
                 value={opt.value}
                 disabled={opt.disabled}
                 className={cn(
-                  'relative flex cursor-default select-none items-center gap-2 rounded-sm py-1.5 pl-8 pr-2 text-body-sm outline-none',
+                  'text-body-sm relative flex cursor-default items-center gap-2 rounded-sm py-1.5 pr-2 pl-8 outline-none select-none',
                   'data-[highlighted]:bg-surface-muted',
                   'data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
                 )}
@@ -78,7 +94,7 @@ export const Select = React.forwardRef<HTMLButtonElement, SelectProps>(function 
                 </span>
                 <RadixSelect.ItemText>{opt.label}</RadixSelect.ItemText>
                 {opt.description && (
-                  <span className="ml-auto text-caption text-ink-3">{opt.description}</span>
+                  <span className="text-caption text-ink-3 ml-auto">{opt.description}</span>
                 )}
               </RadixSelect.Item>
             ))}

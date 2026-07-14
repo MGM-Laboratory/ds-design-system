@@ -40,7 +40,7 @@ export function PatternCorner({
       tileSize={tileSize}
       seed={seed ?? `corner-${placement}`}
       colors={colors}
-      className={cn('absolute pointer-events-none', placementClasses[placement], className)}
+      className={cn('pointer-events-none absolute', placementClasses[placement], className)}
     />
   );
 }

@@ -12,7 +12,7 @@ export const AlertDialogContent = React.forwardRef<
 >(function AlertDialogContent({ className, ...rest }, ref) {
   return (
     <RadixAlertDialog.Portal>
-      <RadixAlertDialog.Overlay className="fixed inset-0 z-50 bg-surface-inverse/40 backdrop-blur-sm data-[state=open]:animate-fade-in" />
+      <RadixAlertDialog.Overlay className="bg-surface-inverse/40 fixed inset-0 z-50 backdrop-blur-sm data-[state=open]:animate-fade-in" />
       <RadixAlertDialog.Content
         ref={ref}
         data-surface="default"
@@ -28,11 +28,12 @@ export const AlertDialogContent = React.forwardRef<
   );
 });
 
-export const AlertDialogHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  function AlertDialogHeader({ className, ...rest }, ref) {
-    return <div ref={ref} className={cn('flex flex-col gap-1.5', className)} {...rest} />;
-  },
-);
+export const AlertDialogHeader = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(function AlertDialogHeader({ className, ...rest }, ref) {
+  return <div ref={ref} className={cn('flex flex-col gap-1.5', className)} {...rest} />;
+});
 
 export const AlertDialogTitle = React.forwardRef<
   React.ElementRef<typeof RadixAlertDialog.Title>,
@@ -60,20 +61,25 @@ export const AlertDialogDescription = React.forwardRef<
   );
 });
 
-export const AlertDialogFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  function AlertDialogFooter({ className, ...rest }, ref) {
-    return (
-      <div
-        ref={ref}
-        className={cn('flex flex-col-reverse sm:flex-row sm:items-center sm:justify-end gap-2', className)}
-        {...rest}
-      />
-    );
-  },
-);
+export const AlertDialogFooter = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(function AlertDialogFooter({ className, ...rest }, ref) {
+  return (
+    <div
+      ref={ref}
+      className={cn(
+        'flex flex-col-reverse gap-2 sm:flex-row sm:items-center sm:justify-end',
+        className,
+      )}
+      {...rest}
+    />
+  );
+});
 
 export interface AlertDialogActionProps
-  extends React.ComponentPropsWithoutRef<typeof RadixAlertDialog.Action>,
+  extends
+    React.ComponentPropsWithoutRef<typeof RadixAlertDialog.Action>,
     Pick<ButtonProps, 'variant'> {}
 
 export const AlertDialogAction = React.forwardRef<

@@ -29,7 +29,7 @@ export const TabsTrigger = React.forwardRef<
         'transition-colors hover:text-ink',
         'data-[state=active]:text-ink',
         'data-[state=active]:after:absolute data-[state=active]:after:inset-x-0 data-[state=active]:after:-bottom-px data-[state=active]:after:h-0.5 data-[state=active]:after:bg-surface-inverse',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:rounded-sm',
+        'focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus',
         className,
       )}
       {...rest}

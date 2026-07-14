@@ -17,11 +17,15 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(fun
       ref={ref}
       id={id ?? field?.id}
       aria-invalid={invalid || undefined}
-      aria-describedby={[describedByProp, field?.invalid ? field.errorId : field?.helpId].filter(Boolean).join(' ') || undefined}
+      aria-describedby={
+        [describedByProp, field?.invalid ? field.errorId : field?.helpId]
+          .filter(Boolean)
+          .join(' ') || undefined
+      }
       className={cn(
-        'block w-full min-h-[88px] resize-y rounded-md border bg-surface px-3 py-2 text-body text-ink outline-none transition-colors',
+        'bg-surface text-body text-ink block min-h-[88px] w-full resize-y rounded-md border px-3 py-2 transition-colors outline-none',
         'placeholder:text-ink-4',
-        'focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1 focus-visible:border-focus',
+        'focus-visible:ring-focus focus-visible:border-focus focus-visible:ring-2 focus-visible:ring-offset-1',
         invalid ? 'border-brand-red' : 'border-line hover:border-line-strong',
         className,
       )}

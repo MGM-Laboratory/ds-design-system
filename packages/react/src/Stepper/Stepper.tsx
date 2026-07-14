@@ -37,7 +37,8 @@ export const Stepper = React.forwardRef<HTMLOListElement, StepperProps>(function
       >
         {React.Children.map(children, (child, i) => {
           if (!React.isValidElement<StepProps>(child)) return child;
-          const status: StepProps['status'] = i < current ? 'complete' : i === current ? 'active' : 'pending';
+          const status: StepProps['status'] =
+            i < current ? 'complete' : i === current ? 'active' : 'pending';
           return React.cloneElement(child, { index: i + 1, status });
         })}
       </ol>
@@ -54,19 +55,15 @@ export const Step = React.forwardRef<HTMLLIElement, StepProps>(function Step(
     <li
       ref={ref}
       aria-current={status === 'active' ? 'step' : undefined}
-      className={cn(
-        'flex items-start gap-3',
-        orientation === 'horizontal' && 'flex-1',
-        className,
-      )}
+      className={cn('flex items-start gap-3', orientation === 'horizontal' && 'flex-1', className)}
       {...rest}
     >
       <span
         className={cn(
           'inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border text-caption font-semibold',
-          status === 'complete' && 'bg-brand-green border-brand-green text-white',
-          status === 'active' && 'bg-surface-inverse border-surface-inverse text-white',
-          status === 'pending' && 'bg-surface border-line text-ink-3',
+          status === 'complete' && 'border-brand-green bg-brand-green text-white',
+          status === 'active' && 'border-surface-inverse bg-surface-inverse text-white',
+          status === 'pending' && 'border-line bg-surface text-ink-3',
         )}
       >
         {status === 'complete' ? <Check size={14} /> : index}

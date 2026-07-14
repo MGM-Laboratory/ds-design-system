@@ -5,14 +5,19 @@ export function useIntersectionObserver<T extends HTMLElement>(
   options: IntersectionObserverInit = {},
 ): IntersectionObserverEntry | null {
   const [entry, setEntry] = useState<IntersectionObserverEntry | null>(null);
+  const { root, rootMargin, threshold } = options;
 
   useEffect(() => {
     const el = ref.current;
     if (!el || typeof IntersectionObserver === 'undefined') return;
-    const observer = new IntersectionObserver(([first]) => first && setEntry(first), options);
+    const observer = new IntersectionObserver(([first]) => first && setEntry(first), {
+      root,
+      rootMargin,
+      threshold,
+    });
     observer.observe(el);
     return () => observer.disconnect();
-  }, [ref, options.root, options.rootMargin, options.threshold]);
+  }, [ref, root, rootMargin, threshold]);
 
   return entry;
 }

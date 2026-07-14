@@ -38,7 +38,12 @@ This injects `@font-face` declarations for Bricolage Grotesque + Geist + Geist M
 ## Hand-rolled link tags
 
 ```ts
-import { googleFontsLinkTags, GOOGLE_FONTS_HREF, FONT_FAMILIES, FONT_CSS_VARIABLES } from '@labmgm/fonts';
+import {
+  googleFontsLinkTags,
+  GOOGLE_FONTS_HREF,
+  FONT_FAMILIES,
+  FONT_CSS_VARIABLES,
+} from '@labmgm/fonts';
 ```
 
 ## Brand rule

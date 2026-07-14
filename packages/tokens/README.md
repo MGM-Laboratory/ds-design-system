@@ -60,10 +60,10 @@ Inside `[data-surface="inverse"]`, the `--bg / --surface / --surface-muted / --i
 ```ts
 import { tokens, colors, typography, shadows, radii, durations, easings } from '@labmgm/tokens';
 
-colors['brand-blue'];          // '#3a6dc5'
-typography['display-2xl'];     // { fontSize: '4.5rem', lineHeight: '1.02', ... }
-tokens.shadows['2'];           // '0 6px 24px -8px rgba(...)'
-tokens.radii.md;               // '12px'
+colors['brand-blue']; // '#3a6dc5'
+typography['display-2xl']; // { fontSize: '4.5rem', lineHeight: '1.02', ... }
+tokens.shadows['2']; // '0 6px 24px -8px rgba(...)'
+tokens.radii.md; // '12px'
 ```
 
 Every token is `as const` — TypeScript narrows the type for downstream usage.

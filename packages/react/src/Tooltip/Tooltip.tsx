@@ -20,7 +20,7 @@ export const TooltipContent = React.forwardRef<
         data-surface="inverse"
         className={cn(
           'z-50 max-w-xs select-none rounded-sm bg-surface-inverse px-2 py-1 text-caption text-white shadow-2',
-          'data-[state=delayed-open]:animate-fade-in data-[state=closed]:animate-fade-in',
+          'data-[state=closed]:animate-fade-in data-[state=delayed-open]:animate-fade-in',
           className,
         )}
         {...rest}

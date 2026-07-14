@@ -45,6 +45,9 @@ jobs:
       - name: Build packages
         run: pnpm turbo run build --filter='./packages/*'
 
+      - name: Verify published package contracts
+        run: pnpm check:packages
+
       - name: Build Storybook
         run: pnpm --filter storybook build
 

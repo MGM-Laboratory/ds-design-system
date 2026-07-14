@@ -58,8 +58,8 @@ export function Combobox({
         aria-haspopup="listbox"
         aria-expanded={open}
         className={cn(
-          'flex h-10 w-full items-center justify-between gap-2 rounded-md border bg-surface px-3 text-body text-ink outline-none transition-colors',
-          'focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-1 focus-visible:border-focus',
+          'bg-surface text-body text-ink flex h-10 w-full items-center justify-between gap-2 rounded-md border px-3 transition-colors outline-none',
+          'focus-visible:ring-focus focus-visible:border-focus focus-visible:ring-2 focus-visible:ring-offset-1',
           invalid ? 'border-brand-red' : 'border-line hover:border-line-strong',
           'disabled:opacity-50',
         )}
@@ -68,18 +68,20 @@ export function Combobox({
         <ChevronDown size={16} className="text-ink-3" />
       </button>
       {open && (
-        <div className="absolute z-50 mt-2 w-full overflow-hidden rounded-md border border-line bg-surface shadow-2 animate-scale-in">
+        <div className="border-line bg-surface shadow-2 animate-scale-in absolute z-50 mt-2 w-full overflow-hidden rounded-md border">
           <Command shouldFilter>
-            <div className="flex items-center gap-2 border-b border-line px-3">
+            <div className="border-line flex items-center gap-2 border-b px-3">
               <Search size={14} className="text-ink-3" />
               <Command.Input
                 autoFocus
                 placeholder="Search…"
-                className="h-10 w-full bg-transparent text-body text-ink outline-none placeholder:text-ink-4"
+                className="text-body text-ink placeholder:text-ink-4 h-10 w-full bg-transparent outline-none"
               />
             </div>
             <Command.List className="max-h-72 overflow-auto p-1">
-              <Command.Empty className="p-2 text-center text-caption text-ink-3">{emptyMessage}</Command.Empty>
+              <Command.Empty className="text-caption text-ink-3 p-2 text-center">
+                {emptyMessage}
+              </Command.Empty>
               {options.map((opt) => (
                 <Command.Item
                   key={opt.value}
@@ -87,7 +89,7 @@ export function Combobox({
                   disabled={opt.disabled}
                   onSelect={() => pick(opt.value)}
                   className={cn(
-                    'relative flex cursor-pointer select-none items-center justify-between gap-2 rounded-sm px-2 py-1.5 text-body-sm text-ink',
+                    'text-body-sm text-ink relative flex cursor-pointer items-center justify-between gap-2 rounded-sm px-2 py-1.5 select-none',
                     'data-[selected=true]:bg-surface-muted',
                   )}
                 >
@@ -95,7 +97,9 @@ export function Combobox({
                     {opt.value === current && <Check size={14} />}
                     <span>{opt.label}</span>
                   </div>
-                  {opt.description && <span className="text-caption text-ink-3">{opt.description}</span>}
+                  {opt.description && (
+                    <span className="text-caption text-ink-3">{opt.description}</span>
+                  )}
                 </Command.Item>
               ))}
             </Command.List>

@@ -1,7 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Skeleton, Card } from '@labmgm/react';
 
-const meta = { title: 'Components/Skeleton', component: Skeleton, tags: ['autodocs'] } satisfies Meta<typeof Skeleton>;
+const meta = {
+  title: 'Components/Skeleton',
+  component: Skeleton,
+  tags: ['autodocs'],
+} satisfies Meta<typeof Skeleton>;
 export default meta;
 type Story = StoryObj<typeof meta>;
 
@@ -19,16 +23,16 @@ export const Variants: Story = {
 export const LoadingCard: Story = {
   render: () => (
     <Card className="w-80">
-      <div className="flex items-center gap-3 mb-4">
+      <div className="mb-4 flex items-center gap-3">
         <Skeleton variant="circle" />
         <div className="flex-1 space-y-2">
           <Skeleton variant="text" className="w-3/4" />
           <Skeleton variant="text" className="w-1/2" />
         </div>
       </div>
-      <Skeleton variant="block" className="h-32 mb-2" />
+      <Skeleton variant="block" className="mb-2 h-32" />
       <Skeleton variant="text" />
-      <Skeleton variant="text" className="w-5/6 mt-2" />
+      <Skeleton variant="text" className="mt-2 w-5/6" />
     </Card>
   ),
 };

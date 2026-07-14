@@ -2,7 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Empty, Button } from '@labmgm/react';
 import { Plus } from 'lucide-react';
 
-const meta = { title: 'Components/Empty', component: Empty, tags: ['autodocs'] } satisfies Meta<typeof Empty>;
+const meta = { title: 'Components/Empty', component: Empty, tags: ['autodocs'] } satisfies Meta<
+  typeof Empty
+>;
 export default meta;
 type Story = StoryObj<typeof meta>;
 

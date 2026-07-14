@@ -2,7 +2,9 @@ import * as React from 'react';
 import * as RadixScrollArea from '@radix-ui/react-scroll-area';
 import { cn } from '@labmgm/utils';
 
-export interface ScrollAreaProps extends React.ComponentPropsWithoutRef<typeof RadixScrollArea.Root> {
+export interface ScrollAreaProps extends React.ComponentPropsWithoutRef<
+  typeof RadixScrollArea.Root
+> {
   /** Orientation of the visible scrollbar. */
   orientation?: 'vertical' | 'horizontal' | 'both';
 }

@@ -26,9 +26,10 @@ export const PatternTile = React.forwardRef<HTMLDivElement, PatternTileProps>(fu
       aria-hidden="true"
       className={cn('inline-block leading-none', className)}
       style={{ width: size, height: size, ...style }}
-      // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{
-        __html: entry.svg.replace(/width="100"/, `width="${size}"`).replace(/height="100"/, `height="${size}"`),
+        __html: entry.svg
+          .replace(/width="100"/, `width="${size}"`)
+          .replace(/height="100"/, `height="${size}"`),
       }}
       {...rest}
     />
