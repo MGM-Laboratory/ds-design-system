@@ -1,5 +1,11 @@
 # @labmgm/icons
 
+## 0.1.4
+
+### Patch Changes
+
+- [`feeb5c0`](https://github.com/MGM-Laboratory/ds-design-system/commit/feeb5c0e5eff087448870e2aaf64359f9a465498) Thanks [@Idhamadam](https://github.com/Idhamadam)! - Update Lucide to the React 19-compatible release line so Next.js type checks no longer fail on Lucide's legacy `ReactSVG` declaration.
+
 ## 0.1.3
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@labmgm/command",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "MGM-styled command palette backed by cmdk: <CommandPalette>, <CommandGroup>, <CommandItem>, with keyboard shortcuts.",
   "license": "MIT",
   "type": "module",
